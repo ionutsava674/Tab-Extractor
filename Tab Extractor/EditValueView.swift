@@ -12,6 +12,7 @@ struct EditValueView: View {
     @Binding var editValue: String
     @Binding var editOKayed: Bool
     @Environment(\.presentationMode) var premo
+    @FocusState private var editIsFocused: Bool
     
     var body: some View {
         VStack(alignment: .center, spacing: 32 , content: {
@@ -19,6 +20,12 @@ struct EditValueView: View {
                 submit()
             }) //tf
             .keyboardType(.default)
+            .focused($editIsFocused)
+            .submitLabel(.done)
+            .onAppear {
+                self.editIsFocused = true
+                //print("focusing")
+            }
             HStack {
                 Spacer()
                 Button("ok") {

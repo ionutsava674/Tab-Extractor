@@ -34,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C646D2D7276B600E000C83BB /* Tab Extractor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tab Extractor.entitlements"; sourceTree = "<group>"; };
 		C65684A726767028003B3555 /* Save1Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Save1Song.swift; sourceTree = "<group>"; };
 		C65684A92676875F003B3555 /* MainTabViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewer.swift; sourceTree = "<group>"; };
 		C65C26A6267B7CB900DA491D /* EditValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditValueView.swift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		C67649152663919C0033464A /* Tab Extractor */ = {
 			isa = PBXGroup;
 			children = (
+				C646D2D7276B600E000C83BB /* Tab Extractor.entitlements */,
 				C67649162663919C0033464A /* Tab_ExtractorApp.swift */,
 				C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */,
 				C67649182663919C0033464A /* ContentView.swift */,
@@ -363,18 +365,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Tab Extractor/Tab Extractor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Tab Extractor/Preview Content\"";
 				DEVELOPMENT_TEAM = 2222CRHQ48;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Tab Extractor/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.saio674.Tab-Extractor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -385,18 +389,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Tab Extractor/Tab Extractor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Tab Extractor/Preview Content\"";
 				DEVELOPMENT_TEAM = 2222CRHQ48;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Tab Extractor/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.saio674.Tab-Extractor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
