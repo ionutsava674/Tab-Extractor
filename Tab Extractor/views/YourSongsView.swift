@@ -10,6 +10,7 @@ import SwiftUI
 struct YourSongsView: View {
     @Environment(\.horizontalSizeClass) var hSizeClass
         @State private var showingNewTabUrl = false
+    @State private var showingNewTabFromText = false
         @State private var ssl = false
         @State private var docFiles = [TabFileAssoc]()
         @State private var docFilesFiltered: [TabFileAssoc] = []
@@ -84,10 +85,10 @@ struct YourSongsView: View {
                     } //btn
                     .accessibilityLabel(NSLocalizedString("Add from web", comment: "main window web add button"))
                     .accessibility(hint: Text(NSLocalizedString("opens browser", comment: "main window add button hint")))
-                    Spacer()
+                    //Spacer()
                     Spacer()
                     Button {
-                        showingNewTabUrl = true
+                        showingNewTabFromText = true
                     } label: {
                         Text( Image(systemName: "note.text.badge.plus").renderingMode(.original) )
                             .font(.largeTitle)
@@ -114,6 +115,11 @@ struct YourSongsView: View {
                                     // "https://www.google.com/search?q=amazing+grace+bass+tab&source=hp&ei=Gve8YOuWCsGMlwSjsKWgDQ&oq=amazing+grace+bass+tab&gs_lcp=ChFtb2JpbGUtZ3dzLXdpei1ocBADMgIIADIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoCCCk6EQguELEDEIMBEMcBEKMCEJMCOggIABCxAxCDAToFCAAQsQM6DgguELEDEIMBEMcBEK8BOgsILhCxAxDHARCjAjoICC4QsQMQgwE6CAguEMcBEK8BOgUILhCxAzoOCC4QsQMQgwEQxwEQowI6AgguOgcIABCxAxAKOgQIABAKOgsILhCxAxCDARCTAjoNCC4QsQMQgwEQDRCTAjoECAAQDVCwQFiwyQFg2tIBaAFwAHgAgAH4AYgBlxqSAQYwLjIwLjOYAQCgAQGwAQE&sclient=mobile-gws-wiz-hp"
                                  fetchClipBoard: true,
                                     browseAutomatically: true)
+        })
+            .sheet(isPresented: $showingNewTabFromText, onDismiss: {
+                listDocFiles()
+            }, content: {
+                                    NewTabFromTextContent()
         })
             .navigationTitle(LCLZ.yourSavedSongs)
             .navigationBarTitleDisplayMode(.large)

@@ -30,6 +30,7 @@
 		C6A198502686483C0083D08B /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1984F2686483C0083D08B /* PreferencesView.swift */; };
 		C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */; };
 		C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */; };
+		C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg2.swift; sourceTree = "<group>"; };
 		C6C6F9CF267F3F1F00F4A653 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6C6F9D1267F45A200F4A653 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabFromTextContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */,
 				C61D34E82778BE4D00EB3013 /* TabSharer.swift */,
 				C61D34E02778BD1C00EB3013 /* NewTabUrlContent.swift */,
+				C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */,
 				C61D34E22778BD4200EB3013 /* TabPageView.swift */,
 				C61D34E42778BD6D00EB3013 /* EditValueView.swift */,
 				C61D34E62778BD9A00EB3013 /* Save1Song.swift */,
@@ -227,6 +230,7 @@
 				C66F4C632679EE7D00321FAD /* AccessibleCheckBox.swift in Sources */,
 				C676492826639B5F0033464A /* TabObject.swift in Sources */,
 				C6A198502686483C0083D08B /* PreferencesView.swift in Sources */,
+				C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */,
 				C61D34E12778BD1C00EB3013 /* NewTabUrlContent.swift in Sources */,
 				C61D34E92778BE4D00EB3013 /* TabSharer.swift in Sources */,
 				C61D34E32778BD4200EB3013 /* TabPageView.swift in Sources */,

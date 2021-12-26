@@ -21,7 +21,7 @@ struct NewTabUrlContent: View {
     @State private var tabFromWeb: GuitarTab?
     @State private var showingPageViewer = false
     
-    @State private var fromWebLines: [String] = []
+    //@State private var fromWebLines: [String] = []
     @State private var showingAddressActions = false
     
     var body: some View {
@@ -82,21 +82,7 @@ struct NewTabUrlContent: View {
             //}
             //.hidden()
             SwiftUIWebView( targetAddr: self.$browserAddressStr) { resultStr in
-                let utext = resultStr.replacingOccurrences(of: "\r\n", with: "\n")
-                let lns = utext.components(separatedBy: "\n").map { $0.trimmingCharacters(in: .whitespaces) }
-                
-                let td = TabDetector()
-                let gt = td.detectTabs2(text: resultStr, parseAlg: TabParseAlg2())
-                gt.sourceUrl = self.browserAddressStr
-                
-                DispatchQueue.main.async {
-                    self.fromWebLines = lns
-                    self.tabFromWeb = gt
-                    self.statusStr = String.localizedStringWithFormat(NSLocalizedString("detected %1$d tabs", comment: "status"), gt.pages.count)
-                    if !gt.pages.isEmpty {
-                        self.showingPageViewer = true
-                    }
-                } //async
+                browserDidFinishNavigation(resultStr: resultStr)
             } //web
             //TextEditor(text: $plainText)
         } //vs
@@ -111,6 +97,24 @@ struct NewTabUrlContent: View {
             fetchAddress()
         }) //onapp
     } //body
+    
+    func browserDidFinishNavigation(resultStr: String) -> Void {
+        //let utext = resultStr.replacingOccurrences(of: "\r\n", with: "\n")
+        //let lns = utext.components(separatedBy: "\n").map { $0.trimmingCharacters(in: .whitespaces) }
+        
+        let td = TabDetector()
+        let gt = td.detectTabs2(text: resultStr, parseAlg: TabParseAlg2())
+        gt.sourceUrl = self.browserAddressStr
+        
+        DispatchQueue.main.async {
+            //self.fromWebLines = lns
+            self.tabFromWeb = gt
+            self.statusStr = String.localizedStringWithFormat(NSLocalizedString("detected %1$d tabs", comment: "status"), gt.pages.count)
+            if !gt.pages.isEmpty {
+                self.showingPageViewer = true
+            }
+        } //async
+    } //func
     func fetchAddress() -> Void {
         if fetchClipBoard {
             if UIPasteboard.general.hasURLs {
