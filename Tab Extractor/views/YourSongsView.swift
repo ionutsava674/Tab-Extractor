@@ -108,11 +108,12 @@ struct YourSongsView: View {
                 listDocFiles()
             }, content: {
                 NewTabUrlContent(initialAddress:
-                                    "https://tabs.ultimate-guitar.com/tab/misc-television/formula-1-theme-tabs-2640351"
+                                    "https://tabs.ultimate-guitar.com/tab/misc-television/formula-1-theme-tabs-2640351",
                                      // "https://www.google.com/"
                                     // "https://www.bigbasstabs.com/misc_bass_tabs/amazing_grace_bass_tab.html"
                                     // "https://www.google.com/search?q=amazing+grace+bass+tab&source=hp&ei=Gve8YOuWCsGMlwSjsKWgDQ&oq=amazing+grace+bass+tab&gs_lcp=ChFtb2JpbGUtZ3dzLXdpei1ocBADMgIIADIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjIGCAAQFhAeMgYIABAWEB4yBggAEBYQHjoCCCk6EQguELEDEIMBEMcBEKMCEJMCOggIABCxAxCDAToFCAAQsQM6DgguELEDEIMBEMcBEK8BOgsILhCxAxDHARCjAjoICC4QsQMQgwE6CAguEMcBEK8BOgUILhCxAzoOCC4QsQMQgwEQxwEQowI6AgguOgcIABCxAxAKOgQIABAKOgsILhCxAxCDARCTAjoNCC4QsQMQgwEQDRCTAjoECAAQDVCwQFiwyQFg2tIBaAFwAHgAgAH4AYgBlxqSAQYwLjIwLjOYAQCgAQGwAQE&sclient=mobile-gws-wiz-hp"
-                                    , browseAutomatically: false)
+                                 fetchClipBoard: true,
+                                    browseAutomatically: true)
         })
             .navigationTitle(LCLZ.yourSavedSongs)
             .navigationBarTitleDisplayMode(.large)

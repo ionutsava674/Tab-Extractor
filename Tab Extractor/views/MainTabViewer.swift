@@ -77,12 +77,10 @@ struct MainTabViewer: View {
                     }
                 } //ls
                 HStack(alignment: .center, spacing: 20, content: {
-                    Button("Share 2") {
-                        share2()
-                    }
+                    Spacer()
                     Button("Share") {
-                        shareTab()
-                    }
+                        share2()
+                    } //btn
                 }) //hs
                 .font(.title)
                 .popover(isPresented: $showingShareSheet, attachmentAnchor: .point(UnitPoint.bottom), arrowEdge: .top, content: {
@@ -110,7 +108,8 @@ struct MainTabViewer: View {
         //self.sharedItems = sts
         self.si.sharedItems = sts
         self.showingShareSheet = true
-    }
+    } //func
+    /*
     func shareTab() -> Void {
         guard !tab.pages.isEmpty else {
             return
@@ -136,6 +135,7 @@ struct MainTabViewer: View {
             //print("shared")
         //})        
     } //func
+     */
 } //struct
 
 class SharedItemsContainer: ObservableObject {

@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct NewTabUrlContent: View {
     @Environment(\.presentationMode) private var premo
-    let initialAddress: String
+    let initialAddress: String?
+    let fetchClipBoard: Bool
     let browseAutomatically: Bool
     @State private var editAddressStr = ""
     @FocusState private var addressFocused: Bool
@@ -106,21 +108,44 @@ struct NewTabUrlContent: View {
         } //nv
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: {
-            self.editAddressStr = self.initialAddress
-            if browseAutomatically {
-                DispatchQueue.main.async {
-                    self.goButtonClick()
-                } //as
-            } //if
-            else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.addressFocused = true
-                }
-            }
+            fetchAddress()
         }) //onapp
     } //body
+    func fetchAddress() -> Void {
+        if fetchClipBoard {
+            if UIPasteboard.general.hasURLs {
+                if let furl = UIPasteboard.general.urls?.first {
+                    self.editAddressStr = furl.absoluteString
+                    if browseAutomatically {
+                        goButtonClick()
+                    }
+                    return
+                }
+            }
+            if UIPasteboard.general.hasStrings {
+                if let fstr = UIPasteboard.general.strings?.first(where: {
+                    if let _ = URL(string: $0) {
+                        return true
+                    }
+                    return false
+                }) {
+                    self.editAddressStr = fstr
+                    if browseAutomatically {
+                        goButtonClick()
+                    }
+                    return
+                }
+            }
+        } //if fetch
+        if let ia = initialAddress {
+            self.editAddressStr = ia
+            if browseAutomatically {
+                goButtonClick()
+            }
+        } //if got str
+                //self.addressFocused = true
+    } //func
     func goButtonClick() -> Void {
-        //self.showingPageViewer = true
         //DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.browserAddressStr = self.editAddressStr
         //} //dq
