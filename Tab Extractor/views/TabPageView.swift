@@ -15,9 +15,9 @@ class SelectablePage: SelectableItem<GuitarTab.Page> {
             objectWillChange.send()
             mainItem.title = newValue
         }
-    }
+    } //cv
     //@Published var title = ""
-}
+} //class
 struct MSIView: View {
     @ObservedObject var item: SelectablePage
     @ObservedObject var listContainer: SelectableItemContainer<SelectablePage, GuitarTab.Page>
@@ -123,14 +123,16 @@ struct TabPageView: View {
     } //init
     
     var body: some View {
-        return NavigationView {
+        NavigationView {
             VStack(alignment: .leading, spacing: 20, content: {
                 HStack {
                     Button(NSLocalizedString("back", comment: "back button for web search results page window")) {
                         self.premo.wrappedValue.dismiss()
-                    }
+                    } //btn
+                    .padding(.horizontal)
                     Spacer()
                     saveButton
+                        .padding(.horizontal)
                         .fullScreenCover(isPresented: $showingSaveAs1, content: {
                             Save1Song(TabSELContainer: self.selectableItems)
                         }) //pop
@@ -202,6 +204,7 @@ struct TabPageView: View {
             return
         }
         guard let source = UIApplication.shared.windows.last?.rootViewController else {
+            //UIWindowScene.window
             return
         }
         let av = UIActivityViewController(activityItems: [sharedString], applicationActivities: nil)

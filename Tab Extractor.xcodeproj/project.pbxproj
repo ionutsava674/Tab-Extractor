@@ -7,37 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C65684A826767028003B3555 /* Save1Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65684A726767028003B3555 /* Save1Song.swift */; };
-		C65684AA2676875F003B3555 /* MainTabViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65684A92676875F003B3555 /* MainTabViewer.swift */; };
-		C65C26A7267B7CB900DA491D /* EditValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C26A6267B7CB900DA491D /* EditValueView.swift */; };
+		C61D34DB2778BBC600EB3013 /* lclz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34DA2778BBC600EB3013 /* lclz.swift */; };
+		C61D34DD2778BBDB00EB3013 /* PreferencesClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34DC2778BBDB00EB3013 /* PreferencesClass.swift */; };
+		C61D34DF2778BC0E00EB3013 /* MainTabViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */; };
+		C61D34E12778BD1C00EB3013 /* NewTabUrlContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E02778BD1C00EB3013 /* NewTabUrlContent.swift */; };
+		C61D34E32778BD4200EB3013 /* TabPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E22778BD4200EB3013 /* TabPageView.swift */; };
+		C61D34E52778BD6D00EB3013 /* EditValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E42778BD6D00EB3013 /* EditValueView.swift */; };
+		C61D34E72778BD9A00EB3013 /* Save1Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E62778BD9A00EB3013 /* Save1Song.swift */; };
+		C61D34E92778BE4D00EB3013 /* TabSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E82778BE4D00EB3013 /* TabSharer.swift */; };
+		C61D34EB2778BF1900EB3013 /* WebViewRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34EA2778BF1900EB3013 /* WebViewRep.swift */; };
 		C65C26A9267BC70100DA491D /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C26A8267BC70100DA491D /* SelectableItem.swift */; };
 		C66F4C632679EE7D00321FAD /* AccessibleCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66F4C622679EE7D00321FAD /* AccessibleCheckBox.swift */; };
 		C67649172663919C0033464A /* Tab_ExtractorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67649162663919C0033464A /* Tab_ExtractorApp.swift */; };
 		C67649192663919C0033464A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67649182663919C0033464A /* ContentView.swift */; };
 		C676491B2663919D0033464A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C676491A2663919D0033464A /* Assets.xcassets */; };
 		C676491E2663919D0033464A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C676491D2663919D0033464A /* Preview Assets.xcassets */; };
-		C676492826639B5F0033464A /* TabExtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C676492726639B5F0033464A /* TabExtract.swift */; };
-		C676492A2663E13B0033464A /* NewTabUrlContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67649292663E13B0033464A /* NewTabUrlContent.swift */; };
-		C676492C2664098C0033464A /* WebViewRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C676492B2664098C0033464A /* WebViewRep.swift */; };
+		C676492826639B5F0033464A /* TabObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C676492726639B5F0033464A /* TabObject.swift */; };
 		C682470026832C460003B79B /* YourSongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68246FF26832C460003B79B /* YourSongsView.swift */; };
 		C682470226832DE40003B79B /* TabFileAssoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C682470126832DE40003B79B /* TabFileAssoc.swift */; };
-		C6824704268330100003B79B /* lclz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6824703268330100003B79B /* lclz.swift */; };
-		C68ADBD3266AC50800246312 /* TabPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68ADBD2266AC50800246312 /* TabPageView.swift */; };
 		C68C470926668B4E00D3A026 /* TabDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68C470826668B4E00D3A026 /* TabDetector.swift */; };
 		C69AC590266FF26C00D066AB /* TabParseAlg1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */; };
-		C69AC592266FFBB900D066AB /* LineSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69AC591266FFBB900D066AB /* LineSelector.swift */; };
 		C6A198502686483C0083D08B /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1984F2686483C0083D08B /* PreferencesView.swift */; };
-		C6A19852268648570083D08B /* PreferencesClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A19851268648570083D08B /* PreferencesClass.swift */; };
 		C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */; };
 		C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */; };
-		C6E669E82677D6420031DC1C /* TabSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E669E72677D6420031DC1C /* TabSharer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C61D34DA2778BBC600EB3013 /* lclz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lclz.swift; sourceTree = "<group>"; };
+		C61D34DC2778BBDB00EB3013 /* PreferencesClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesClass.swift; sourceTree = "<group>"; };
+		C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewer.swift; sourceTree = "<group>"; };
+		C61D34E02778BD1C00EB3013 /* NewTabUrlContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTabUrlContent.swift; sourceTree = "<group>"; };
+		C61D34E22778BD4200EB3013 /* TabPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageView.swift; sourceTree = "<group>"; };
+		C61D34E42778BD6D00EB3013 /* EditValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditValueView.swift; sourceTree = "<group>"; };
+		C61D34E62778BD9A00EB3013 /* Save1Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Save1Song.swift; sourceTree = "<group>"; };
+		C61D34E82778BE4D00EB3013 /* TabSharer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabSharer.swift; sourceTree = "<group>"; };
+		C61D34EA2778BF1900EB3013 /* WebViewRep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewRep.swift; sourceTree = "<group>"; };
 		C646D2D7276B600E000C83BB /* Tab Extractor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tab Extractor.entitlements"; sourceTree = "<group>"; };
-		C65684A726767028003B3555 /* Save1Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Save1Song.swift; sourceTree = "<group>"; };
-		C65684A92676875F003B3555 /* MainTabViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewer.swift; sourceTree = "<group>"; };
-		C65C26A6267B7CB900DA491D /* EditValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditValueView.swift; sourceTree = "<group>"; };
 		C65C26A8267BC70100DA491D /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
 		C66F4C622679EE7D00321FAD /* AccessibleCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibleCheckBox.swift; sourceTree = "<group>"; };
 		C67649132663919C0033464A /* Tab Extractor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tab Extractor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,22 +51,15 @@
 		C676491A2663919D0033464A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C676491D2663919D0033464A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C676491F2663919D0033464A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C676492726639B5F0033464A /* TabExtract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabExtract.swift; sourceTree = "<group>"; };
-		C67649292663E13B0033464A /* NewTabUrlContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabUrlContent.swift; sourceTree = "<group>"; };
-		C676492B2664098C0033464A /* WebViewRep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewRep.swift; sourceTree = "<group>"; };
+		C676492726639B5F0033464A /* TabObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabObject.swift; sourceTree = "<group>"; };
 		C68246FF26832C460003B79B /* YourSongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourSongsView.swift; sourceTree = "<group>"; };
 		C682470126832DE40003B79B /* TabFileAssoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFileAssoc.swift; sourceTree = "<group>"; };
-		C6824703268330100003B79B /* lclz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lclz.swift; sourceTree = "<group>"; };
-		C68ADBD2266AC50800246312 /* TabPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageView.swift; sourceTree = "<group>"; };
 		C68C470826668B4E00D3A026 /* TabDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDetector.swift; sourceTree = "<group>"; };
 		C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg1.swift; sourceTree = "<group>"; };
-		C69AC591266FFBB900D066AB /* LineSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineSelector.swift; sourceTree = "<group>"; };
 		C6A1984F2686483C0083D08B /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
-		C6A19851268648570083D08B /* PreferencesClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesClass.swift; sourceTree = "<group>"; };
 		C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg2.swift; sourceTree = "<group>"; };
 		C6C6F9CF267F3F1F00F4A653 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6C6F9D1267F45A200F4A653 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C6E669E72677D6420031DC1C /* TabSharer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabSharer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +73,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C61D34EC2778BF3200EB3013 /* generals */ = {
+			isa = PBXGroup;
+			children = (
+				C65C26A8267BC70100DA491D /* SelectableItem.swift */,
+				C66F4C622679EE7D00321FAD /* AccessibleCheckBox.swift */,
+				C61D34EA2778BF1900EB3013 /* WebViewRep.swift */,
+			);
+			path = generals;
+			sourceTree = "<group>";
+		};
+		C61D34ED2778BFA900EB3013 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C67649182663919C0033464A /* ContentView.swift */,
+				C6A1984F2686483C0083D08B /* PreferencesView.swift */,
+				C68246FF26832C460003B79B /* YourSongsView.swift */,
+				C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */,
+				C61D34E82778BE4D00EB3013 /* TabSharer.swift */,
+				C61D34E02778BD1C00EB3013 /* NewTabUrlContent.swift */,
+				C61D34E22778BD4200EB3013 /* TabPageView.swift */,
+				C61D34E42778BD6D00EB3013 /* EditValueView.swift */,
+				C61D34E62778BD9A00EB3013 /* Save1Song.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		C61D34EE2778BFE300EB3013 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				C682470126832DE40003B79B /* TabFileAssoc.swift */,
+				C676492726639B5F0033464A /* TabObject.swift */,
+				C68C470826668B4E00D3A026 /* TabDetector.swift */,
+				C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */,
+				C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
 		C676490A2663919C0033464A = {
 			isa = PBXGroup;
 			children = (
@@ -97,26 +133,11 @@
 				C646D2D7276B600E000C83BB /* Tab Extractor.entitlements */,
 				C67649162663919C0033464A /* Tab_ExtractorApp.swift */,
 				C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */,
-				C67649182663919C0033464A /* ContentView.swift */,
-				C6824703268330100003B79B /* lclz.swift */,
-				C6A1984F2686483C0083D08B /* PreferencesView.swift */,
-				C6A19851268648570083D08B /* PreferencesClass.swift */,
-				C68246FF26832C460003B79B /* YourSongsView.swift */,
-				C682470126832DE40003B79B /* TabFileAssoc.swift */,
-				C65684A92676875F003B3555 /* MainTabViewer.swift */,
-				C6E669E72677D6420031DC1C /* TabSharer.swift */,
-				C676492B2664098C0033464A /* WebViewRep.swift */,
-				C676492726639B5F0033464A /* TabExtract.swift */,
-				C68C470826668B4E00D3A026 /* TabDetector.swift */,
-				C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */,
-				C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */,
-				C67649292663E13B0033464A /* NewTabUrlContent.swift */,
-				C69AC591266FFBB900D066AB /* LineSelector.swift */,
-				C68ADBD2266AC50800246312 /* TabPageView.swift */,
-				C65C26A6267B7CB900DA491D /* EditValueView.swift */,
-				C65684A726767028003B3555 /* Save1Song.swift */,
-				C65C26A8267BC70100DA491D /* SelectableItem.swift */,
-				C66F4C622679EE7D00321FAD /* AccessibleCheckBox.swift */,
+				C61D34DA2778BBC600EB3013 /* lclz.swift */,
+				C61D34DC2778BBDB00EB3013 /* PreferencesClass.swift */,
+				C61D34ED2778BFA900EB3013 /* views */,
+				C61D34EE2778BFE300EB3013 /* data */,
+				C61D34EC2778BF3200EB3013 /* generals */,
 				C676491A2663919D0033464A /* Assets.xcassets */,
 				C676491F2663919D0033464A /* Info.plist */,
 				C676491C2663919D0033464A /* Preview Content */,
@@ -204,25 +225,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				C66F4C632679EE7D00321FAD /* AccessibleCheckBox.swift in Sources */,
-				C676492A2663E13B0033464A /* NewTabUrlContent.swift in Sources */,
-				C6E669E82677D6420031DC1C /* TabSharer.swift in Sources */,
-				C676492826639B5F0033464A /* TabExtract.swift in Sources */,
-				C65684AA2676875F003B3555 /* MainTabViewer.swift in Sources */,
+				C676492826639B5F0033464A /* TabObject.swift in Sources */,
 				C6A198502686483C0083D08B /* PreferencesView.swift in Sources */,
+				C61D34E12778BD1C00EB3013 /* NewTabUrlContent.swift in Sources */,
+				C61D34E92778BE4D00EB3013 /* TabSharer.swift in Sources */,
+				C61D34E32778BD4200EB3013 /* TabPageView.swift in Sources */,
 				C68C470926668B4E00D3A026 /* TabDetector.swift in Sources */,
+				C61D34EB2778BF1900EB3013 /* WebViewRep.swift in Sources */,
 				C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */,
 				C682470226832DE40003B79B /* TabFileAssoc.swift in Sources */,
 				C682470026832C460003B79B /* YourSongsView.swift in Sources */,
-				C676492C2664098C0033464A /* WebViewRep.swift in Sources */,
 				C65C26A9267BC70100DA491D /* SelectableItem.swift in Sources */,
+				C61D34E72778BD9A00EB3013 /* Save1Song.swift in Sources */,
 				C69AC590266FF26C00D066AB /* TabParseAlg1.swift in Sources */,
-				C65C26A7267B7CB900DA491D /* EditValueView.swift in Sources */,
-				C6A19852268648570083D08B /* PreferencesClass.swift in Sources */,
+				C61D34DD2778BBDB00EB3013 /* PreferencesClass.swift in Sources */,
 				C67649192663919C0033464A /* ContentView.swift in Sources */,
-				C68ADBD3266AC50800246312 /* TabPageView.swift in Sources */,
-				C69AC592266FFBB900D066AB /* LineSelector.swift in Sources */,
-				C65684A826767028003B3555 /* Save1Song.swift in Sources */,
-				C6824704268330100003B79B /* lclz.swift in Sources */,
+				C61D34DF2778BC0E00EB3013 /* MainTabViewer.swift in Sources */,
+				C61D34E52778BD6D00EB3013 /* EditValueView.swift in Sources */,
+				C61D34DB2778BBC600EB3013 /* lclz.swift in Sources */,
 				C67649172663919C0033464A /* Tab_ExtractorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

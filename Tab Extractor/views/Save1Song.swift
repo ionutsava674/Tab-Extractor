@@ -15,6 +15,7 @@ struct Save1Song: View {
     @State private var alertTitle = ""
     @State private var alertVisible = false
     @State private var dismissAfterAlert = false
+    @FocusState private var editFocused: Bool
     
     private func btnSave() -> Void {
         guard !songTitle.isEmpty else {
@@ -57,6 +58,7 @@ struct Save1Song: View {
             TextField(NSLocalizedString("enter song name", comment: "save 1 song dialog edit box prompt"), text: $songTitle, onCommit: {
                 btnSave()
             })
+                .focused($editFocused)
             HStack {
                 Button(NSLocalizedString("Save", comment: "save 1 song dialog save button")) {
                     btnSave()
@@ -76,7 +78,12 @@ struct Save1Song: View {
                     self.premo.wrappedValue.dismiss()
                 }
             }))
-        })
+        }) //alert
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.editFocused = true
+            } //as
+        } //onap
         //} //nv
     } //body
 } //str

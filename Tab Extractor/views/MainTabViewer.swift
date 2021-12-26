@@ -20,9 +20,6 @@ struct MainTabViewer: View {
     @AppStorage( wrappedValue: GLBP.stringNoteSeparatorDefault, GLBP.stringNoteSeparator.rawValue) var stringNoteSeparator
     @AppStorage( wrappedValue: GLBP.noteNoteSeparatorDefault, GLBP.noteNoteSeparator.rawValue) var noteNoteSeparator
     
-    func a()  {
-        let page = GuitarTab.Page()
-    }
     var originalList: some View {
         ForEach(tab.pages) {page in
             Section(header: Text(page.title)) {
@@ -102,9 +99,14 @@ struct MainTabViewer: View {
         }
         let sts = [ tab.pages.map { page in
             page.displayableLines.joined(separator: "\r\n")
+            + "\r\nlc \(page.lines.count)"
+            + "\r\ncc \(page.clusters.count)"
+            + "\r\noc \(page.sourceStrings.count)"
+            + page.sourceStrings.joined(separator: "\r\n")
         }
         .joined(separator: "\r\n\r\n")
         ]
+        print(sts[0])
         //self.sharedItems = sts
         self.si.sharedItems = sts
         self.showingShareSheet = true

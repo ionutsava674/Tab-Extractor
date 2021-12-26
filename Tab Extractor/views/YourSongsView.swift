@@ -51,31 +51,62 @@ struct YourSongsView: View {
                 TextField(NSLocalizedString("search", comment: "main window search filter caption"), text: filterBind)
                 List {
                 ForEach(docFilesFiltered, id: \.fileUrl) {tfa in
-                    NavigationLink( tfa.tab.title ,
-                                    destination: MainTabViewer(tab: tfa.tab),
-                                    tag: tfa.fileUrl, selection: self.$listSelection)
-                    .font(.headline)
+                    NavigationLink(tag: tfa.fileUrl,
+                                   selection: self.$listSelection,
+                                   destination: {
+                        MainTabViewer(tab: tfa.tab)
+                    },
+                                   label: {
+                        Text(tfa.tab.title)
+                            .padding()
+                    }) //nl
+                        .swipeActions(content: {
+                            Button(role: .destructive) {
+                                _ = self.deleteItem(tfa: tfa)
+                            } label: {
+                                Label("delete \(tfa.tab.title)", image: "trash.fill")
+                            } //btn
+                        }) //swipe
+                    //.font(.headline)
                 } //fe
-                .onDelete(perform: deleteItems)
+//                .onDelete(perform: deleteItems)
                 } //ls
-                Button(NSLocalizedString("Refresh", comment: "main window list refresh button")) {
-                    //ssl = true
+                Button(NSLocalizedString("Refresh list", comment: "main window list refresh button")) {
                     listDocFiles()
-                    //print(hSizeClass)
                 }
-                Button(NSLocalizedString("Add from web", comment: "main window add button")) {
-                    showingNewTabUrl = true
-                }
-                .accessibility(hint: Text(NSLocalizedString("opens browser", comment: "main window add button hint")))
+                HStack {
+                    Spacer()
+                    Button {
+                        showingNewTabUrl = true
+                    } label: {
+                        Text( Image(systemName: "doc.badge.plus").renderingMode(.original) )
+                            .font(.largeTitle)
+                    } //btn
+                    .accessibilityLabel(NSLocalizedString("Add from web", comment: "main window web add button"))
+                    .accessibility(hint: Text(NSLocalizedString("opens browser", comment: "main window add button hint")))
+                    Spacer()
+                    Spacer()
+                    Button {
+                        showingNewTabUrl = true
+                    } label: {
+                        Text( Image(systemName: "note.text.badge.plus").renderingMode(.original) )
+                            .font(.largeTitle)
+                    } //btn
+                    .accessibilityLabel(NSLocalizedString("Add text directly", comment: "main window add text button"))
+                    .accessibility(hint: Text(NSLocalizedString("you can paste text directly", comment: "main window add text button hint")))
+                    Spacer()
+                } //hs
             } //vs
             .onAppear(perform: {
-                print("app")
+                //print("app")
                 DispatchQueue.main.async {
                     listDocFiles()
-                }
-            })
-            .navigationBarItems(trailing: EditButton() )
-            .sheet(isPresented: $showingNewTabUrl, content: {
+                } //as
+            }) //onapp
+            //.navigationBarItems(trailing: EditButton() )
+            .sheet(isPresented: $showingNewTabUrl, onDismiss: {
+                listDocFiles()
+            }, content: {
                 NewTabUrlContent(initialAddress:
                                     "https://tabs.ultimate-guitar.com/tab/misc-television/formula-1-theme-tabs-2640351"
                                      // "https://www.google.com/"
@@ -93,13 +124,20 @@ struct YourSongsView: View {
             //.padding(-0.5)
             } //geo
         } //body
+    func deleteItem(tfa: TabFileAssoc) -> Bool {
+        if let _ = try? FileManager.default.removeItem( at: tfa.fileUrl) {
+            listDocFiles()
+            return true
+        }
+        return false
+    } //func
         func deleteItems(indices: IndexSet) -> Void {
             for index in indices {
                 let tfa = docFilesFiltered[index]
                 try? FileManager.default.removeItem( at: tfa.fileUrl)
             }
             listDocFiles()
-        }
+        } //func
         func listDocFiles() -> Void {
             self.docFiles = []
             let du = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

@@ -99,7 +99,7 @@ class GuitarTab: Codable, ObservableObject {
         func unnamedStringNames() -> [String] {
             var names = [String]()
             for i in 0..<self.lines.count {
-                names.append(String.localizedStringWithFormat(NSLocalizedString("s%1$d;", comment: "string number: s1 s2 etc"), [i]))
+                names.append(String.localizedStringWithFormat(NSLocalizedString("s%1$d;", comment: "string number: s1 s2 etc"), i))
             }
             return names
         }
@@ -131,7 +131,7 @@ return unnamedStringNames()
             }
             return names
         }
-        func getStringNames1( clusts: [Cluster]) -> [String] {
+        private func getStringNames1( clusts: [Cluster]) -> [String] {
             guard let namesCluster = getNamesCluster(clusts: clusts) else {
                 return unnamedStringNames()
             }
@@ -142,7 +142,7 @@ return unnamedStringNames()
                 note.fretValue
             }
         }
-        func getNamesCluster( clusts: [Cluster]) -> Cluster? {
+        private func getNamesCluster( clusts: [Cluster]) -> Cluster? {
             guard let firstFullCandidate = ( clusts.first { c in
                 !c.isBar
             } ) else {
