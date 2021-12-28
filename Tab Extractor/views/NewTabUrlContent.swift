@@ -81,8 +81,8 @@ struct NewTabUrlContent: View {
                 //self.showingLineSelector = true
             //}
             //.hidden()
-            SwiftUIWebView( targetAddr: self.$browserAddressStr) { resultStr in
-                browserDidFinishNavigation(resultStr: resultStr)
+            SwiftUIWebView( targetAddr: self.$browserAddressStr) { bodyStr, titleStr in
+                browserDidFinishNavigation(resultStr: bodyStr, titleStr: titleStr)
             } //web
             //TextEditor(text: $plainText)
         } //vs
@@ -98,22 +98,25 @@ struct NewTabUrlContent: View {
         }) //onapp
     } //body
     
-    func browserDidFinishNavigation(resultStr: String) -> Void {
+    func browserDidFinishNavigation(resultStr: String, titleStr: String?) -> Void {
         //let utext = resultStr.replacingOccurrences(of: "\r\n", with: "\n")
         //let lns = utext.components(separatedBy: "\n").map { $0.trimmingCharacters(in: .whitespaces) }
-        
+        //print(self.browserAddressStr)
+        //print(resultStr)
         let td = TabDetector()
-        let gt = td.detectTabs2(text: resultStr, parseAlg: TabParseAlg2())
-        gt.sourceUrl = self.browserAddressStr
-        
-        DispatchQueue.main.async {
-            //self.fromWebLines = lns
-            self.tabFromWeb = gt
-            self.statusStr = String.localizedStringWithFormat(NSLocalizedString("detected %1$d tabs", comment: "status"), gt.pages.count)
-            if !gt.pages.isEmpty {
-                self.showingPageViewer = true
-            }
-        } //async
+        //let gt = td.detectTabs2(text: resultStr, parseAlg: TabParseAlg2())
+        if let gt = td.detectTabs3(in: resultStr, using: TabParseAlg2(), splitMultipleOf: [6, 4]) {
+            gt.sourceUrl = self.browserAddressStr
+            gt.title = titleStr ?? ""
+            
+            DispatchQueue.main.async {
+                self.tabFromWeb = gt
+                self.statusStr = String.localizedStringWithFormat(NSLocalizedString("detected %1$d tabs", comment: "status"), gt.pages.count)
+                if !gt.pages.isEmpty {
+                    self.showingPageViewer = true
+                }
+            } //async
+        } //got tab
     } //func
     func fetchAddress() -> Void {
         if fetchClipBoard {

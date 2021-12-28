@@ -10,6 +10,7 @@ import SwiftUI
 struct Save1Song: View {
     //@ObservedObject var TabSELContainer: MSLContainer<GuitarTab.Page>
     @ObservedObject var TabSELContainer: SelectableItemContainer<SelectablePage, GuitarTab.Page>
+    @ObservedObject var fromTab: GuitarTab
     @State private var songTitle = ""
     @Environment(\.presentationMode) var premo
     @State private var alertTitle = ""
@@ -43,8 +44,9 @@ struct Save1Song: View {
             return false
         }
         for item in selected {
-            tts.pages.append(item.mainItem)
+            tts.pages.append( item.mainItem)
         }
+        tts.sourceUrl = fromTab.sourceUrl
         tts.title = self.songTitle
         if let _ = TabFileAssoc.saveTab(tab: tts) {
             return true
@@ -80,6 +82,7 @@ struct Save1Song: View {
             }))
         }) //alert
         .onAppear {
+            self.songTitle = fromTab.title
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self.editFocused = true
             } //as

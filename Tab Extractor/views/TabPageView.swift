@@ -134,7 +134,7 @@ struct TabPageView: View {
                     saveButton
                         .padding(.horizontal)
                         .fullScreenCover(isPresented: $showingSaveAs1, content: {
-                            Save1Song(TabSELContainer: self.selectableItems)
+                            Save1Song(TabSELContainer: self.selectableItems, fromTab: self.sourceTab)
                         }) //pop
                         .actionSheet(isPresented: self.$showingSaveMenu, content: {saveActionSheet}) //asheet
                 } //hs
@@ -169,6 +169,7 @@ struct TabPageView: View {
                     Button("share info") {
                         var sha = [String]()
                         sha.append(self.sourceTab.sourceUrl ?? "no url")
+                        sha.append(self.sourceTab.title)
                         for ip in self.sourceTab.pages {
                             sha.append(ip.title)
                             let ss = ip.sourceStrings
