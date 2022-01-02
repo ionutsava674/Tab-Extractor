@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C613835D277BB9C7007F2A43 /* TitleString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613835C277BB9C7007F2A43 /* TitleString.swift */; };
+		C619586B277F06D600985895 /* TouchTabViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C619586A277F06D600985895 /* TouchTabViewer.swift */; };
 		C61D34DB2778BBC600EB3013 /* lclz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34DA2778BBC600EB3013 /* lclz.swift */; };
 		C61D34DD2778BBDB00EB3013 /* PreferencesClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34DC2778BBDB00EB3013 /* PreferencesClass.swift */; };
 		C61D34DF2778BC0E00EB3013 /* MainTabViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C613835C277BB9C7007F2A43 /* TitleString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleString.swift; sourceTree = "<group>"; };
+		C619586A277F06D600985895 /* TouchTabViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchTabViewer.swift; sourceTree = "<group>"; };
 		C61D34DA2778BBC600EB3013 /* lclz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lclz.swift; sourceTree = "<group>"; };
 		C61D34DC2778BBDB00EB3013 /* PreferencesClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesClass.swift; sourceTree = "<group>"; };
 		C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewer.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				C65C26A8267BC70100DA491D /* SelectableItem.swift */,
+				C613835C277BB9C7007F2A43 /* TitleString.swift */,
 				C66F4C622679EE7D00321FAD /* AccessibleCheckBox.swift */,
 				C61D34EA2778BF1900EB3013 /* WebViewRep.swift */,
 			);
@@ -92,6 +97,7 @@
 				C6A1984F2686483C0083D08B /* PreferencesView.swift */,
 				C68246FF26832C460003B79B /* YourSongsView.swift */,
 				C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */,
+				C619586A277F06D600985895 /* TouchTabViewer.swift */,
 				C61D34E82778BE4D00EB3013 /* TabSharer.swift */,
 				C61D34E02778BD1C00EB3013 /* NewTabUrlContent.swift */,
 				C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */,
@@ -230,6 +236,7 @@
 				C66F4C632679EE7D00321FAD /* AccessibleCheckBox.swift in Sources */,
 				C676492826639B5F0033464A /* TabObject.swift in Sources */,
 				C6A198502686483C0083D08B /* PreferencesView.swift in Sources */,
+				C613835D277BB9C7007F2A43 /* TitleString.swift in Sources */,
 				C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */,
 				C61D34E12778BD1C00EB3013 /* NewTabUrlContent.swift in Sources */,
 				C61D34E92778BE4D00EB3013 /* TabSharer.swift in Sources */,
@@ -239,6 +246,7 @@
 				C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */,
 				C682470226832DE40003B79B /* TabFileAssoc.swift in Sources */,
 				C682470026832C460003B79B /* YourSongsView.swift in Sources */,
+				C619586B277F06D600985895 /* TouchTabViewer.swift in Sources */,
 				C65C26A9267BC70100DA491D /* SelectableItem.swift in Sources */,
 				C61D34E72778BD9A00EB3013 /* Save1Song.swift in Sources */,
 				C69AC590266FF26C00D066AB /* TabParseAlg1.swift in Sources */,

@@ -60,12 +60,12 @@ class GuitarTab: Codable, ObservableObject {
         func computeDisplayableLines( clusts: [Cluster], includeBars: Bool) -> [String] {
             computeDisplayableLinesEx( clusts: clusts, includeBars: includeBars)
         }
-        static var comcou = 0
+        //static var comcou = 0
         func computeDisplayableLinesEx( clusts: [Cluster], includeBars: Bool, headerLineStringNameSeparator: String = " ", stringValueSeparator: String = "", noteNoteSeparator: String = ", ") -> [String] {
-            Self.comcou += 1
-            print("computed \(Self.comcou)")
+            //Self.comcou += 1
+            //print("computed \(Self.comcou)")
             var out = [String]()
-            let stringNames = getStringNames1( clusts: clusts)
+            let stringNames = getStringNames( from: clusts, or: nil)
             let namesCluster = getNamesCluster(clusts: clusts)
             if let namesLine = namesCluster?.notes.map({
                 $0.fretValue
@@ -96,52 +96,27 @@ class GuitarTab: Codable, ObservableObject {
             }
             return out
         }
-        func unnamedStringNames() -> [String] {
+        private static func unnamedStringNames(linesCount: Int) -> [String] {
             var names = [String]()
-            for i in 0..<self.lines.count {
-                names.append(String.localizedStringWithFormat(NSLocalizedString("s%1$d;", comment: "string number: s1 s2 etc"), i))
+            for i in 0..<linesCount {
+                names.append( String.localizedStringWithFormat( NSLocalizedString("string%1$d;", comment: "string number: s1 s2 etc"), i + 1))
             }
             return names
-        }
-        func getStringNames2( clusts: [Cluster]) -> [String] {
-            var names = [String]()
-            if let firstFullCluster = ( clusts.first { c in
-                !c.isBar
-            } ) {
-                for lineIndex in 0..<self.lines.count {
-                    let noteCount = (firstFullCluster.notes.filter { n in
-                        n.stringIndex == lineIndex
-                    }).count
-                    if noteCount != 1 {
-                        return unnamedStringNames()
-                    }
-                } //good name cluster
-                ////
-                for li in 0..<lines.count {
-                    if let n = firstFullCluster.notes.first(where: { cn in
-                        cn.stringIndex == li
-                    }) {
-                        names.append(n.fretValue)
-                    } else {
-return unnamedStringNames()
-                    }
-                } //for
-            } else {
-                return unnamedStringNames()
+        } //func
+        private func getStringNames( from clusts: [Cluster], or defaultNames: ((Int) -> [String])?) -> [String] {
+            if let namesCluster = getNamesCluster(clusts: clusts) {
+                return (namesCluster.notes.sorted { n1, n2 in
+                    n1.stringIndex < n2.stringIndex
+                        || (n1.stringIndex == n2.stringIndex && n1.position < n2.position)
+                }).map { note in
+                    note.fretValue
+                }
             }
-            return names
-        }
-        private func getStringNames1( clusts: [Cluster]) -> [String] {
-            guard let namesCluster = getNamesCluster(clusts: clusts) else {
-                return unnamedStringNames()
-            }
-            return (namesCluster.notes.sorted { n1, n2 in
-                n1.stringIndex < n2.stringIndex
-                    || (n1.stringIndex == n2.stringIndex && n1.position < n2.position)
-            }).map { note in
-                note.fretValue
-            }
-        }
+            let ret = defaultNames?(self.lines.count)
+            return ret?.count == self.lines.count
+            ? ret  ?? Self.unnamedStringNames( linesCount: self.lines.count)
+            : Self.unnamedStringNames( linesCount: self.lines.count)
+        } //func
         private func getNamesCluster( clusts: [Cluster]) -> Cluster? {
             guard let firstFullCandidate = ( clusts.first { c in
                 !c.isBar

@@ -40,6 +40,8 @@ struct MainTabViewer: View {
     var listComputedLines: some View {
         ForEach(tab.pages) {page in
             Section(header: Text(page.title)) {
+                TouchTabViewer(tabPage: page)
+                    .frame(width: .infinity, height: 120, alignment: .topLeading)
                 let linesToList = page.computeDisplayableLinesEx(clusts: page.clusters,
                                                      includeBars: self.includeBars,
                                                      headerLineStringNameSeparator: self.stringStringSeparator,

@@ -7,21 +7,25 @@
 
 import SwiftUI
 import UIKit
+import Combine
 
 struct NewTabUrlContent: View {
-    @Environment(\.presentationMode) private var premo
     let initialAddress: String?
-    let fetchClipBoard: Bool
+    let autoFetchClipBoard: Bool
     let browseAutomatically: Bool
+    
+    @Environment(\.presentationMode) private var premo
+    
     @State private var editAddressStr = ""
     @FocusState private var addressFocused: Bool
     @State private var statusStr = NSLocalizedString("status", comment: "browser initial status")
     @State private var browserAddressStr = "about:blank"
     
     @State private var tabFromWeb: GuitarTab?
-    @State private var showingPageViewer = false
+    @State private var pageBodyFromWeb: String?
+    @State private var pageTitleFromWeb: String?
     
-    //@State private var fromWebLines: [String] = []
+    @State private var showingPageViewer = false
     @State private var showingAddressActions = false
     
     var body: some View {
@@ -29,9 +33,22 @@ struct NewTabUrlContent: View {
         VStack {
             HStack {
                 TextField(NSLocalizedString("web address", comment: "web address placeholder"), text: self.$editAddressStr)
+                    .onReceive(NotificationCenter.default.publisher( for: UITextField.textDidBeginEditingNotification, object: nil), perform: { publisherOutput in
+                        if let textField = publisherOutput.object as? UITextField {
+                            DispatchQueue.main.async {
+                                //textField.selectAll(textField)
+                                textField.selectedTextRange = textField.textRange(from: textField.beginningOfDocument, to: textField.endOfDocument)
+                                textField.updateFocusIfNeeded()
+                            }
+                        }
+                    })
                     .focused($addressFocused)
                     .keyboardType(.URL)
                     .submitLabel(.go)
+                    .onSubmit {
+                        goButtonClick()
+                    }
+                
                 Button {
                     self.showingAddressActions = true
                 } label: {
@@ -40,7 +57,11 @@ struct NewTabUrlContent: View {
                 }
                 .confirmationDialog("address actions", isPresented: $showingAddressActions) {
                     Button("Paste and load address") {
-                        //
+                        _ = self.pasteClipboard(andGo: true)
+                    }
+                    .disabled( !self.clipboardHasUrl() )
+                    Button("clear address") {
+                        self.editAddressStr = ""
                     }
                 } message: {
                     Text("Select an action")
@@ -51,9 +72,11 @@ struct NewTabUrlContent: View {
                     goButtonClick()
                 } //btn
                 .font(.title)
+                .disabled( self.editAddressStr.isEmpty || self.browserAddressStr == self.editAddressStr)
             } //hs
             HStack {
                 Button(action: {
+                    self.addressFocused = false
                     self.showingPageViewer = true
                 }, label: {
                     Text( self.statusStr)
@@ -77,10 +100,6 @@ struct NewTabUrlContent: View {
                 }) //t b i
             }) //tb
             //.font(.title)
-            //Button(NSLocalizedString("add manually", comment: "")) {
-                //self.showingLineSelector = true
-            //}
-            //.hidden()
             SwiftUIWebView( targetAddr: self.$browserAddressStr) { bodyStr, titleStr in
                 browserDidFinishNavigation(resultStr: bodyStr, titleStr: titleStr)
             } //web
@@ -103,45 +122,74 @@ struct NewTabUrlContent: View {
         //let lns = utext.components(separatedBy: "\n").map { $0.trimmingCharacters(in: .whitespaces) }
         //print(self.browserAddressStr)
         //print(resultStr)
-        let td = TabDetector()
-        //let gt = td.detectTabs2(text: resultStr, parseAlg: TabParseAlg2())
-        if let gt = td.detectTabs3(in: resultStr, using: TabParseAlg2(), splitMultipleOf: [6, 4]) {
-            gt.sourceUrl = self.browserAddressStr
-            gt.title = titleStr ?? ""
-            
-            DispatchQueue.main.async {
-                self.tabFromWeb = gt
-                self.statusStr = String.localizedStringWithFormat(NSLocalizedString("detected %1$d tabs", comment: "status"), gt.pages.count)
-                if !gt.pages.isEmpty {
-                    self.showingPageViewer = true
+        let captAddr  = self.browserAddressStr
+        DispatchQueue.main.async {
+            self.statusStr = "finished navigation"
+            self.pageBodyFromWeb = resultStr
+            self.pageTitleFromWeb = titleStr?.limitToTitle(of: 128)
+        } //as
+        DispatchQueue.global( qos: .userInitiated).async {
+            let td = TabDetector()
+            if let gt = td.detectTabs3(in: resultStr, using: TabParseAlg2(), splitMultipleOf: [6, 4]) {
+                gt.sourceUrl = captAddr
+                gt.title = titleStr?.limitToTitle( of: 64) ?? ""
+                DispatchQueue.main.async {
+                    self.tabFromWeb = gt
+                    self.statusStr = String.localizedStringWithFormat(NSLocalizedString("detected %1$d tabs", comment: "status"), gt.pages.count)
+                    if !gt.pages.isEmpty {
+                        self.addressFocused = false
+                        self.showingPageViewer = true
+                    }
+                } //masync
+            } //got tab
+        } //gas
+    } //func
+    func clipboardHasUrl() -> Bool {
+        if UIPasteboard.general.hasURLs {
+            return true
+        }
+        if UIPasteboard.general.hasStrings {
+            if let _ = UIPasteboard.general.strings?.first(where: {
+                if let _ = URL(string: $0) {
+                    return true
                 }
-            } //async
-        } //got tab
+                return false
+            }) {
+                return true
+            }
+        }
+        return false
+    } //func
+    func pasteClipboard( andGo: Bool) -> Bool {
+        if UIPasteboard.general.hasURLs {
+            if let furl = UIPasteboard.general.urls?.first {
+                self.editAddressStr = furl.absoluteString
+                if andGo {
+                    goButtonClick()
+                }
+                return true
+            }
+        }
+        if UIPasteboard.general.hasStrings {
+            if let fstr = UIPasteboard.general.strings?.first(where: {
+                if let _ = URL(string: $0) {
+                    return true
+                }
+                return false
+            }) {
+                self.editAddressStr = fstr
+                if andGo {
+                    goButtonClick()
+                }
+                return true
+            }
+        }
+        return false
     } //func
     func fetchAddress() -> Void {
-        if fetchClipBoard {
-            if UIPasteboard.general.hasURLs {
-                if let furl = UIPasteboard.general.urls?.first {
-                    self.editAddressStr = furl.absoluteString
-                    if browseAutomatically {
-                        goButtonClick()
-                    }
-                    return
-                }
-            }
-            if UIPasteboard.general.hasStrings {
-                if let fstr = UIPasteboard.general.strings?.first(where: {
-                    if let _ = URL(string: $0) {
-                        return true
-                    }
-                    return false
-                }) {
-                    self.editAddressStr = fstr
-                    if browseAutomatically {
-                        goButtonClick()
-                    }
-                    return
-                }
+        if autoFetchClipBoard {
+            if pasteClipboard( andGo: browseAutomatically) {
+                return
             }
         } //if fetch
         if let ia = initialAddress {

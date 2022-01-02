@@ -15,15 +15,21 @@ struct ContentView: View {
                 content:  {
                     YourSongsView()
                         .tabItem {
-                            Text(LCLZ.yourSavedSongs)
+                            Label(LCLZ.yourSavedSongs, systemImage: "music.note.list")
+                            //Text(LCLZ.yourSavedSongs)
                         }
                         .tag(1)
                     
                     PreferencesView()
                         .tabItem {
-                            Text(LCLZ.preferencesTab)
+                            Label(LCLZ.preferencesTab, systemImage: "gearshape.fill")
                         }
                         .tag(2)
+            Text("nothing yet")
+                .tabItem {
+                    Label("About", systemImage: "info.circle")
+                }
+                .tag(3)
                 }) //tv
     } //body
 } //str

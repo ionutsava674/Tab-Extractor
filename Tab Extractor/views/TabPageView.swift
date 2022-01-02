@@ -39,9 +39,9 @@ struct MSIView: View {
             editOKayed = false
         }
     }
-    func woabody(sb: Binding<Bool>) -> some View {
-        Color.red
-    } //woafunc
+    //func woabody(sb: Binding<Bool>) -> some View {
+        //Color.red
+    //} //woafunc
     var body: some View {
         let sb = Binding<Bool> {
             item.selected
@@ -54,7 +54,7 @@ struct MSIView: View {
             VStack(alignment: .leading, spacing: nil, content: {
                 HStack {
                     Text(String.localizedStringWithFormat(NSLocalizedString("%1$@ (%2$d lines)", comment: "item title to display after it was detected"), item.title, item.mainItem.displayableLines.count))
-                                    .padding()
+                        //.padding(.horizontal)
                                     .font(.title)
                                .accessibility(value: Text(item.selected ? NSLocalizedString("selected", comment: "selectable item is selected") : NSLocalizedString("not selected", comment: "selectable item is not selected")))
                     Spacer()
@@ -66,8 +66,9 @@ struct MSIView: View {
                             AccessibleCheckBox( checked: sb, caption: item.selected ? NSLocalizedString("selected", comment: "selectable item is selected") : NSLocalizedString("not selected", comment: "selectable item is not selected"))
                                 .font(.headline)
                                 .accessibility(hidden: true)
+                                .padding(2)
                 Text(String.localizedStringWithFormat(self.contentCollapsed ? NSLocalizedString("expand %1$@", comment: "expand item lines caption") : NSLocalizedString("collapse %1$@", comment: "collapse item lines"), item.title))
-                                .padding()
+                    .padding(4)
                                 .font(.headline)
                                 .accessibility(hidden: true)
                                         .onTapGesture(perform: {
@@ -98,13 +99,14 @@ struct MSIView: View {
 
 struct TabPageView: View {
     let enableDebug = true
-    //let pages: [GuitarTab.Page]
     let sourceTab: GuitarTab
+
+    @Environment(\.presentationMode) var premo
+    
     @ObservedObject private var selectableItems: SelectableItemContainer<SelectablePage, GuitarTab.Page>
 
     @State private var showingSaveMenu = false
     @State private var showingSaveAs1 = false
-    @Environment(\.presentationMode) var premo
     @State private var showingSaveConfirm = false
     @State private var saveConfirmMsg = ""
     @State private var genAlertMsg = ""
@@ -124,7 +126,7 @@ struct TabPageView: View {
     
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading, spacing: 20, content: {
+            VStack(alignment: .leading, spacing: 10, content: {
                 HStack {
                     Button(NSLocalizedString("back", comment: "back button for web search results page window")) {
                         self.premo.wrappedValue.dismiss()
@@ -136,10 +138,16 @@ struct TabPageView: View {
                         .fullScreenCover(isPresented: $showingSaveAs1, content: {
                             Save1Song(TabSELContainer: self.selectableItems, fromTab: self.sourceTab)
                         }) //pop
-                        .actionSheet(isPresented: self.$showingSaveMenu, content: {saveActionSheet}) //asheet
+                        .actionSheet(isPresented: self.$showingSaveMenu, content: { saveActionSheet }) //asheet
                 } //hs
                 .font(.title)
+                Text("Title: \(self.sourceTab.title)")
+                    .font(.title.bold())
+                    .lineLimit(1)
+                    .padding(.horizontal)
                 Text(NSLocalizedString("Select the tabs you want to save, from the list below.", comment: "info static text"))
+                    .foregroundColor(.secondary)
+                    .padding(.horizontal)
                 Form {
                     Section(header:
                 selectAllButton
@@ -178,7 +186,7 @@ struct TabPageView: View {
                                 }
                             //}
                         }
-                        shareString(sha.joined(separator: "\n"))
+                        //shareString(sha.joined(separator: "\n"))
                     } //b1
                 } //hs
                 } //if
@@ -200,6 +208,7 @@ struct TabPageView: View {
         }) //alert
     } //body
     
+    /*
     func shareString(_ sharedString: String) -> Void {
         guard !sharedString.isEmpty else {
             return
@@ -221,7 +230,7 @@ struct TabPageView: View {
             //print("shared")
         //})
     } //func
-
+*/
     var saveButton: some View {
         let b = Button(NSLocalizedString("Save", comment: "main save button caption"), action: {
             if self.selectableItems.selectedCount == 1 {

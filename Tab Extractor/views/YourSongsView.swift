@@ -59,7 +59,9 @@ struct YourSongsView: View {
                     },
                                    label: {
                         Text(tfa.tab.title)
-                            .padding()
+                            .lineLimit(2)
+                            .font(.headline.bold())
+                            .padding(4)
                     }) //nl
                         .swipeActions(content: {
                             Button(role: .destructive) {
@@ -73,31 +75,46 @@ struct YourSongsView: View {
                 } //fe
 //                .onDelete(perform: deleteItems)
                 } //ls
-                Button(NSLocalizedString("Refresh list", comment: "main window list refresh button")) {
-                    listDocFiles()
-                }
                 HStack {
                     Spacer()
+                    Button(NSLocalizedString("Refresh list", comment: "main window list refresh button")) {
+                        listDocFiles()
+                    } //btn
+                    .padding(.horizontal)
+                } //hs
+                HStack {
+                    //Spacer()
                     Button {
                         showingNewTabUrl = true
                     } label: {
-                        Text( Image(systemName: "doc.badge.plus").renderingMode(.original) )
+                        //Text(
+                            Image(systemName: "doc.badge.plus").renderingMode(.original)
+                        //)
                             .font(.largeTitle)
                     } //btn
+                    //.padding(.horizontal)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .contentShape(Rectangle())
                     .accessibilityLabel(NSLocalizedString("Add from web", comment: "main window web add button"))
                     .accessibility(hint: Text(NSLocalizedString("opens browser", comment: "main window add button hint")))
                     //Spacer()
-                    Spacer()
+                    //Spacer()
                     Button {
                         showingNewTabFromText = true
                     } label: {
-                        Text( Image(systemName: "note.text.badge.plus").renderingMode(.original) )
+                        //Text(
+                            Image(systemName: "note.text.badge.plus").renderingMode(.original)
+                        //)
                             .font(.largeTitle)
                     } //btn
+                    //.padding(.horizontal)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .contentShape(Rectangle())
                     .accessibilityLabel(NSLocalizedString("Add text directly", comment: "main window add text button"))
                     .accessibility(hint: Text(NSLocalizedString("you can paste text directly", comment: "main window add text button hint")))
-                    Spacer()
+                    //Spacer()
                 } //hs
+                .padding(.bottom)
             } //vs
             .onAppear(perform: {
                 //print("app")
@@ -111,9 +128,10 @@ struct YourSongsView: View {
             }, content: {
                 NewTabUrlContent(initialAddress:
                                     // "https://tabs.ultimate-guitar.com/tab/misc-television/formula-1-theme-tabs-2640351",
-                                 "https://tabs.ultimate-guitar.com/tab/the-national/the-rains-of-castamere-tabs-1228763",
-                                 fetchClipBoard: false,
-                                    browseAutomatically: true)
+                                  "https://tabs.ultimate-guitar.com/tab/the-national/the-rains-of-castamere-tabs-1228763",
+                                 //nil,
+                                 autoFetchClipBoard: true,
+                                    browseAutomatically: false)
         })
             .sheet(isPresented: $showingNewTabFromText, onDismiss: {
                 listDocFiles()
