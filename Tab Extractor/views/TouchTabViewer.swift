@@ -27,7 +27,7 @@ struct TouchTabViewer: View {
             return CGFloat(maxEnd - $0.minPosition) / lastEnd
         })
         return sizes
-    } //func
+    } //func funk
     var body: some View {
         let sizes = getSizes()
         return GeometryReader { geo in
