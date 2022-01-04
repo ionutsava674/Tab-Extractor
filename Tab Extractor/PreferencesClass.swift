@@ -19,5 +19,8 @@ enum GlobalPreferences: String {
     static let stringNoteSeparatorDefault: String = ""
     case noteNoteSeparator
     static let noteNoteSeparatorDefault = ", "
+    
+    case viewHorizontally
+    static let viewHorizontallyDefault = true
 }
 typealias GLBP = GlobalPreferences

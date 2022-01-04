@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct PreferencesView: View {
+struct InnerPreferencesView: View {
+    var geo: GeometryProxy
+    
     @AppStorage( wrappedValue: GLBP.viewSourceLinesDefault, GLBP.viewSourceLines.rawValue) var viewSourceLines
     
     @AppStorage( wrappedValue: GLBP.includeBarsDefault, GLBP.includeBars.rawValue) private var includeBars
@@ -15,18 +17,29 @@ struct PreferencesView: View {
     @AppStorage( wrappedValue: GLBP.stringNoteSeparatorDefault, GLBP.stringNoteSeparator.rawValue) var stringNoteSeparator
     @AppStorage( wrappedValue: GLBP.noteNoteSeparatorDefault, GLBP.noteNoteSeparator.rawValue) var noteNoteSeparator
     
+    @AppStorage( wrappedValue: GLBP.viewHorizontallyDefault, GLBP.viewHorizontally.rawValue) private var viewHorizontally
     //@Environment(\.accessibilityDifferentiateWithoutColor) var diffWithoutColor
+    
     var body: some View {
-        VStack(alignment: .center) {
-            VStack {
-        GeometryReader {geo in
         Form {
-            AccessibleCheckBox(checked: self.$viewSourceLines, caption: "Display tabs as original, unprocessed, lines")
-            Section(header: Text("How do you want to list each tab content?")) {
+            Section(header: Text("How to display tabs")) {
+            AccessibleCheckBox(checked: $viewSourceLines, caption: "Display tabs as original, unprocessed, lines")
+                //Toggle("Display tabs as original, unprocessed, lines", isOn: self.$viewSourceLines)
+            } //se
+            if !viewSourceLines {
+            Picker("Display each tab as", selection: $viewHorizontally) {
+                Text("as horizontal list")
+                    .tag(true)
+                Text("as vertical list")
+                    .tag(false)
+            } //pk
+            .pickerStyle(InlinePickerStyle() )
+            .disabled( self.viewSourceLines)
+            Section(header: Text("Options for processed tabs:")) {
                 HStack {
                 Toggle("Include bars when listing tab content", isOn: self.$includeBars)
                     Spacer()
-                }
+                } //hs
                     .padding(.vertical)
                 HStack {
                     //Text("Separator between string names (E A D G...)")
@@ -44,11 +57,7 @@ struct PreferencesView: View {
                 HStack {
                     Text("Separator between string name and note")
                     Spacer()
-                    TextField("", text: self.$stringNoteSeparator) { isEditing in
-                        //
-                    } onCommit: {
-                        //
-                    } //tf
+                    TextField("", text: self.$stringNoteSeparator)
                     .limitToMaxWidth(geo: geo, ratio: 0.25)
                 } //hs
                     Text(String(format: "Example: G%1$@7", self.stringNoteSeparator))
@@ -56,13 +65,9 @@ struct PreferencesView: View {
                 .padding(.vertical)
                 VStack {
                 HStack {
-                    Text(String(format: "Separator between notes (D%1$@5%2$@G%1$@7)", self.stringNoteSeparator, self.noteNoteSeparator))
+                    Text("Separator between notes")
                     Spacer()
-                    TextField("", text: self.$noteNoteSeparator) { isEditing in
-                        //
-                    } onCommit: {
-                        //
-                    } //tf
+                    TextField("", text: self.$noteNoteSeparator)
                     .limitToMaxWidth(geo: geo, ratio: 0.25)
                 } //hs
                     Text(String(format: "Example: D%1$@7%2$@G%1$@5", self.stringNoteSeparator, self.noteNoteSeparator))
@@ -70,17 +75,37 @@ struct PreferencesView: View {
                 .padding(.vertical)
                 Text("Tip: use dots, commas or semicolons to help VoiceOver make longer or shorter pauses.")
             } //sect
+            } //if processed
         } //fo
+        .padding(.bottom)
+        .keyboardType(.numbersAndPunctuation)
+        .submitLabel(.done)
+    } //body
+} //str
+struct PreferencesView: View {
+    var body: some View {
+        GeometryReader {geo in
+            InnerPreferencesView(geo: geo)
         } //geo
-        } //vs
         .frame(maxWidth: 480)
-    } //vs
     } //body
 } //str
 
 extension TextField {
     @ViewBuilder
-    func limitToMaxWidth(geo: GeometryProxy, ratio: CGFloat) -> some View {
-        self.frame(maxWidth: geo.size.width * ratio)
-    }
-}
+    func limitToMaxWidth( geo: GeometryProxy, ratio: CGFloat) -> some View {
+        self
+            .frame(maxWidth: geo.size.width * ratio)
+    } //func
+} //ext
+extension View {
+    @ViewBuilder
+    func optionalHidden(condition: Bool) -> some View {
+        if condition {
+            self
+            .hidden()
+        } else {
+            self
+        }
+    } //func
+} //ext

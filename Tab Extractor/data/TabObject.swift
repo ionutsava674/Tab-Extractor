@@ -57,6 +57,7 @@ class GuitarTab: Codable, ObservableObject {
         lazy var clusters: [Cluster] = { [unowned self] in generateClusters(allNotes: self.p_AllNotes) }()
         lazy var displayableLines: [String] = { [unowned self] in computeDisplayableLines(clusts: self.clusters, includeBars: true) }()
 
+        
         func computeDisplayableLines( clusts: [Cluster], includeBars: Bool) -> [String] {
             computeDisplayableLinesEx( clusts: clusts, includeBars: includeBars)
         }
@@ -66,7 +67,7 @@ class GuitarTab: Codable, ObservableObject {
             //print("computed \(Self.comcou)")
             var out = [String]()
             let stringNames = getStringNames( from: clusts, or: nil)
-            let namesCluster = getNamesCluster(clusts: clusts)
+            let namesCluster = getNamesCluster( from: clusts)
             if let namesLine = namesCluster?.notes.map({
                 $0.fretValue
             }).joined(separator: headerLineStringNameSeparator) {
@@ -95,7 +96,35 @@ class GuitarTab: Codable, ObservableObject {
                 out.append(curLine)
             }
             return out
-        }
+        } //func
+        func computeDisplayableClustersEx( for clusts: [Cluster], includeHeader: Bool = true, includeBars: Bool = true, headerLineStringNameSeparator: String = " ", stringValueSeparator: String = "", noteNoteSeparator: String = ", ") -> [DisplayableCluster] {
+            print("computing")
+            var res = [DisplayableCluster]()
+            let stringNames = getStringNames( from: clusts, or: nil)
+            let namesCluster = getNamesCluster( from: clusts)
+            if includeHeader {
+                if let namesLine = namesCluster?.notes.map({
+                    $0.fretValue
+                }).joined(separator: headerLineStringNameSeparator) {
+                    res.append(.init(from: namesCluster, rawString: namesLine))
+                }
+            }
+            let formatter = DisplayableClusterFormatter(stringToValueSeparator: stringValueSeparator, noteNoteSeparator: noteNoteSeparator, stringHeaderSeparator: headerLineStringNameSeparator)
+            for clu in clusts {
+                if clu === namesCluster {
+                    continue
+                }
+                if clu.isBar {
+                    if includeBars {
+                        //out.append(NSLocalizedString("Bar", comment: "guitar tab bar"))
+                        res.append(.init(from: clu, rawString: NSLocalizedString("Bar", comment: "guitar tab bar")))
+                    }
+                    continue
+                }
+                res.append(.init(from: clu, using: formatter, and: stringNames))
+            } //for
+            return res
+        } //func
         private static func unnamedStringNames(linesCount: Int) -> [String] {
             var names = [String]()
             for i in 0..<linesCount {
@@ -104,7 +133,7 @@ class GuitarTab: Codable, ObservableObject {
             return names
         } //func
         private func getStringNames( from clusts: [Cluster], or defaultNames: ((Int) -> [String])?) -> [String] {
-            if let namesCluster = getNamesCluster(clusts: clusts) {
+            if let namesCluster = getNamesCluster( from: clusts) {
                 return (namesCluster.notes.sorted { n1, n2 in
                     n1.stringIndex < n2.stringIndex
                         || (n1.stringIndex == n2.stringIndex && n1.position < n2.position)
@@ -117,7 +146,7 @@ class GuitarTab: Codable, ObservableObject {
             ? ret  ?? Self.unnamedStringNames( linesCount: self.lines.count)
             : Self.unnamedStringNames( linesCount: self.lines.count)
         } //func
-        private func getNamesCluster( clusts: [Cluster]) -> Cluster? {
+        private func getNamesCluster( from clusts: [Cluster]) -> Cluster? {
             guard let firstFullCandidate = ( clusts.first { c in
                 !c.isBar
             } ) else {
@@ -206,4 +235,13 @@ class GuitarTab: Codable, ObservableObject {
     var title: String = ""
     var sourceUrl: String?
     
-}
+} //tab class
+
+extension Array where Element == GuitarTab.Note {
+    func sortedNicely() -> Self {
+        self.sorted {
+            $0.stringIndex < $1.stringIndex
+                || ($0.stringIndex == $1.stringIndex && $0.position < $1.position)
+        }
+    }
+} //ext
