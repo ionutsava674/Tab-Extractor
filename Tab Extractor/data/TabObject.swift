@@ -27,6 +27,7 @@ class GuitarTab: Codable, ObservableObject {
     
     class Cluster {
         let id: Int
+        var idForUI: UUID = UUID()
         var minPosition: Int
         var notes: [Note]
         var isBar: Bool
@@ -54,8 +55,9 @@ class GuitarTab: Codable, ObservableObject {
         var title: String = ""
         var sourceStrings: [String] = []
         private lazy var p_AllNotes: [Note] = { generateAllLines() }()
-        lazy var clusters: [Cluster] = { [unowned self] in generateClusters(allNotes: self.p_AllNotes) }()
-        lazy var displayableLines: [String] = { [unowned self] in computeDisplayableLines(clusts: self.clusters, includeBars: true) }()
+        lazy var clusters: [Cluster] = { generateClusters( allNotes: self.p_AllNotes) }()
+        lazy var headerCluster: Cluster? = { getNamesCluster(from: self.clusters) }()
+        //lazy var displayableLines: [String] = { [unowned self] in computeDisplayableLines(clusts: self.clusters, includeBars: true) }()
 
         
         func computeDisplayableLines( clusts: [Cluster], includeBars: Bool) -> [String] {
@@ -97,33 +99,18 @@ class GuitarTab: Codable, ObservableObject {
             }
             return out
         } //func
-        func computeDisplayableClustersEx( for clusts: [Cluster], includeHeader: Bool = true, includeBars: Bool = true, headerLineStringNameSeparator: String = " ", stringValueSeparator: String = "", noteNoteSeparator: String = ", ") -> [DisplayableCluster] {
-            print("computing")
-            var res = [DisplayableCluster]()
-            let stringNames = getStringNames( from: clusts, or: nil)
+        func computeDisplayableClusters2( for clusts: [Cluster], includeHeader: Bool = true, includeBars: Bool = true) -> [Cluster] {
+            print("computing2")
             let namesCluster = getNamesCluster( from: clusts)
-            if includeHeader {
-                if let namesLine = namesCluster?.notes.map({
-                    $0.fretValue
-                }).joined(separator: headerLineStringNameSeparator) {
-                    res.append(.init(from: namesCluster, rawString: namesLine))
+            return clusts.filter({
+                if $0 === namesCluster && !includeHeader {
+                    return false
                 }
-            }
-            let formatter = DisplayableClusterFormatter(stringToValueSeparator: stringValueSeparator, noteNoteSeparator: noteNoteSeparator, stringHeaderSeparator: headerLineStringNameSeparator)
-            for clu in clusts {
-                if clu === namesCluster {
-                    continue
+                if $0.isBar && !includeBars {
+                    return false
                 }
-                if clu.isBar {
-                    if includeBars {
-                        //out.append(NSLocalizedString("Bar", comment: "guitar tab bar"))
-                        res.append(.init(from: clu, rawString: NSLocalizedString("Bar", comment: "guitar tab bar")))
-                    }
-                    continue
-                }
-                res.append(.init(from: clu, using: formatter, and: stringNames))
-            } //for
-            return res
+                return true
+            })
         } //func
         private static func unnamedStringNames(linesCount: Int) -> [String] {
             var names = [String]()
@@ -132,7 +119,7 @@ class GuitarTab: Codable, ObservableObject {
             }
             return names
         } //func
-        private func getStringNames( from clusts: [Cluster], or defaultNames: ((Int) -> [String])?) -> [String] {
+        public func getStringNames( from clusts: [Cluster], or defaultNames: ((Int) -> [String])?) -> [String] {
             if let namesCluster = getNamesCluster( from: clusts) {
                 return (namesCluster.notes.sorted { n1, n2 in
                     n1.stringIndex < n2.stringIndex
@@ -149,7 +136,7 @@ class GuitarTab: Codable, ObservableObject {
         private func getNamesCluster( from clusts: [Cluster]) -> Cluster? {
             guard let firstFullCandidate = ( clusts.first { c in
                 !c.isBar
-            } ) else {
+            }) else {
                 return nil
             }
             //number test

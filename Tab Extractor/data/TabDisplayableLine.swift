@@ -34,4 +34,29 @@ struct DisplayableClusterFormatter {
     let stringToValueSeparator: String
     let noteNoteSeparator: String
     let stringHeaderSeparator: String
-}
+    
+    func makeDisplayText(from cluster: GuitarTab.Cluster, asHeader: Bool = false, withStringNames stringNames: [String]) -> String {
+        if cluster.isBar {
+            return NSLocalizedString("Bar", comment: "guitar tab bar")
+        }
+        if asHeader {
+            return cluster.notes.map({
+                $0.fretValue
+            }).joined(separator: self.stringHeaderSeparator)
+        }
+        let sortedNotes = cluster.notes.sortedNicely()
+        let mapped = sortedNotes.map { (note: GuitarTab.Note) -> String in
+            "\( stringNames.at( note.stringIndex, defaultValue: "?") )\(self.stringToValueSeparator)\(note.fretValue)"
+        }
+        return mapped.joined(separator: noteNoteSeparator)
+    } //func
+} //str
+
+extension Array where Element == String {
+    func at(_ index: Self.Index, defaultValue: Element) -> Element {
+        guard self.indices.contains(index) else {
+            return defaultValue
+        }
+        return self[index]
+    } //func
+} //ext

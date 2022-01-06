@@ -33,28 +33,50 @@ struct HorizontalTabLister: View {
         })
         return sizes
     } //func
-    func putPage(tabPage: GuitarTab.Page) -> some View {
-        let toDisplay = tabPage.computeDisplayableClustersEx(for: tabPage.clusters, includeHeader: false, includeBars: includeBars, headerLineStringNameSeparator: stringStringSeparator, stringValueSeparator: stringNoteSeparator, noteNoteSeparator: noteNoteSeparator)
-        //let sizes = getSizes2(of: tabPage.clusters)
-        let ratio = toDisplay.isEmpty ? 1.0 : 1.0 / CGFloat(toDisplay.count)
-        return GeometryReader { geo in
-            HStack(alignment: .center, spacing: 0) {
-            ForEach(toDisplay, id: \.idForUI) {clust in
-                Rectangle()
-                    .fill(Color.white)
-                    .frame(width: geo.size.width * ratio, alignment: .center)
-                    .accessibilityElement()
-                    .accessibilityLabel( clust.content)
-            } //fe
-            } //hs
-        } //geo
+    func putPage2( tabPage: GuitarTab.Page) -> some View {
+        AnyContainerView( objectToPass: tabPage.getStringNames(from: tabPage.clusters, or: nil)) { stringNames in
+        AnyContainerView(objectToPass: tabPage.computeDisplayableClusters2(for: tabPage.clusters)) { toDisplayClusters in
+            AnyContainerView(objectToPass: DisplayableClusterFormatter(stringToValueSeparator: stringNoteSeparator, noteNoteSeparator: noteNoteSeparator, stringHeaderSeparator: stringStringSeparator)) { formatter in
+                GeometryReader { geo in
+                    HStack(alignment: .center, spacing: 0) {
+                        ForEach(toDisplayClusters, id: \.id) {clust in
+                        Rectangle()
+                            .fill(Color.white)
+                            .frame(width: geo.size.width / 100.0,
+                                   alignment: .center)
+                            .accessibilityElement()
+                            .accessibilityLabel( formatter.makeDisplayText(from: clust, asHeader: false, withStringNames: stringNames) )
+                    } //fe
+                    } //hs
+                } //geo
+            }
+        }
+                                             }
     } //each page
+    func putPage3( tabPage: GuitarTab.Page) -> some View {
+        let stringNames = tabPage.getStringNames( from: tabPage.clusters, or: nil)
+        let elementsToDisplay = tabPage.computeDisplayableClusters2(for: tabPage.clusters, includeHeader: false, includeBars: includeBars)
+        let formatter = DisplayableClusterFormatter(stringToValueSeparator: stringNoteSeparator, noteNoteSeparator: noteNoteSeparator, stringHeaderSeparator: stringStringSeparator)
+        let ratio: CGFloat = elementsToDisplay.isEmpty ? 1.0 : 1.0 / CGFloat(elementsToDisplay.count)
+                return GeometryReader { geo in
+                    HStack(alignment: .center, spacing: 0) {
+                        ForEach(elementsToDisplay, id: \.id) {clust in
+                        Rectangle()
+                                .strokeBorder(Color.init(UIColor.systemBackground), lineWidth: 1)
+                                .background(Rectangle().fill(Color.init(UIColor.label)))
+                            .frame(width: geo.size.width * ratio, alignment: .center)
+                            .accessibilityElement()
+                            .accessibilityLabel( formatter.makeDisplayText(from: clust, asHeader: clust === tabPage.headerCluster, withStringNames: stringNames) )
+                    } //fe
+                    } //hs
+                } //geo
+    } //func
     var body: some View {
         List {
         ForEach( tab.pages) {page in
             Section(header: Text(page.title)) {
-                    putPage(tabPage: page)
-                        .frame(maxWidth: .infinity, idealHeight: 120, maxHeight: 120, alignment: .topLeading)
+                    putPage3(tabPage: page)
+                        .frame(maxWidth: .infinity, idealHeight: 100, maxHeight: 100, alignment: .topLeading)
             } //se
         } //fe
         } //ls

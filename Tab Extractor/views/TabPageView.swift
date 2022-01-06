@@ -53,7 +53,7 @@ struct MSIView: View {
             //Section( header:
             VStack(alignment: .leading, spacing: nil, content: {
                 HStack {
-                    Text(String.localizedStringWithFormat(NSLocalizedString("%1$@ (%2$d lines)", comment: "item title to display after it was detected"), item.title, item.mainItem.displayableLines.count))
+                    Text(String.localizedStringWithFormat(NSLocalizedString("%1$@ (%2$d elements)", comment: "item title to display after it was detected"), item.title, item.mainItem.clusters.count ))
                         //.padding(.horizontal)
                                     .font(.title)
                                .accessibility(value: Text(item.selected ? NSLocalizedString("selected", comment: "selectable item is selected") : NSLocalizedString("not selected", comment: "selectable item is not selected")))
@@ -74,9 +74,12 @@ struct MSIView: View {
                                         .onTapGesture(perform: {
                                             self.contentCollapsed.toggle()
                                         })
+                let stringNames = item.mainItem.getStringNames( from: item.mainItem.clusters, or: nil)
+                let elementsToDisplay = item.mainItem.computeDisplayableClusters2(for: item.mainItem.clusters, includeHeader: true, includeBars: true)
+                let formatter = DisplayableClusterFormatter(stringToValueSeparator: "", noteNoteSeparator: ", ", stringHeaderSeparator: ", ")
                                 if !self.contentCollapsed {
-                                ForEach(item.mainItem.displayableLines, id: \.self) { line in
-                        Text(line)
+                                ForEach(elementsToDisplay, id: \.idForUI) { clust in
+                                    Text(formatter.makeDisplayText(from: clust, asHeader: clust === item.mainItem.headerCluster, withStringNames: stringNames))
                     } //fe
                                 } //if
             }) //mainsect

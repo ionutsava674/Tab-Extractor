@@ -15,10 +15,10 @@ struct MainTabViewer: View {
     
     @AppStorage( wrappedValue: GLBP.viewSourceLinesDefault, GLBP.viewSourceLines.rawValue) var viewSourceLines
     
-    //@AppStorage( wrappedValue: GLBP.includeBarsDefault, GLBP.includeBars.rawValue) private var includeBars
-    //@AppStorage( wrappedValue: GLBP.stringStringSepparatorDefault, GLBP.stringStringSeparator.rawValue) var stringStringSeparator
-    //@AppStorage( wrappedValue: GLBP.stringNoteSeparatorDefault, GLBP.stringNoteSeparator.rawValue) var stringNoteSeparator
-    //@AppStorage( wrappedValue: GLBP.noteNoteSeparatorDefault, GLBP.noteNoteSeparator.rawValue) var noteNoteSeparator
+    @AppStorage( wrappedValue: GLBP.includeBarsDefault, GLBP.includeBars.rawValue) private var includeBars
+    @AppStorage( wrappedValue: GLBP.stringStringSepparatorDefault, GLBP.stringStringSeparator.rawValue) var stringStringSeparator
+    @AppStorage( wrappedValue: GLBP.stringNoteSeparatorDefault, GLBP.stringNoteSeparator.rawValue) var stringNoteSeparator
+    @AppStorage( wrappedValue: GLBP.noteNoteSeparatorDefault, GLBP.noteNoteSeparator.rawValue) var noteNoteSeparator
     
     @AppStorage( wrappedValue: GLBP.viewHorizontallyDefault, GLBP.viewHorizontally.rawValue) private var viewHorizontally
 
@@ -65,20 +65,22 @@ struct MainTabViewer: View {
         //} //nv
         //.navigationViewStyle(StackNavigationViewStyle())
     } //body
+    
     func share2() -> Void {
         guard !tab.pages.isEmpty else {
             return
         }
-        let sts = [ tab.pages.map { page in
-            page.displayableLines.joined(separator: "\r\n")
-            + "\r\nlc \(page.lines.count)"
-            + "\r\ncc \(page.clusters.count)"
-            + "\r\noc \(page.sourceStrings.count)"
-            + page.sourceStrings.joined(separator: "\r\n")
-        }
-        .joined(separator: "\r\n\r\n")
-        ]
-        print(sts[0])
+        let formatter = DisplayableClusterFormatter(stringToValueSeparator: stringNoteSeparator, noteNoteSeparator: noteNoteSeparator, stringHeaderSeparator: stringStringSeparator)
+        let cont = tab.pages.map({ page in
+            let stringNames = page.getStringNames( from: page.clusters, or: nil)
+            let elementsToDisplay = page.computeDisplayableClusters2(for: page.clusters, includeHeader: true, includeBars: self.includeBars)
+            return "\(page.title)\r\n" +
+            elementsToDisplay.map({ clust in
+                formatter.makeDisplayText(from: clust, asHeader: clust === page.headerCluster, withStringNames: stringNames)
+            }).joined(separator: "\r\n")
+        }).joined(separator: "\r\n\r\n")
+        let sts = ["\(tab.title)\r\n\(tab.pages.count) tabs\r\n\r\n\(cont)"]
+        //print(sts[0])
         //self.sharedItems = sts
         self.si.sharedItems = sts
         self.showingShareSheet = true

@@ -19,23 +19,26 @@ struct VerticalTabLister: View {
     @State private var markedCluster: UUID?
     
     func putVerticalPage( page: GuitarTab.Page, scrollProxy: ScrollViewProxy) -> some View {
-        let toDisplay = page.computeDisplayableClustersEx(for: page.clusters, includeHeader: false, includeBars: includeBars, headerLineStringNameSeparator: stringStringSeparator, stringValueSeparator: stringNoteSeparator, noteNoteSeparator: noteNoteSeparator)
-        return ForEach(toDisplay , id: \.idForUI) {line in
-            Text( self.markedCluster == line.idForUI ? "\(line.content), marked" : line.content)
-                .accessibilityLabel( self.markedCluster == line.idForUI ? "\(line.content), marked" : line.content)
-                .id(line.idForUI)
-                .accessibilityFocused($aiFocused, equals: line.idForUI)
+        let stringNames = page.getStringNames( from: page.clusters, or: nil)
+        let elementsToDisplay = page.computeDisplayableClusters2(for: page.clusters, includeHeader: false, includeBars: includeBars)
+        let formatter = DisplayableClusterFormatter(stringToValueSeparator: stringNoteSeparator, noteNoteSeparator: noteNoteSeparator, stringHeaderSeparator: stringStringSeparator)
+        
+        return ForEach(elementsToDisplay , id: \.idForUI) {clust in
+            Text( formatter.makeDisplayText(from: clust, withStringNames: stringNames) )
+                //.accessibilityLabel( self.markedCluster == line.idForUI ? "\(line.content), marked" : line.content)
+                .id( clust.idForUI )
+                .accessibilityFocused($aiFocused, equals: clust.idForUI)
                 .padding(.leading, 80)
                 .onTapGesture {
                     if let mc = self.markedCluster {
                         //scrollProxy.scrollTo(mc)
                         self.aiFocused = mc
-                        UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: "going to marked spot")
+                        //UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: "going to marked spot")
                     }
                 }
                 .onLongPressGesture {
                     UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: "marking spot")
-                    self.markedCluster = line.idForUI
+                    self.markedCluster = clust.idForUI
                 }
         } //fe
     }
