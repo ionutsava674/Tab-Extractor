@@ -14,11 +14,13 @@ struct NewTabUrlContent: View {
     let autoFetchClipBoard: Bool
     let browseAutomatically: Bool
     
+    @ObservedObject private var glop = GlobalPreferences2.global
     @Environment(\.presentationMode) private var premo
     
     @State private var editAddressStr = ""
     @FocusState private var addressFocused: Bool
     @State private var statusStr = NSLocalizedString("status", comment: "browser initial status")
+    @State private var showZeroResultsFound = false
     @State private var browserAddressStr = "about:blank"
     
     @State private var tabFromWeb: GuitarTab?
@@ -33,6 +35,7 @@ struct NewTabUrlContent: View {
         VStack {
             HStack {
                 TextField(NSLocalizedString("web address", comment: "web address placeholder"), text: self.$editAddressStr)
+                /*
                     .onReceive(NotificationCenter.default.publisher( for: UITextField.textDidBeginEditingNotification, object: nil), perform: { publisherOutput in
                         if let textField = publisherOutput.object as? UITextField {
                             DispatchQueue.main.async {
@@ -42,6 +45,7 @@ struct NewTabUrlContent: View {
                             }
                         }
                     })
+                 */
                     .focused($addressFocused)
                     .keyboardType(.URL)
                     .submitLabel(.go)
@@ -103,8 +107,15 @@ struct NewTabUrlContent: View {
             SwiftUIWebView( targetAddr: self.$browserAddressStr) { bodyStr, titleStr in
                 browserDidFinishNavigation(resultStr: bodyStr, titleStr: titleStr)
             } //web
-            //TextEditor(text: $plainText)
         } //vs
+        .alert("no tabs found", isPresented: self.$showZeroResultsFound, actions: {
+            Button("don't show this again", role: .destructive) {
+                glop.showZeroResultsFound = false
+            }
+            Button("OK", role: .cancel) { }
+        }, message: {
+            Text("The page has finished loading.\r\nThere were no tabs found on the page.")
+        })
         .fullScreenCover(isPresented: $showingPageViewer, content: {
             TabPageView( srcTab: tabFromWeb ?? GuitarTab())
         })
@@ -124,7 +135,7 @@ struct NewTabUrlContent: View {
         //print(resultStr)
         let captAddr  = self.browserAddressStr
         DispatchQueue.main.async {
-            self.statusStr = "finished navigation"
+            self.statusStr = "navigation ready"
             self.pageBodyFromWeb = resultStr
             self.pageTitleFromWeb = titleStr?.limitToTitle(of: 128)
         } //as
@@ -139,6 +150,10 @@ struct NewTabUrlContent: View {
                     if !gt.pages.isEmpty {
                         self.addressFocused = false
                         self.showingPageViewer = true
+                    } else {
+                        if glop.showZeroResultsFound {
+                            self.showZeroResultsFound = true
+                        }
                     }
                 } //masync
             } //got tab

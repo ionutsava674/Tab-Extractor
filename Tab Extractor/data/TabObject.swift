@@ -57,50 +57,9 @@ class GuitarTab: Codable, ObservableObject {
         private lazy var p_AllNotes: [Note] = { generateAllLines() }()
         lazy var clusters: [Cluster] = { generateClusters( allNotes: self.p_AllNotes) }()
         lazy var headerCluster: Cluster? = { getNamesCluster(from: self.clusters) }()
-        //lazy var displayableLines: [String] = { [unowned self] in computeDisplayableLines(clusts: self.clusters, includeBars: true) }()
 
         
-        func computeDisplayableLines( clusts: [Cluster], includeBars: Bool) -> [String] {
-            computeDisplayableLinesEx( clusts: clusts, includeBars: includeBars)
-        }
-        //static var comcou = 0
-        func computeDisplayableLinesEx( clusts: [Cluster], includeBars: Bool, headerLineStringNameSeparator: String = " ", stringValueSeparator: String = "", noteNoteSeparator: String = ", ") -> [String] {
-            //Self.comcou += 1
-            //print("computed \(Self.comcou)")
-            var out = [String]()
-            let stringNames = getStringNames( from: clusts, or: nil)
-            let namesCluster = getNamesCluster( from: clusts)
-            if let namesLine = namesCluster?.notes.map({
-                $0.fretValue
-            }).joined(separator: headerLineStringNameSeparator) {
-                out.append(namesLine)
-            }
-            let goodIndices = 0..<stringNames.count
-            for clu in clusts {
-                if clu === namesCluster {
-                    continue
-                }
-                if clu.isBar {
-                    if includeBars {
-                        out.append(NSLocalizedString("Bar", comment: "guitar tab bar"))
-                    }
-                    continue
-                }
-                let sortedNotes = clu.notes.sorted {
-                    $0.stringIndex < $1.stringIndex
-                        || ($0.stringIndex == $1.stringIndex && $0.position < $1.position)
-                }
-                let mapped = sortedNotes.map { (note: GuitarTab.Note) -> String in
-                    let fullName: String = goodIndices.contains( note.stringIndex) ? stringNames[ note.stringIndex] : "?"
-                    return fullName + stringValueSeparator + note.fretValue
-                }
-                let curLine = mapped.joined(separator: noteNoteSeparator)
-                out.append(curLine)
-            }
-            return out
-        } //func
-        func computeDisplayableClusters2( for clusts: [Cluster], includeHeader: Bool = true, includeBars: Bool = true) -> [Cluster] {
-            print("computing2")
+        func filterClusters( from clusts: [Cluster], includeHeader: Bool = true, includeBars: Bool = true) -> [Cluster] {
             let namesCluster = getNamesCluster( from: clusts)
             return clusts.filter({
                 if $0 === namesCluster && !includeHeader {

@@ -9,11 +9,7 @@ import SwiftUI
 
 struct HorizontalTabLister: View {
     @ObservedObject var tab: GuitarTab
-    
-    @AppStorage( wrappedValue: GLBP.includeBarsDefault, GLBP.includeBars.rawValue) private var includeBars
-    @AppStorage( wrappedValue: GLBP.stringStringSepparatorDefault, GLBP.stringStringSeparator.rawValue) var stringStringSeparator
-    @AppStorage( wrappedValue: GLBP.stringNoteSeparatorDefault, GLBP.stringNoteSeparator.rawValue) var stringNoteSeparator
-    @AppStorage( wrappedValue: GLBP.noteNoteSeparatorDefault, GLBP.noteNoteSeparator.rawValue) var noteNoteSeparator
+    @ObservedObject private var glop = GlobalPreferences2.global
     
     func getSizes(tabPage: GuitarTab.Page) -> [CGFloat] {
         guard let lastClust = tabPage.clusters.last else {
@@ -35,8 +31,8 @@ struct HorizontalTabLister: View {
     } //func
     func putPage2( tabPage: GuitarTab.Page) -> some View {
         AnyContainerView( objectToPass: tabPage.getStringNames(from: tabPage.clusters, or: nil)) { stringNames in
-        AnyContainerView(objectToPass: tabPage.computeDisplayableClusters2(for: tabPage.clusters)) { toDisplayClusters in
-            AnyContainerView(objectToPass: DisplayableClusterFormatter(stringToValueSeparator: stringNoteSeparator, noteNoteSeparator: noteNoteSeparator, stringHeaderSeparator: stringStringSeparator)) { formatter in
+        AnyContainerView(objectToPass: tabPage.filterClusters(from: tabPage.clusters)) { toDisplayClusters in
+            AnyContainerView(objectToPass: DisplayableClusterFormatter(stringToValueSeparator: glop.stringNoteSeparator, noteNoteSeparator: glop.noteNoteSeparator, stringHeaderSeparator: glop.stringStringSeparator)) { formatter in
                 GeometryReader { geo in
                     HStack(alignment: .center, spacing: 0) {
                         ForEach(toDisplayClusters, id: \.id) {clust in
@@ -55,8 +51,8 @@ struct HorizontalTabLister: View {
     } //each page
     func putPage3( tabPage: GuitarTab.Page) -> some View {
         let stringNames = tabPage.getStringNames( from: tabPage.clusters, or: nil)
-        let elementsToDisplay = tabPage.computeDisplayableClusters2(for: tabPage.clusters, includeHeader: false, includeBars: includeBars)
-        let formatter = DisplayableClusterFormatter(stringToValueSeparator: stringNoteSeparator, noteNoteSeparator: noteNoteSeparator, stringHeaderSeparator: stringStringSeparator)
+        let elementsToDisplay = tabPage.filterClusters(from: tabPage.clusters, includeHeader: glop.includeHeader, includeBars: glop.includeBars)
+        let formatter = DisplayableClusterFormatter(stringToValueSeparator: glop.stringNoteSeparator, noteNoteSeparator: glop.noteNoteSeparator, stringHeaderSeparator: glop.stringStringSeparator)
         let ratio: CGFloat = elementsToDisplay.isEmpty ? 1.0 : 1.0 / CGFloat(elementsToDisplay.count)
                 return GeometryReader { geo in
                     HStack(alignment: .center, spacing: 0) {
@@ -74,8 +70,9 @@ struct HorizontalTabLister: View {
     var body: some View {
         List {
         ForEach( tab.pages) {page in
-            Section(header: Text(page.title)) {
-                    putPage3(tabPage: page)
+            //Section(header: Text(page.title)) {
+            Section(header: Text("\(page.title) (\(page.clusters.count) positions)")) {
+                putPage3(tabPage: page)
                         .frame(maxWidth: .infinity, idealHeight: 100, maxHeight: 100, alignment: .topLeading)
             } //se
         } //fe

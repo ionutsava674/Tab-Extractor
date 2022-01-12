@@ -18,6 +18,8 @@ struct YourSongsView: View {
         @State private var filterCount = 0
     
     @State private var listSelection: URL?
+    @State private var showDeleteConfirmation = false
+    @State private var tfaToDelete: TabFileAssoc?
         
         func filter(_ cfc: Int) -> Void {
             guard cfc == filterCount else {
@@ -62,12 +64,12 @@ struct YourSongsView: View {
                             .lineLimit(2)
                             .font(.headline.bold())
                             .padding(4)
-                    }) //nl
+                    }) //navlink
                         .swipeActions(content: {
                             Button(role: .destructive) {
-                                _ = self.deleteItem(tfa: tfa)
+                                self.tfaToDelete = tfa
+                                self.showDeleteConfirmation = true
                             } label: {
-                                //Label("delete \(tfa.tab.title)", image: "trash.fill")
                                 Label("delete \(tfa.tab.title)", systemImage: "trash.fill")
                             } //btn
                         }) //swipe
@@ -75,6 +77,15 @@ struct YourSongsView: View {
                 } //fe
 //                .onDelete(perform: deleteItems)
                 } //ls
+                .alert("Warning. This action is irreversible.", isPresented: self.$showDeleteConfirmation, presenting: self.tfaToDelete, actions: { tfatd in
+                    Button(role: ButtonRole.destructive, action: {
+                        _ = self.deleteItem( tfa: tfatd)
+                    }, label: {
+                        Text("Delete")
+                    })
+                }, message: { tfatd in
+                    Text("Delete \(tfatd.tab.title) ?")
+                }) //alert
                 HStack {
                     Spacer()
                     Button(NSLocalizedString("Refresh list", comment: "main window list refresh button")) {
@@ -123,21 +134,6 @@ struct YourSongsView: View {
                 } //as
             }) //onapp
             //.navigationBarItems(trailing: EditButton() )
-            .sheet(isPresented: $showingNewTabUrl, onDismiss: {
-                listDocFiles()
-            }, content: {
-                NewTabUrlContent(initialAddress:
-                                    // "https://tabs.ultimate-guitar.com/tab/misc-television/formula-1-theme-tabs-2640351",
-                                  "https://tabs.ultimate-guitar.com/tab/the-national/the-rains-of-castamere-tabs-1228763",
-                                 //nil,
-                                 autoFetchClipBoard: true,
-                                    browseAutomatically: false)
-        })
-            .sheet(isPresented: $showingNewTabFromText, onDismiss: {
-                listDocFiles()
-            }, content: {
-                                    NewTabFromTextContent()
-        })
             .navigationTitle(LCLZ.yourSavedSongs)
             .navigationBarTitleDisplayMode(.large)
                 //Text("song here")
@@ -147,6 +143,21 @@ struct YourSongsView: View {
             //.navigationViewStyle(DoubleColumnNavigationViewStyle())
             //.padding(-0.5)
             } //geo
+            .sheet(isPresented: $showingNewTabUrl, onDismiss: {
+                listDocFiles()
+            }, content: {
+                NewTabUrlContent(initialAddress:
+                                    // "https://tabs.ultimate-guitar.com/tab/misc-television/formula-1-theme-tabs-2640351",
+                                  // "https://tabs.ultimate-guitar.com/tab/the-national/the-rains-of-castamere-tabs-1228763",
+                                 "",
+                                 autoFetchClipBoard: true,
+                                    browseAutomatically: false)
+        })
+            .sheet(isPresented: $showingNewTabFromText, onDismiss: {
+                listDocFiles()
+            }, content: {
+                                    NewTabFromTextContent()
+        })
         } //body
     func deleteItem(tfa: TabFileAssoc) -> Bool {
         if let _ = try? FileManager.default.removeItem( at: tfa.fileUrl) {

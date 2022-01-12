@@ -21,6 +21,9 @@ class SelectablePage: SelectableItem<GuitarTab.Page> {
 struct MSIView: View {
     @ObservedObject var item: SelectablePage
     @ObservedObject var listContainer: SelectableItemContainer<SelectablePage, GuitarTab.Page>
+    
+    @ObservedObject private var glop = GlobalPreferences2.global
+    
     @State private var contentCollapsed = false
     @State private var isEditing2 = false
     @State private var editingValue2 = ""
@@ -75,8 +78,8 @@ struct MSIView: View {
                                             self.contentCollapsed.toggle()
                                         })
                 let stringNames = item.mainItem.getStringNames( from: item.mainItem.clusters, or: nil)
-                let elementsToDisplay = item.mainItem.computeDisplayableClusters2(for: item.mainItem.clusters, includeHeader: true, includeBars: true)
-                let formatter = DisplayableClusterFormatter(stringToValueSeparator: "", noteNoteSeparator: ", ", stringHeaderSeparator: ", ")
+                let elementsToDisplay = item.mainItem.filterClusters(from: item.mainItem.clusters, includeHeader: true, includeBars: true)
+                let formatter = DisplayableClusterFormatter(stringToValueSeparator: glop.stringNoteSeparator, noteNoteSeparator: glop.noteNoteSeparator, stringHeaderSeparator: glop.stringStringSeparator)
                                 if !self.contentCollapsed {
                                 ForEach(elementsToDisplay, id: \.idForUI) { clust in
                                     Text(formatter.makeDisplayText(from: clust, asHeader: clust === item.mainItem.headerCluster, withStringNames: stringNames))

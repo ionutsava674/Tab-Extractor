@@ -22,12 +22,14 @@ struct ContentView: View {
                     
                     PreferencesView()
                         .tabItem {
-                            Label(LCLZ.preferencesTab, systemImage: "gearshape.fill")
+                            Label(LCLZ.preferencesTab, systemImage: "tuningfork")
+                            //Label(LCLZ.preferencesTab, systemImage: "gearshape")
                         }
                         .tag(2)
             Text("nothing yet")
                 .tabItem {
-                    Label("About", systemImage: "info.circle")
+                    //Label("About", systemImage: "info.circle")
+                    Label("About", systemImage: "hand.point.up")
                 }
                 .tag(3)
                 }) //tv

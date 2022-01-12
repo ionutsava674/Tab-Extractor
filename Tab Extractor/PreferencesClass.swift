@@ -8,45 +8,30 @@
 import Foundation
 import SwiftUI
 
-enum GlobalPreferences: String {
-    case viewSourceLines
-    static let viewSourceLinesDefault = false
+class GlobalPreferences2: ObservableObject {
+    @AppStorage("showZeroResultsFound") var showZeroResultsFound = true
+    @AppStorage("showNavHint1") var showNavHint1 = true
     
-    case includeHeader
-    static let includeHeaderDefault = true
-    case stringStringSeparator
-    static let stringStringSepparatorDefault = " "
-    case includeBars
-    static let includeBarsDefault = true
-    
-    case stringNoteSeparator
-    static let stringNoteSeparatorDefault: String = ""
-    case noteNoteSeparator
-    static let noteNoteSeparatorDefault = ", "
-    
-    case viewHorizontally
-    static let viewHorizontallyDefault = true
-    
-    case noStrings6
-    static let noStrings6Default = true
-    case noStrings6Names
-    static let noString6NamesDefault = "e, B, G, D, A, E"
-    case noStrings4
-    static let noStrings4Default = true
-    case noStrings4Names
-    static let noString4NamesDefault = "G, D, A, E"
-    case noStrings7
-    static let noStrings7Default = true
-    case noStrings7Names
-    static let noString7NamesDefault = "e, b, G, D, A, E, B"
-    
-    static let nsn6 = Pref2(defaultValue: true)
-}
-typealias GLBP = GlobalPreferences
+    @AppStorage("viewSourceLines") var viewSourceLines = false
 
-struct Pref2<ValueType> {
-    let defaultValue: ValueType
-    var settingName: String {
-        return String(describing: self)
-    }
+    @AppStorage("viewHorizontally") var viewHorizontally = true
+
+    @AppStorage("includeHeader") var includeHeader = true
+    @AppStorage("stringStringSeparator") var stringStringSeparator = " "
+    @AppStorage("includeBars") var includeBars = true
+
+    @AppStorage("stringNoteSeparator") var stringNoteSeparator: String = ""
+    @AppStorage("noteNoteSeparator") var noteNoteSeparator = ", "
+
+    @AppStorage("noStrings6") var noStrings6 = true
+    @AppStorage("noStrings6Names") var noStrings6Names = noStrings6NamesDefault
+    static let noStrings6NamesDefault = "e, B, G, D, A, E"
+    @AppStorage("noStrings4") var noStrings4 = true
+    @AppStorage("noStrings4Names") var noStrings4Names = noStrings4NamesDefault
+    static let noStrings4NamesDefault = "G, D, A, E"
+    @AppStorage("noStrings7") var noStrings7 = true
+    @AppStorage("noStrings7Names") var noStrings7Names = noStrings7NamesDefault
+    static let noStrings7NamesDefault = "e, b, G, D, A, E, B"
+    
+    static let global = GlobalPreferences2()
 }
