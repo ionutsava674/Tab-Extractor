@@ -12,9 +12,14 @@ struct MainTabViewer: View {
     @ObservedObject private var glop = GlobalPreferences2.global
 
     @State private var showingShareSheet = false
-    public var si = SharedItemsContainer()
+    //public var si = SharedItemsContainer()
+    @StateObject var sic = SharedItemsContainer()
+    
+    @State private var showingExport = false
+    @State private var exportDoc: TabTextDocument?
     
     @State private var showNavHintDialog = false
+    @State private var showingHelp = false
     
     var listSourceLines: some View {
         List {
@@ -50,22 +55,37 @@ struct MainTabViewer: View {
                             VerticalTabLister( tab: tab)
                         } //if vert
                     } //if comp
-                HStack(alignment: .center, spacing: 20, content: {
+                HStack(alignment: .center, spacing: 4, content: {
+                    Button("help") {
+                        self.showingHelp = true
+                    }
                     Spacer()
+                    Button("Export") {
+                        self.exportDoc = TabTextDocument(initialText: self.tabToString(tab, originalMode: glop.viewSourceLines))
+                        self.showingExport = true
+                    }
                     Button("Share") {
                         share2()
                     } //btn
                 }) //hs
                 .font(.title)
-                .popover(isPresented: $showingShareSheet, attachmentAnchor: .point(UnitPoint.bottom), arrowEdge: .top, content: {
-                    ShareSheet( activityItems: self.si.sharedItems)
-                }) //pop
             } //vs
+            .sheet(isPresented: self.$showingHelp, onDismiss: {
+                //
+            }, content: {
+                TabViewerHelpView()
+            })
+            .popover(isPresented: $showingShareSheet, attachmentAnchor: .point(UnitPoint.bottom), arrowEdge: .top, content: {
+                ShareSheet( activityItems: self.sic.sharedItems)
+            }) //pop
+            .fileExporter(isPresented: self.$showingExport, document: self.exportDoc, contentType: .plainText, defaultFilename: "\(tab.title).txt", onCompletion: { result in
+                //
+            }) //export
             .onAppear(perform: {
                 if glop.showNavHint1 {
                     self.showNavHintDialog = true
                 }
-            })
+            }) //onapp
             .alert("Navigation hint", isPresented: self.$showNavHintDialog, actions: {
                 Button(role: .cancel) {
                     //
@@ -86,29 +106,40 @@ struct MainTabViewer: View {
                 }
             }, message: {
                 Text("You can mark a position with a long press (voiceover triple tap),\r\nand focus from any position to the marked position with a single activation (voiceover double-tap).")
-            })
+            }) //alert
             // .navigationTitle(tab.title)
         //} //nv
         //.navigationViewStyle(StackNavigationViewStyle())
     } //body
     
+    func tabToString(_ gt: GuitarTab,originalMode: Bool = false) -> String {
+        var result: [String] = [
+            //"exported song:",
+            gt.title, "\(gt.pages.count) tabs"]
+        let formatter = DisplayableClusterFormatter(stringToValueSeparator: glop.stringNoteSeparator, noteNoteSeparator: glop.noteNoteSeparator, stringHeaderSeparator: glop.stringStringSeparator)
+        for page in gt.pages {
+            result.append("")
+            result.append( page.title)
+            if originalMode {
+                result.append(contentsOf: page.sourceStrings)
+            } else {
+                let stringNames = page.getStringNames( from: page.clusters, or: nil)
+                let positionsToDisplay = page.filterClusters(from: page.clusters, includeHeader: glop.includeHeader, includeBars: glop.includeBars)
+                result.append(contentsOf: positionsToDisplay.map({ clust in
+                    formatter.makeDisplayText(from: clust, asHeader: clust === page.headerCluster, withStringNames: stringNames)
+                }))
+            }
+        } //for
+        return result.joined(separator: glop.endOfLine)
+    } //eof
     func share2() -> Void {
         guard !tab.pages.isEmpty else {
             return
         }
-        let formatter = DisplayableClusterFormatter(stringToValueSeparator: glop.stringNoteSeparator, noteNoteSeparator: glop.noteNoteSeparator, stringHeaderSeparator: glop.stringStringSeparator)
-        let cont = tab.pages.map({ page in
-            let stringNames = page.getStringNames( from: page.clusters, or: nil)
-            let elementsToDisplay = page.filterClusters(from: page.clusters, includeHeader: glop.includeHeader, includeBars: glop.includeBars)
-            return "\(page.title)\r\n" +
-            elementsToDisplay.map({ clust in
-                formatter.makeDisplayText(from: clust, asHeader: clust === page.headerCluster, withStringNames: stringNames)
-            }).joined(separator: "\r\n")
-        }).joined(separator: "\r\n\r\n")
-        let sts = ["\(tab.title)\r\n\(tab.pages.count) tabs\r\n\r\n\(cont)"]
-        //print(sts[0])
-        //self.sharedItems = sts
-        self.si.sharedItems = sts
+        //let exDoc = TabTextDocument(initialText: self.tabToString(tab, originalMode: glop.viewSourceLines))
+        let sts = [tabToString( tab, originalMode: glop.viewSourceLines)]
+        //let sts = [exDoc]
+        self.sic.sharedItems = sts
         self.showingShareSheet = true
     } //func
 } //struct

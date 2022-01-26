@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 class GlobalPreferences2: ObservableObject {
+    @AppStorage("endOfLine") var endOfLine = "\n"
+    
+    @AppStorage("showZeroResultsFound2") var showZeroResultsFound2 = true
     @AppStorage("showZeroResultsFound") var showZeroResultsFound = true
     @AppStorage("showNavHint1") var showNavHint1 = true
     

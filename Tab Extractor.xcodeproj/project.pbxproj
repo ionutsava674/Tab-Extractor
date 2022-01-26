@@ -20,6 +20,9 @@
 		C61D34EB2778BF1900EB3013 /* WebViewRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34EA2778BF1900EB3013 /* WebViewRep.swift */; };
 		C64F37492783920D0063E990 /* AlignedGeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F37482783920D0063E990 /* AlignedGeometryReader.swift */; };
 		C65C26A9267BC70100DA491D /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C26A8267BC70100DA491D /* SelectableItem.swift */; };
+		C66EEEE827A1B8A500569F30 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66EEEE727A1B8A500569F30 /* AboutView.swift */; };
+		C66EEEEA27A1BC9600569F30 /* HowItWorksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */; };
+		C66EEEEC27A1BF8100569F30 /* TroubleshootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */; };
 		C66F4C632679EE7D00321FAD /* AccessibleCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66F4C622679EE7D00321FAD /* AccessibleCheckBox.swift */; };
 		C672E7252781EBD400007E30 /* TabDisplayableLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672E7242781EBD400007E30 /* TabDisplayableLine.swift */; };
 		C67649172663919C0033464A /* Tab_ExtractorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67649162663919C0033464A /* Tab_ExtractorApp.swift */; };
@@ -33,6 +36,8 @@
 		C69AC590266FF26C00D066AB /* TabParseAlg1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */; };
 		C6A198502686483C0083D08B /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1984F2686483C0083D08B /* PreferencesView.swift */; };
 		C6A413C72786289200E1E7CB /* AnyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A413C62786289200E1E7CB /* AnyContainerView.swift */; };
+		C6A66A72278F2EC700C61B75 /* TabTextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */; };
+		C6A66A74278F3BB600C61B75 /* TabViewerHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */; };
 		C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */; };
 		C6C537DA2783349E005259BB /* VerticalTabLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C537D92783349E005259BB /* VerticalTabLister.swift */; };
 		C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */; };
@@ -54,6 +59,9 @@
 		C646D2D7276B600E000C83BB /* Tab Extractor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tab Extractor.entitlements"; sourceTree = "<group>"; };
 		C64F37482783920D0063E990 /* AlignedGeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedGeometryReader.swift; sourceTree = "<group>"; };
 		C65C26A8267BC70100DA491D /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
+		C66EEEE727A1B8A500569F30 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorksView.swift; sourceTree = "<group>"; };
+		C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroubleshootView.swift; sourceTree = "<group>"; };
 		C66F4C622679EE7D00321FAD /* AccessibleCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibleCheckBox.swift; sourceTree = "<group>"; };
 		C672E7242781EBD400007E30 /* TabDisplayableLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDisplayableLine.swift; sourceTree = "<group>"; };
 		C67649132663919C0033464A /* Tab Extractor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tab Extractor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +77,8 @@
 		C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg1.swift; sourceTree = "<group>"; };
 		C6A1984F2686483C0083D08B /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		C6A413C62786289200E1E7CB /* AnyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyContainerView.swift; sourceTree = "<group>"; };
+		C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTextDocument.swift; sourceTree = "<group>"; };
+		C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewerHelpView.swift; sourceTree = "<group>"; };
 		C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg2.swift; sourceTree = "<group>"; };
 		C6C537D92783349E005259BB /* VerticalTabLister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTabLister.swift; sourceTree = "<group>"; };
 		C6C6F9CF267F3F1F00F4A653 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -104,9 +114,13 @@
 			isa = PBXGroup;
 			children = (
 				C67649182663919C0033464A /* ContentView.swift */,
+				C66EEEE727A1B8A500569F30 /* AboutView.swift */,
+				C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */,
+				C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */,
 				C6A1984F2686483C0083D08B /* PreferencesView.swift */,
 				C68246FF26832C460003B79B /* YourSongsView.swift */,
 				C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */,
+				C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */,
 				C619586A277F06D600985895 /* HorizontalTabView.swift */,
 				C6C537D92783349E005259BB /* VerticalTabLister.swift */,
 				C61D34E82778BE4D00EB3013 /* TabSharer.swift */,
@@ -128,6 +142,7 @@
 				C68C470826668B4E00D3A026 /* TabDetector.swift */,
 				C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */,
 				C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */,
+				C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -249,6 +264,7 @@
 				C676492826639B5F0033464A /* TabObject.swift in Sources */,
 				C6A198502686483C0083D08B /* PreferencesView.swift in Sources */,
 				C613835D277BB9C7007F2A43 /* TitleString.swift in Sources */,
+				C66EEEE827A1B8A500569F30 /* AboutView.swift in Sources */,
 				C672E7252781EBD400007E30 /* TabDisplayableLine.swift in Sources */,
 				C6C537DA2783349E005259BB /* VerticalTabLister.swift in Sources */,
 				C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */,
@@ -259,19 +275,23 @@
 				C68C470926668B4E00D3A026 /* TabDetector.swift in Sources */,
 				C61D34EB2778BF1900EB3013 /* WebViewRep.swift in Sources */,
 				C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */,
+				C6A66A74278F3BB600C61B75 /* TabViewerHelpView.swift in Sources */,
 				C682470226832DE40003B79B /* TabFileAssoc.swift in Sources */,
 				C682470026832C460003B79B /* YourSongsView.swift in Sources */,
 				C619586B277F06D600985895 /* HorizontalTabView.swift in Sources */,
 				C65C26A9267BC70100DA491D /* SelectableItem.swift in Sources */,
 				C61D34E72778BD9A00EB3013 /* Save1Song.swift in Sources */,
 				C69AC590266FF26C00D066AB /* TabParseAlg1.swift in Sources */,
+				C66EEEEC27A1BF8100569F30 /* TroubleshootView.swift in Sources */,
 				C61D34DD2778BBDB00EB3013 /* PreferencesClass.swift in Sources */,
 				C67649192663919C0033464A /* ContentView.swift in Sources */,
+				C66EEEEA27A1BC9600569F30 /* HowItWorksView.swift in Sources */,
 				C61D34DF2778BC0E00EB3013 /* MainTabViewer.swift in Sources */,
 				C61D34E52778BD6D00EB3013 /* EditValueView.swift in Sources */,
 				C6A413C72786289200E1E7CB /* AnyContainerView.swift in Sources */,
 				C61D34DB2778BBC600EB3013 /* lclz.swift in Sources */,
 				C67649172663919C0033464A /* Tab_ExtractorApp.swift in Sources */,
+				C6A66A72278F2EC700C61B75 /* TabTextDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

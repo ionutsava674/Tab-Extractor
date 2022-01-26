@@ -11,6 +11,8 @@ struct HorizontalTabLister: View {
     @ObservedObject var tab: GuitarTab
     @ObservedObject private var glop = GlobalPreferences2.global
     
+    @AccessibilityFocusState private var voFocused: UUID?
+    @State private var markedCluster: UUID?
     func getSizes(tabPage: GuitarTab.Page) -> [CGFloat] {
         guard let lastClust = tabPage.clusters.last else {
             return []
@@ -51,18 +53,36 @@ struct HorizontalTabLister: View {
     } //each page
     func putPage3( tabPage: GuitarTab.Page) -> some View {
         let stringNames = tabPage.getStringNames( from: tabPage.clusters, or: nil)
-        let elementsToDisplay = tabPage.filterClusters(from: tabPage.clusters, includeHeader: glop.includeHeader, includeBars: glop.includeBars)
+        //let elementsToDisplay = tabPage.filterClusters(from: tabPage.clusters, includeHeader: glop.includeHeader, includeBars: glop.includeBars)
+        let elementsToDisplay = Array(tabPage.filterClusters(from: tabPage.clusters, includeHeader: glop.includeHeader, includeBars: glop.includeBars).enumerated())
         let formatter = DisplayableClusterFormatter(stringToValueSeparator: glop.stringNoteSeparator, noteNoteSeparator: glop.noteNoteSeparator, stringHeaderSeparator: glop.stringStringSeparator)
         let ratio: CGFloat = elementsToDisplay.isEmpty ? 1.0 : 1.0 / CGFloat(elementsToDisplay.count)
                 return GeometryReader { geo in
                     HStack(alignment: .center, spacing: 0) {
-                        ForEach(elementsToDisplay, id: \.id) {clust in
+                        ForEach(elementsToDisplay, id: \.element.idForUI) {(clustIndex, clust) in
                         Rectangle()
                                 .strokeBorder(Color.init(UIColor.systemBackground), lineWidth: 1)
                                 .background(Rectangle().fill(Color.init(UIColor.label)))
                             .frame(width: geo.size.width * ratio, alignment: .center)
                             .accessibilityElement()
-                            .accessibilityLabel( formatter.makeDisplayText(from: clust, asHeader: clust === tabPage.headerCluster, withStringNames: stringNames) )
+//                            .accessibilityLabel( formatter.makeDisplayText(from: clust, asHeader: clust === tabPage.headerCluster, withStringNames: stringNames) )
+                            .accessibilityLabel( Text( "\(formatter.makeDisplayText(from: clust, withStringNames: stringNames))\(self.markedCluster == clust.idForUI ? ", marked" : "")" ) )
+                            //Text( "\(formatter.makeDisplayText(from: clust, withStringNames: stringNames))\(self.markedCluster == clust.idForUI ? ", marked" : "")" )
+                                //.id( clust.idForUI )
+                                .accessibilityFocused($voFocused, equals: clust.idForUI)
+                                .onTapGesture {
+                                    if let mc = self.markedCluster {
+                                        //scrollProxy.scrollTo(mc)
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                                            self.voFocused = mc
+                                        }
+                                        //UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: "going to marked spot")
+                                    }
+                                } //tap
+                                .onLongPressGesture {
+                                    UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: "marking position \(clustIndex + 1)")
+                                    self.markedCluster = clust.idForUI
+                                } //lontap
                     } //fe
                     } //hs
                 } //geo

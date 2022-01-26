@@ -26,7 +26,7 @@ struct ContentView: View {
                             //Label(LCLZ.preferencesTab, systemImage: "gearshape")
                         }
                         .tag(2)
-            Text("nothing yet")
+            AboutView()
                 .tabItem {
                     //Label("About", systemImage: "info.circle")
                     Label("About", systemImage: "hand.point.up")

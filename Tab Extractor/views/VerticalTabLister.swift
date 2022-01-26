@@ -21,7 +21,6 @@ struct VerticalTabLister: View {
         
         return ForEach(elementsToDisplay, id: \.element.idForUI) {(clustIndex, clust) in
             Text( "\(formatter.makeDisplayText(from: clust, withStringNames: stringNames))\(self.markedCluster == clust.idForUI ? ", marked" : "")" )
-                //.accessibilityLabel( self.markedCluster == line.idForUI ? "\(line.content), marked" : line.content)
                 .id( clust.idForUI )
                 .accessibilityFocused($aiFocused, equals: clust.idForUI)
                 .padding(.leading, 80)

@@ -115,7 +115,7 @@ struct NewTabUrlContent: View {
             Button("OK", role: .cancel) { }
         }, message: {
             Text("The page has finished loading.\r\nThere were no tabs found on the page.")
-        })
+        }) //alert
         .fullScreenCover(isPresented: $showingPageViewer, content: {
             TabPageView( srcTab: tabFromWeb ?? GuitarTab())
         })

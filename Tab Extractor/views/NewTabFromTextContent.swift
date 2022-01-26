@@ -9,13 +9,18 @@ import SwiftUI
 import UIKit
 
 struct NewTabFromTextContent: View {
+    @ObservedObject private var glop = GlobalPreferences2.global
     @Environment(\.presentationMode) private var premo
     @State private var memoStr = ""
     @FocusState private var memoFocused: Bool
-    @State private var statusStr = NSLocalizedString("status", comment: "text initial status")
+    
+    @State private var statusStr = "no tabs found"
     
     @State private var tabFromText: GuitarTab?
     @State private var showingPageViewer = false
+    
+    @State private var showZeroResultsFound = false
+
     init() {
         UITextView.appearance().textDragInteraction?.isEnabled = false
         UITextView.appearance().isScrollEnabled = true
@@ -24,14 +29,27 @@ struct NewTabFromTextContent: View {
     
     var body: some View {
         NavigationView {
-        VStack {
+            VStack(alignment: .center, spacing: 4) {
+                //Button("reset") { glop.showZeroResultsFound2 = true }
             HStack {
                 Spacer()
                 Button(action: {
-                    self.showingPageViewer = true
+                    self.showPageViewer()
                 }, label: {
                     Text( self.statusStr)
-                })
+                })//btn
+                    .disabled( tabFromText?.pages.isEmpty ?? true)
+                Spacer()
+            } //hs
+            .contentShape(Rectangle())
+            HStack {
+                Spacer()
+                Button(action: {
+                    self.DetectTab()
+                }, label: {
+                    Text( NSLocalizedString("detect", comment: "detect button"))
+                })//btn
+                    .disabled( memoStr.isEmpty)
                 Spacer()
             } //hs
             .contentShape(Rectangle())
@@ -52,17 +70,31 @@ struct NewTabFromTextContent: View {
                     .textSelection(.enabled)
                     .toolbar {
                         ToolbarItem(placement: .keyboard) {
-                            HStack {
+                            HStack(alignment: .center, spacing: 8) {
                                 Spacer()
-                            Button("dismiss keyboard") {
-                                self.memoFocused = false
-                            } //btn
+                                Button("clear text") {
+                                    self.memoStr = ""
+                                } //btn
+                                Button("dismiss keyboard") {
+                                    self.memoFocused = false
+                                } //btn
                             } //hs
                         } //tbi
                     } //tb
             //} //sv
             //.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
         } //vs
+        .onAppear(perform: {
+            pasteClipboard( andLoad: true)
+        }) //onapp
+        .alert("no tabs found", isPresented: self.$showZeroResultsFound, actions: {
+            Button("don't show this again", role: .destructive) {
+                glop.showZeroResultsFound2 = false
+            }
+            Button("OK", role: .cancel) { }
+        }, message: {
+            Text("There were no tabs found in the text.")
+        }) //alert
         .fullScreenCover(isPresented: $showingPageViewer, content: {
             TabPageView( srcTab: tabFromText ?? GuitarTab())
         }) //sheet
@@ -71,4 +103,40 @@ struct NewTabFromTextContent: View {
         } //nv
         .navigationViewStyle(StackNavigationViewStyle())
     } //body
+    
+    func showPageViewer() -> Void {
+        self.memoFocused = false
+        self.showingPageViewer = true
+    }
+    func DetectTab( ) -> Void {
+        let text = memoStr
+        DispatchQueue.global( qos: .userInitiated).async {
+            let td = TabDetector()
+            if let gt = td.detectTabs3(in: text, using: TabParseAlg2(), splitMultipleOf: [6, 4]) {
+                gt.sourceUrl = "pasted manually"
+                //gt.title = titleStr?.limitToTitle( of: 64) ?? ""
+                DispatchQueue.main.async {
+                    self.tabFromText = gt
+                    self.statusStr = String.localizedStringWithFormat(NSLocalizedString("show %1$d detected tabs", comment: "show button on load from text"), gt.pages.count)
+                    if !gt.pages.isEmpty {
+                        showPageViewer()
+                    } else {
+                        if glop.showZeroResultsFound2 {
+                            self.showZeroResultsFound = true
+                        }
+                    }
+                } //masync
+            } //got tab
+        } //gas
+    }
+    func pasteClipboard( andLoad: Bool) -> Void {
+        if UIPasteboard.general.hasStrings {
+            if let fStr = UIPasteboard.general.strings?.first {
+                self.memoStr = fStr
+                if andLoad {
+                    DetectTab()
+                }
+            }
+        }
+    } //func
 } //str
