@@ -17,7 +17,7 @@ struct AboutView: View {
                     //.accessibilityFocused($headerFocused)
                 Text("Very accessible guitar tabs")
                     .font(.headline)
-                Text("Tab Extractor is a tool that helps visually impaired people to read guitar tabs more easily.")
+                Text("Tab Extractor is a tool created to help visually impaired people to read guitar tabs more easily.")
                 Text("""
     Usually guitar tabs are very hard to access using screen readers.
     Tab extractor makes it easy and fun to read and navigate guitar tabs by laying out the information in a list form, position by position.
