@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct Tab_ExtractorApp: App {
-    @UIApplicationDelegateAdaptor(TEAppDelegate.self) var appDelegate
+    //@UIApplicationDelegateAdaptor(TEAppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
             ContentView()
@@ -19,7 +19,7 @@ struct Tab_ExtractorApp: App {
 
 class TEAppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        Thread.sleep(forTimeInterval: 3)
+        //Thread.sleep(forTimeInterval: 3)
         return true
     }
 } //cl
