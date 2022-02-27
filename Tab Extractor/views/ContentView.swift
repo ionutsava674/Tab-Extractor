@@ -29,7 +29,7 @@ struct ContentView: View {
             AboutView()
                 .tabItem {
                     //Label("About", systemImage: "info.circle")
-                    Label("About", systemImage: "hand.point.up")
+                    Label(LCLZ.aboutTab, systemImage: "hand.point.up")
                 }
                 .tag(3)
                 }) //tv

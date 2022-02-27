@@ -40,7 +40,8 @@ struct MainTabViewer: View {
         //NavigationView {
             VStack {
                 Text(tab.title)
-                    .font(.title)
+                    .font(.headline.bold())
+                    .padding(.horizontal)
                     .onLongPressGesture {
                         glop.showNavHint1 = true
                     }
@@ -56,17 +57,26 @@ struct MainTabViewer: View {
                         } //if vert
                     } //if comp
                 HStack(alignment: .center, spacing: 4, content: {
-                    Button("help") {
+                    //Button("help") {
+                        //self.showingHelp = true
+                    //}
+                    Button(action: {
                         self.showingHelp = true
-                    }
+                    }, label: {
+                        Image(systemName: "questionmark.diamond")
+                    })
+                        .accessibilityLabel("Navigation help")
+                    .padding()
                     Spacer()
                     Button("Export") {
                         self.exportDoc = TabTextDocument(initialText: self.tabToString(tab, originalMode: glop.viewSourceLines))
                         self.showingExport = true
                     }
+                    .padding()
                     Button("Share") {
                         share2()
                     } //btn
+                    .padding()
                 }) //hs
                 .font(.title)
             } //vs
@@ -94,7 +104,7 @@ struct MainTabViewer: View {
                 }
 
                 Button {
-                    //
+                    self.showingHelp = true
                 } label: {
                     Label("more info", systemImage: "questionmark.circle")
                 }
@@ -105,7 +115,7 @@ struct MainTabViewer: View {
                     Label("don't show this again", systemImage: "hand.thumbsup.circle")
                 }
             }, message: {
-                Text("You can mark a position with a long press (voiceover triple tap),\r\nand focus from any position to the marked position with a single activation (voiceover double-tap).")
+                Text("You can mark a position with a long press (voiceover triple tap), and focus from any position to the marked position with a single activation (voiceover double-tap).")
             }) //alert
             // .navigationTitle(tab.title)
         //} //nv

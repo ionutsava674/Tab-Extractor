@@ -14,7 +14,7 @@ struct NewTabFromTextContent: View {
     @State private var memoStr = ""
     @FocusState private var memoFocused: Bool
     
-    @State private var statusStr = "no tabs found"
+    @State private var statusStr = NSLocalizedString("no tabs found", comment: "status on text")
     
     @State private var tabFromText: GuitarTab?
     @State private var showingPageViewer = false
@@ -72,10 +72,10 @@ struct NewTabFromTextContent: View {
                         ToolbarItem(placement: .keyboard) {
                             HStack(alignment: .center, spacing: 8) {
                                 Spacer()
-                                Button("clear text") {
+                                Button(NSLocalizedString("clear text", comment: "tool button")) {
                                     self.memoStr = ""
                                 } //btn
-                                Button("dismiss keyboard") {
+                                Button(NSLocalizedString("dismiss keyboard", comment: "tool button")) {
                                     self.memoFocused = false
                                 } //btn
                             } //hs

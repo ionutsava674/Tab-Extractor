@@ -12,4 +12,5 @@ enum LCLZ {
         NSLocalizedString("Your saved songs", comment: "page title for main song list")
     }
     static let preferencesTab = NSLocalizedString("Preferences", comment: "preferences tab button caption")
+    static let aboutTab = NSLocalizedString("About", comment: "About tab button caption")
 }

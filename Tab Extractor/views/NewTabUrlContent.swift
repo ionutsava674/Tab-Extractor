@@ -57,14 +57,14 @@ struct NewTabUrlContent: View {
                     self.showingAddressActions = true
                 } label: {
                     Image(systemName: "circle")
-                        .accessibilityLabel("more actions")
+                        .accessibilityLabel(NSLocalizedString("more actions", comment: "button on web view"))
                 }
                 .confirmationDialog("address actions", isPresented: $showingAddressActions) {
-                    Button("Paste and load address") {
+                    Button(NSLocalizedString("Paste and load address", comment: "more actions button")) {
                         _ = self.pasteClipboard(andGo: true)
                     }
                     .disabled( !self.clipboardHasUrl() )
-                    Button("clear address") {
+                    Button(NSLocalizedString("clear address", comment: "more actions button")) {
                         self.editAddressStr = ""
                     }
                 } message: {
@@ -109,12 +109,12 @@ struct NewTabUrlContent: View {
             } //web
         } //vs
         .alert("no tabs found", isPresented: self.$showZeroResultsFound, actions: {
-            Button("don't show this again", role: .destructive) {
+            Button(NSLocalizedString("don't show this again", comment: "alert button"), role: .destructive) {
                 glop.showZeroResultsFound = false
             }
             Button("OK", role: .cancel) { }
         }, message: {
-            Text("The page has finished loading.\r\nThere were no tabs found on the page.")
+            Text("The page has finished loading. There were no tabs found on the page.")
         }) //alert
         .fullScreenCover(isPresented: $showingPageViewer, content: {
             TabPageView( srcTab: tabFromWeb ?? GuitarTab())
@@ -135,7 +135,7 @@ struct NewTabUrlContent: View {
         //print(resultStr)
         let captAddr  = self.browserAddressStr
         DispatchQueue.main.async {
-            self.statusStr = "navigation ready"
+            self.statusStr = NSLocalizedString("navigation ready", comment: "status when ready to navigate")
             self.pageBodyFromWeb = resultStr
             self.pageTitleFromWeb = titleStr?.limitToTitle(of: 128)
         } //as

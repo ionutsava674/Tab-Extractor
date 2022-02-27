@@ -20,6 +20,7 @@
 		C61D34EB2778BF1900EB3013 /* WebViewRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34EA2778BF1900EB3013 /* WebViewRep.swift */; };
 		C64F37492783920D0063E990 /* AlignedGeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F37482783920D0063E990 /* AlignedGeometryReader.swift */; };
 		C65C26A9267BC70100DA491D /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C26A8267BC70100DA491D /* SelectableItem.swift */; };
+		C66C424B27C1451A002C587C /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66C424A27C1451A002C587C /* MailComposer.swift */; };
 		C66EEEE827A1B8A500569F30 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66EEEE727A1B8A500569F30 /* AboutView.swift */; };
 		C66EEEEA27A1BC9600569F30 /* HowItWorksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */; };
 		C66EEEEC27A1BF8100569F30 /* TroubleshootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */; };
@@ -42,6 +43,7 @@
 		C6C537DA2783349E005259BB /* VerticalTabLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C537D92783349E005259BB /* VerticalTabLister.swift */; };
 		C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */; };
 		C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */; };
+		C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6E23D8827C6C456002A49E3 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,7 @@
 		C646D2D7276B600E000C83BB /* Tab Extractor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tab Extractor.entitlements"; sourceTree = "<group>"; };
 		C64F37482783920D0063E990 /* AlignedGeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedGeometryReader.swift; sourceTree = "<group>"; };
 		C65C26A8267BC70100DA491D /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
+		C66C424A27C1451A002C587C /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
 		C66EEEE727A1B8A500569F30 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorksView.swift; sourceTree = "<group>"; };
 		C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroubleshootView.swift; sourceTree = "<group>"; };
@@ -84,6 +87,7 @@
 		C6C6F9CF267F3F1F00F4A653 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6C6F9D1267F45A200F4A653 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabFromTextContent.swift; sourceTree = "<group>"; };
+		C6E23D8927C6C456002A49E3 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 			children = (
 				C67649182663919C0033464A /* ContentView.swift */,
 				C66EEEE727A1B8A500569F30 /* AboutView.swift */,
+				C66C424A27C1451A002C587C /* MailComposer.swift */,
 				C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */,
 				C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */,
 				C6A1984F2686483C0083D08B /* PreferencesView.swift */,
@@ -176,6 +181,7 @@
 				C61D34EC2778BF3200EB3013 /* generals */,
 				C676491A2663919D0033464A /* Assets.xcassets */,
 				C676491F2663919D0033464A /* Info.plist */,
+				C6E23D8827C6C456002A49E3 /* InfoPlist.strings */,
 				C676491C2663919D0033464A /* Preview Content */,
 			);
 			path = "Tab Extractor";
@@ -248,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C676491E2663919D0033464A /* Preview Assets.xcassets in Resources */,
+				C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */,
 				C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */,
 				C676491B2663919D0033464A /* Assets.xcassets in Resources */,
 			);
@@ -261,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C66F4C632679EE7D00321FAD /* AccessibleCheckBox.swift in Sources */,
+				C66C424B27C1451A002C587C /* MailComposer.swift in Sources */,
 				C676492826639B5F0033464A /* TabObject.swift in Sources */,
 				C6A198502686483C0083D08B /* PreferencesView.swift in Sources */,
 				C613835D277BB9C7007F2A43 /* TitleString.swift in Sources */,
@@ -305,6 +313,14 @@
 				C6C6F9D1267F45A200F4A653 /* ro */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		C6E23D8827C6C456002A49E3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C6E23D8927C6C456002A49E3 /* ro */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -17,10 +17,10 @@ struct InnerPreferencesView: View {
     var body: some View {
         Form {
             Section(header: Text("How to display tabs")) {
-                AccessibleCheckBox(checked: $glop.viewSourceLines, caption: "Display tabs as original, unprocessed, lines")
+                AccessibleCheckBox(checked: $glop.viewSourceLines, caption: NSLocalizedString("Display tabs as original, unprocessed, lines", comment: "preferences checkbox"))
             } //se
             if !glop.viewSourceLines {
-                Picker("Display each tab as", selection: $glop.viewHorizontally) {
+                Picker(NSLocalizedString("Display each tab as", comment: "preferences picker"), selection: $glop.viewHorizontally) {
                 Text("as horizontal list")
                     .tag(true)
                 Text("as vertical list")
@@ -30,12 +30,12 @@ struct InnerPreferencesView: View {
             //.disabled( self.viewSourceLines)
             Section(header: Text("Options for processed tabs:")) {
                 HStack {
-                    Toggle("Include header line (the string names at the beginning of the tab)", isOn: self.$glop.includeHeader)
+                    Toggle(NSLocalizedString("Include header line (the string names at the beginning of the tab)", comment: "prefs radio box"), isOn: self.$glop.includeHeader)
                     Spacer()
                 } //hs
                     .padding(.top)
                 HStack {
-                    Text(String(format: "Separator between string names (E%1$@A%1$@D%1$@G...)", glop.stringStringSeparator))
+                    Text(String(format: NSLocalizedString("Separator between string names (E%1$@A%1$@D%1$@G...)", comment: "prefs sep"), glop.stringStringSeparator))
                     Spacer()
                     TextField("", text: $glop.stringStringSeparator)
                     .limitToMaxWidth(geo: geo, ratio: 0.25)
@@ -43,12 +43,12 @@ struct InnerPreferencesView: View {
                 .padding(.vertical)
                 .disabled( !glop.includeHeader)
                 HStack {
-                    Toggle("Include bars when listing tab content", isOn: self.$glop.includeBars)
+                    Toggle(NSLocalizedString("Include bars when listing tab content", comment: "prefs radio"), isOn: self.$glop.includeBars)
                     Spacer()
                 } //hs
                     .padding(.top)
             } // se
-                Section("on each note") {
+                Section(NSLocalizedString("on each note", comment: "prefs section")) {
                 VStack {
                 HStack {
                     Text("Separator between string name and note")
@@ -56,7 +56,7 @@ struct InnerPreferencesView: View {
                     TextField("", text: self.$glop.stringNoteSeparator)
                     .limitToMaxWidth(geo: geo, ratio: 0.25)
                 } //hs
-                    Text(String(format: "Example: G%1$@7", glop.stringNoteSeparator))
+                    Text(String(format: NSLocalizedString("Example: G%1$@7", comment: "string note sep example"), glop.stringNoteSeparator))
                 } //vs
                 .padding(.vertical)
                 VStack {
@@ -66,12 +66,13 @@ struct InnerPreferencesView: View {
                     TextField("", text: $glop.noteNoteSeparator)
                     .limitToMaxWidth(geo: geo, ratio: 0.25)
                 } //hs
-                    Text(String(format: "Example: D%1$@7%2$@G%1$@5", glop.stringNoteSeparator, glop.noteNoteSeparator))
+                    Text(String(format: NSLocalizedString("Example: D%1$@7%2$@G%1$@5", comment: "not note sep example"), glop.stringNoteSeparator, glop.noteNoteSeparator))
                 } //vs
                 .padding(.vertical)
                 Text("Tip: use dots, commas or semicolons to help VoiceOver make longer or shorter pauses.")
             } //sect
-                Section("When string names are missing") {
+                /*
+                Section(NSLocalizedString("When string names are missing", comment: "missing section")) {
                     VStack {
                         Toggle("6 strings default", isOn: $glop.noStrings6)
                         TextField(GlobalPreferences2.noStrings6NamesDefault, text: $glop.noStrings6Names)
@@ -85,6 +86,7 @@ struct InnerPreferencesView: View {
                         TextField(GlobalPreferences2.noStrings7NamesDefault, text: $glop.noStrings7Names)
                 }.padding(.vertical)
                 } //se
+                 */
             } //if processed
         } //fo
         .padding(.bottom)

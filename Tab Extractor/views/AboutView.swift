@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import MessageUI
 
 struct AboutView: View {
     //@AccessibilityFocusState private var headerFocused: Bool
+    @State private var mailResult: Result<MFMailComposeResult, Error>? = nil
+    @State private var showingMail = false
+    let mailTo = "ionutsava027@gmail.com"
+    let mailSubject = "contacting for Tab Extractor"
     var body: some View {
         NavigationView {
+            ScrollView {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Tab Extractor")
                     .font(.title)
@@ -22,28 +28,53 @@ struct AboutView: View {
     Usually guitar tabs are very hard to access using screen readers.
     Tab extractor makes it easy and fun to read and navigate guitar tabs by laying out the information in a list form, position by position.
     """) //text
+                Text("Having to deal with this situation myself, I've decided to create this app, to make it a little easier.")
                 Text("Of course, Tab Extractor can be used by everyone, including sighted persons, by having tabs displayed in original format, so that tabs can be easily shared with friends.")
                 Group {
                 Text("Main features:")
+                        .font(.subheadline.bold())
                 Text("automatically detects guitar tabs on a web page")
                 Text("lets you save each tab individually or all together")
                 Text("lets you customise the way the information is formatted")
                 Text("All it requires is that the tabs are correctly formatted and aligned.")
                     
                 } //gr
+                .padding(8)
                 Group {
-                    NavigationLink("How it works") {
+                    NavigationLink(NSLocalizedString("How it works", comment: "link in about")) {
                         HowItWorksView()
                     }
-                    NavigationLink("Troubleshoot") {
+                    NavigationLink(NSLocalizedString("Troubleshoot", comment: "link in about")) {
                         TroubleshootView()
                     }
                 } //gr
+                .padding(8)
+                Group {
+                    Text("Contact")
+                        .font(.subheadline.bold())
+                    Text("For suggestions, bugs, critics etc 😅 feel free to drop me an email:")
+                    Button(mailTo) {
+                        showingMail = true
+                    }
+                    .disabled(!MFMailComposeViewController.canSendMail())
+                } //gr
             } //vs
             .padding()
-            .navigationTitle("About")
+            } //sv
+            .navigationTitle(LCLZ.aboutTab)
         } //nv
+        .sheet(isPresented: $showingMail) {
+            //
+        } content: {
+            MailComposerView(result: self.$mailResult, toRecipient: self.mailTo, subject: self.mailSubject)
+        }
+
     } //body
+    func openEmail() -> Void {
+        if MFMailComposeViewController.canSendMail() {
+            //
+        }
+    } //func
 } //str
 
 struct AboutView_Previews: PreviewProvider {

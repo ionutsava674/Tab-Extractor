@@ -18,7 +18,7 @@ struct AccessibleCheckBox: View {
         .accessibilityElement(children: .ignore)
         .accessibility(hint: Text("double tap to toggle"))
         .accessibility(label: Text(caption))
-        .accessibility(value: Text(self.checked ? "checked" : "unchecked"))
+        .accessibility(value: self.checked ? Text("checked") : Text("unchecked"))
         .onTapGesture(perform: {
             self.checked.toggle()
         })
