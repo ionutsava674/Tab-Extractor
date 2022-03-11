@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HowItWorksView: View {
     var body: some View {
-        NavigationView {
+        //NavigationView {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 4) {
                 Text("1. To add tabs from a web page:")
@@ -37,9 +37,9 @@ struct HowItWorksView: View {
                 .padding()
             } //sv
             .navigationBarTitle("How it works")
+            .navigationBarTitleDisplayMode(.inline)
             //.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        } //nv
-        .navigationBarTitleDisplayMode(.inline)
+        //} //nv
     } //body
 } //str
 

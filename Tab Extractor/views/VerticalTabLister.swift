@@ -44,7 +44,7 @@ struct VerticalTabLister: View {
         List {
         ForEach(tab.pages) {page in
             //Section(header: Text(page.title)) {
-            Section(header: Text("\(page.title) (\(page.clusters.count) positions)")) {
+            Section(header: Text(String.localizedStringWithFormat(NSLocalizedString("%1$@ (%2$d positions)", comment: ""), page.title, page.clusters.count))) {
                     putVerticalPage( page: page, scrollProxy: sv)
             } //se
         } //fe

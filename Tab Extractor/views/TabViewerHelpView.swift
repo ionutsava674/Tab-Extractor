@@ -31,9 +31,11 @@ struct TabViewerHelpView: View {
                     Text("Or if the position has more than one strings that should be played at the same time, it will be something like A2 D4 G4.")
                 } //g
                 .padding()
-                    Button("OK") {
+                    Button(action: {
                         premo.wrappedValue.dismiss()
-                    }
+                    }, label: {
+                        Text("ok")
+                    })
                     .padding()
                     .font(.title.bold())
                     .frame(maxWidth: .infinity, alignment: .trailing)
@@ -43,6 +45,7 @@ struct TabViewerHelpView: View {
             } //sv
             .navigationBarTitle("Navigation help")
             //.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            //
         } //nv
         .navigationBarTitleDisplayMode(.inline)
     } //body

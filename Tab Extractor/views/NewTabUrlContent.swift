@@ -22,6 +22,10 @@ struct NewTabUrlContent: View {
     @State private var statusStr = NSLocalizedString("status", comment: "browser initial status")
     @State private var showZeroResultsFound = false
     @State private var browserAddressStr = "about:blank"
+    private var browserAddrEmpty: Bool {
+        browserAddressStr.isEmpty ||
+        browserAddressStr == "about:blank"
+    }
     
     @State private var tabFromWeb: GuitarTab?
     @State private var pageBodyFromWeb: String?
@@ -124,7 +128,9 @@ struct NewTabUrlContent: View {
         } //nv
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: {
-            fetchAddress()
+            DispatchQueue.main.async {
+                fetchAddress()
+            }
         }) //onapp
     } //body
     
@@ -134,11 +140,18 @@ struct NewTabUrlContent: View {
         //print(self.browserAddressStr)
         //print(resultStr)
         let captAddr  = self.browserAddressStr
+        //print("gua1 \(resultStr.isEmpty) \(Date.now)")
         DispatchQueue.main.async {
-            self.statusStr = NSLocalizedString("navigation ready", comment: "status when ready to navigate")
+            //print("gua2 \(resultStr.isEmpty) \(Date.now)")
+            if !resultStr.isEmpty {
+                self.statusStr = NSLocalizedString("processing content", comment: "status when done loading ")
+            }
             self.pageBodyFromWeb = resultStr
             self.pageTitleFromWeb = titleStr?.limitToTitle(of: 128)
         } //as
+        //guard !resultStr.isEmpty else {
+            //return
+        //}
         DispatchQueue.global( qos: .userInitiated).async {
             let td = TabDetector()
             if let gt = td.detectTabs3(in: resultStr, using: TabParseAlg2(), splitMultipleOf: [6, 4]) {
@@ -216,8 +229,10 @@ struct NewTabUrlContent: View {
                 //self.addressFocused = true
     } //func
     func goButtonClick() -> Void {
-        //DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        // DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.browserAddressStr = self.editAddressStr
+        self.statusStr = NSLocalizedString("loading", comment: "status when started loading ")
+        //self.startedBrowsing = true
         //} //dq
     }
 } //struct

@@ -10,6 +10,9 @@
 /* item title to display after it was detected */
 "%1$@ (%2$d lines)" = "%1$@ (%2$d linii)";
 
+/* No comment provided by engineer. */
+"%1$@ (%2$d positions)" = "%1$@ (%2$d poziții)";
+
 /* search results window title */
 "%1$d tabs detected" = "%1$d taburi detectate";
 
@@ -79,8 +82,14 @@
 /* No comment provided by engineer. */
 "contains %@ %@" = "conține %1$@ %2$@";
 
+/* contains label */
+"contains %1$d %2$@" = "conține %1$d %2$@";
+
 /* No comment provided by engineer. */
 "Delete" = "Șterge";
+
+/* main screen menu */
+"delete %@" = "Șterge %@";
 
 /* No comment provided by engineer. */
 "Delete %@ ?" = "Șterge %@ ?";
@@ -193,14 +202,14 @@
 /* load from web window title */
 "Load from website" = "Încarcă din website";
 
+/* status when started loading */
+"loading" = "se încarcă";
+
 /* No comment provided by engineer. */
 "Main features:" = "Funcții importante:";
 
 /* button on web view */
 "more actions" = "Mai multe acțiuni";
-
-/* status when ready to navigate */
-"navigation ready" = "Pregătit de navigare";
 
 /* status on text */
 "no tabs found" = "nu s-au găsit taburi";
@@ -243,6 +252,9 @@
 
 /* preferences tab button caption */
 "Preferences" = "Preferințe";
+
+/* status when done loading */
+"processing content" = "se procesează";
 
 /* main window list refresh button */
 "Refresh" = "Împrospătează";
@@ -314,6 +326,9 @@
 /* string number: s1 s2 etc */
 "string%1$d;" = "coarda%1$d;";
 
+/* tab singular */
+"tab" = "tab";
+
 /* default title for a found tab */
 "Tab %1$d" = "Tab %1$d";
 
@@ -322,6 +337,9 @@
 
 /* No comment provided by engineer. */
 "Tab Extractor is a tool created to help visually impaired people to read guitar tabs more easily." = "Tab Extractor este un instrument creat pentru a ajuta citirea tabulaturilor de chitară mult mai accesibil.";
+
+/* many tabs */
+"tabs" = "taburi";
 
 /* No comment provided by engineer. */
 "The best thing to do in this case, is to find a better version. Most tabs out there are formatted and aligned correctly." = "Cel mai bun lucru de făcut în acest caz, este să găsești o versiune mai bună a cântecului. Majoritatea tabulaturilor sunt formatate și aliniate corect.";
@@ -391,6 +409,9 @@
 
 /* view detected tabs */
 "View" = "Vezi";
+
+/* main screen alert */
+"Warning. This action is irreversible." = "Atenție. Această acțiune este ireversibilă.";
 
 /* web address to start browsing */
 "web address" = "adresa web";

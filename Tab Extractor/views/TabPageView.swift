@@ -104,7 +104,7 @@ struct MSIView: View {
 } //view
 
 struct TabPageView: View {
-    let enableDebug = true
+    //let enableDebug = true
     let sourceTab: GuitarTab
 
     @Environment(\.presentationMode) var premo
@@ -166,36 +166,6 @@ struct TabPageView: View {
                     //.frame(maxWidth: .infinity)
                 } //sv
             //.listStyle(GroupedListStyle())
-                if enableDebug {
-                HStack {
-                    Spacer()
-                    Button("print info") {
-                        print(self.sourceTab.sourceUrl ?? "no url")
-                        for ip in self.sourceTab.pages {
-                            print(ip.title)
-                            let ss = ip.sourceStrings
-                                for ipl in ss {
-                                    print(ipl)
-                                }
-                            //}
-                        }
-                    } //b1
-                    Button("share info") {
-                        var sha = [String]()
-                        sha.append(self.sourceTab.sourceUrl ?? "no url")
-                        sha.append(self.sourceTab.title)
-                        for ip in self.sourceTab.pages {
-                            sha.append(ip.title)
-                            let ss = ip.sourceStrings
-                                for ipl in ss {
-                                    sha.append(ipl)
-                                }
-                            //}
-                        }
-                        //shareString(sha.joined(separator: "\n"))
-                    } //b1
-                } //hs
-                } //if
             }) //vs
             .navigationTitle(String.localizedStringWithFormat(NSLocalizedString("%1$d tabs detected", comment: "search results window title"), selectableItems.items.count))
             .alert(isPresented: $genAlertVisible, content: {

@@ -28,7 +28,6 @@ struct AboutView: View {
     Usually guitar tabs are very hard to access using screen readers.
     Tab extractor makes it easy and fun to read and navigate guitar tabs by laying out the information in a list form, position by position.
     """) //text
-                Text("Having to deal with this situation myself, I've decided to create this app, to make it a little easier.")
                 Text("Of course, Tab Extractor can be used by everyone, including sighted persons, by having tabs displayed in original format, so that tabs can be easily shared with friends.")
                 Group {
                 Text("Main features:")
@@ -62,13 +61,14 @@ struct AboutView: View {
             .padding()
             } //sv
             .navigationTitle(LCLZ.aboutTab)
+            .navigationBarTitleDisplayMode(.large)
         } //nv
+        .navigationViewStyle(.stack)
         .sheet(isPresented: $showingMail) {
             //
         } content: {
             MailComposerView(result: self.$mailResult, toRecipient: self.mailTo, subject: self.mailSubject)
-        }
-
+        } //mail
     } //body
     func openEmail() -> Void {
         if MFMailComposeViewController.canSendMail() {

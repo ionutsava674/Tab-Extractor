@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TroubleshootView: View {
     var body: some View {
-        NavigationView {
+        //NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Sometimes ,tab detection may fail because they are not formatted correctly. If monospaced font isn’t used, the tab lines may appear equal in length, but in fact, they are not.")
@@ -21,10 +21,10 @@ struct TroubleshootView: View {
                     .padding()
                 } //sv
                 .navigationBarTitle("Troubleshoot")
-            } //nv
-            .navigationBarTitleDisplayMode(.inline)
-    }
-}
+                .navigationBarTitleDisplayMode(.inline)
+            //} //nv
+    } //body
+} //str
 
 struct TroubleshootView_Previews: PreviewProvider {
     static var previews: some View {

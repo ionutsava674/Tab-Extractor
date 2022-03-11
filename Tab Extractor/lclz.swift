@@ -13,4 +13,12 @@ enum LCLZ {
     }
     static let preferencesTab = NSLocalizedString("Preferences", comment: "preferences tab button caption")
     static let aboutTab = NSLocalizedString("About", comment: "About tab button caption")
-}
+    static let singleTab = NSLocalizedString("tab", comment: "tab singular")
+    static let manyTabs = NSLocalizedString("tabs", comment: "many tabs")
+    
+    static func singleMany(_ counter: Int, _ single: String, _ many: String) -> String {
+        counter == 1
+        ? single
+        : many
+    }
+} //lclz

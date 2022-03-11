@@ -24,7 +24,7 @@ struct MainTabViewer: View {
     var listSourceLines: some View {
         List {
         ForEach(tab.pages) {page in
-            Section(header: Text("\(page.title) (\(page.clusters.count) positions)")) {
+            Section(header: Text(String.localizedStringWithFormat(NSLocalizedString("%1$@ (%2$d positions)", comment: ""), page.title, page.clusters.count))) {
             //Section(header: Text(page.title)) {
                 let linesToList = page.sourceStrings
                 ForEach(linesToList , id: \.self) {line in
@@ -45,7 +45,8 @@ struct MainTabViewer: View {
                     .onLongPressGesture {
                         glop.showNavHint1 = true
                     }
-                Text("contains \(tab.pages.count) \(tab.pages.count == 1 ? "tab" : "tabs")")
+                //Text("contains \(tab.pages.count) \(tab.pages.count == 1 ? "tab" : "tabs")")
+                Text(String.localizedStringWithFormat(NSLocalizedString("contains %1$d %2$@", comment: "contains label"), tab.pages.count, LCLZ.singleMany(tab.pages.count, LCLZ.singleTab, LCLZ.manyTabs)))
                     .font(.headline)
                     if glop.viewSourceLines {
                     listSourceLines
@@ -69,8 +70,13 @@ struct MainTabViewer: View {
                     .padding()
                     Spacer()
                     Button("Export") {
-                        self.exportDoc = TabTextDocument(initialText: self.tabToString(tab, originalMode: glop.viewSourceLines))
-                        self.showingExport = true
+                        DispatchQueue.main.async {
+                            //let ts = self.tabToString(tab, originalMode: glop.viewSourceLines)
+                            //print("\(ts.count)")
+                            self.exportDoc = TabTextDocument(initialText: self.tabToString(tab, originalMode: glop.viewSourceLines))
+                            //print("\(tab.title).txt")
+                            self.showingExport = true
+                        }
                     }
                     .padding()
                     Button("Share") {
@@ -88,7 +94,7 @@ struct MainTabViewer: View {
             .popover(isPresented: $showingShareSheet, attachmentAnchor: .point(UnitPoint.bottom), arrowEdge: .top, content: {
                 ShareSheet( activityItems: self.sic.sharedItems)
             }) //pop
-            .fileExporter(isPresented: self.$showingExport, document: self.exportDoc, contentType: .plainText, defaultFilename: "\(tab.title).txt", onCompletion: { result in
+            .fileExporter(isPresented: self.$showingExport, document: self.exportDoc, contentType: .plainText, defaultFilename: "\(tab.title.changeToFileNameLegal()).txt", onCompletion: { result in
                 //
             }) //export
             .onAppear(perform: {

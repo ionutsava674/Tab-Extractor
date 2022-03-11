@@ -8,6 +8,16 @@
 import Foundation
 
 extension String {
+    func changeToFileNameLegal() -> Self {
+        let illegalFileNameChars: [String] = ["/", "\\", "?", ":", "\""]
+        var result = self
+        for char in illegalFileNameChars {
+            if result.contains( char) {
+                result = result.replacingOccurrences(of: char, with: " ")
+            }
+        }
+        return result
+    } //func
     func limitToTitle( of length: Int) -> String {
         String(
         self.replacingOccurrences( of: "\r\n", with: "")

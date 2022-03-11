@@ -70,14 +70,14 @@ struct YourSongsView: View {
                                 self.tfaToDelete = tfa
                                 self.showDeleteConfirmation = true
                             } label: {
-                                Label("delete \(tfa.tab.title)", systemImage: "trash.fill")
+                                Label(String.localizedStringWithFormat(NSLocalizedString("delete %@", comment: "main screen menu"), tfa.tab.title), systemImage: "trash.fill")
                             } //btn
                         }) //swipe
                     //.font(.headline)
                 } //fe
 //                .onDelete(perform: deleteItems)
                 } //ls
-                .alert("Warning. This action is irreversible.", isPresented: self.$showDeleteConfirmation, presenting: self.tfaToDelete, actions: { tfatd in
+                .alert(NSLocalizedString("Warning. This action is irreversible.", comment: "main screen alert"), isPresented: self.$showDeleteConfirmation, presenting: self.tfaToDelete, actions: { tfatd in
                     Button(role: ButtonRole.destructive, action: {
                         _ = self.deleteItem( tfa: tfatd)
                     }, label: {
@@ -151,7 +151,7 @@ struct YourSongsView: View {
                                   // "https://tabs.ultimate-guitar.com/tab/the-national/the-rains-of-castamere-tabs-1228763",
                                  "",
                                  autoFetchClipBoard: true,
-                                    browseAutomatically: false)
+                                    browseAutomatically: true)
         })
             .sheet(isPresented: $showingNewTabFromText, onDismiss: {
                 listDocFiles()
