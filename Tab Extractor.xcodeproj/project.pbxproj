@@ -43,7 +43,6 @@
 		C6C537DA2783349E005259BB /* VerticalTabLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C537D92783349E005259BB /* VerticalTabLister.swift */; };
 		C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */; };
 		C6D7C52F27DBDD1200B1032D /* privacypolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = C6D7C52E27DBDD1200B1032D /* privacypolicy.html */; };
-		C6D7C53327DBDE3000B1032D /* file1.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6D7C53227DBDE3000B1032D /* file1.txt */; };
 		C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */; };
 		C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6E23D8827C6C456002A49E3 /* InfoPlist.strings */; };
 		C6FB033B27DB5B260013E2A5 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = C6FB033A27DB5B260013E2A5 /* index.html */; };
@@ -90,7 +89,6 @@
 		C6C6F9CF267F3F1F00F4A653 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6C6F9D1267F45A200F4A653 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6D7C52E27DBDD1200B1032D /* privacypolicy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacypolicy.html; sourceTree = "<group>"; };
-		C6D7C53227DBDE3000B1032D /* file1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = file1.txt; sourceTree = "<group>"; };
 		C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabFromTextContent.swift; sourceTree = "<group>"; };
 		C6E23D8927C6C456002A49E3 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C6FB033A27DB5B260013E2A5 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -205,7 +203,6 @@
 		C6FB033727DB5AC80013E2A5 /* docs */ = {
 			isa = PBXGroup;
 			children = (
-				C6D7C53227DBDE3000B1032D /* file1.txt */,
 				C6FB033A27DB5B260013E2A5 /* index.html */,
 				C6D7C52E27DBDD1200B1032D /* privacypolicy.html */,
 			);
@@ -272,7 +269,6 @@
 			files = (
 				C676491E2663919D0033464A /* Preview Assets.xcassets in Resources */,
 				C6D7C52F27DBDD1200B1032D /* privacypolicy.html in Resources */,
-				C6D7C53327DBDE3000B1032D /* file1.txt in Resources */,
 				C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */,
 				C6FB033B27DB5B260013E2A5 /* index.html in Resources */,
 				C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */,
