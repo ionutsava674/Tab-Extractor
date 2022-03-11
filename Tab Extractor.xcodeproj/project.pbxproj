@@ -159,7 +159,7 @@
 		C676490A2663919C0033464A = {
 			isa = PBXGroup;
 			children = (
-				C6FB033727DB5AC80013E2A5 /* site */,
+				C6FB033727DB5AC80013E2A5 /* docs */,
 				C67649152663919C0033464A /* Tab Extractor */,
 				C67649142663919C0033464A /* Products */,
 			);
@@ -200,13 +200,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C6FB033727DB5AC80013E2A5 /* site */ = {
+		C6FB033727DB5AC80013E2A5 /* docs */ = {
 			isa = PBXGroup;
 			children = (
 				C6FB033827DB5AEE0013E2A5 /* file1.txt */,
 				C6FB033A27DB5B260013E2A5 /* index.html */,
 			);
-			path = site;
+			path = docs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
