@@ -48,6 +48,7 @@
 		C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */; };
 		C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */; };
 		C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6E23D8827C6C456002A49E3 /* InfoPlist.strings */; };
+		C6F93D0E27DB58E80060AFB7 /* index3.html in Resources */ = {isa = PBXBuildFile; fileRef = C6F93D0D27DB58E80060AFB7 /* index3.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		C6C6F9D1267F45A200F4A653 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabFromTextContent.swift; sourceTree = "<group>"; };
 		C6E23D8927C6C456002A49E3 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C6F93D0D27DB58E80060AFB7 /* index3.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index3.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				C639CA3827DB56A500057A4E /* index2.html */,
 				C639CA3B27DB56A500057A4E /* policy1.txt */,
 				C639CA3A27DB56A500057A4E /* policy2.html */,
+				C6F93D0D27DB58E80060AFB7 /* index3.html */,
 			);
 			path = webhost;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				C639CA3F27DB56A500057A4E /* policy1.txt in Resources */,
 				C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */,
 				C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */,
+				C6F93D0E27DB58E80060AFB7 /* index3.html in Resources */,
 				C639CA3D27DB56A500057A4E /* index.html in Resources */,
 				C676491B2663919D0033464A /* Assets.xcassets in Resources */,
 				C639CA3C27DB56A500057A4E /* index2.html in Resources */,
