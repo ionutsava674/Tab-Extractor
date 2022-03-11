@@ -46,6 +46,7 @@
 		C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6E23D8827C6C456002A49E3 /* InfoPlist.strings */; };
 		C6FB033927DB5AEE0013E2A5 /* file1.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6FB033827DB5AEE0013E2A5 /* file1.txt */; };
 		C6FB033B27DB5B260013E2A5 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = C6FB033A27DB5B260013E2A5 /* index.html */; };
+		C6FB033F27DBBECA0013E2A5 /* policy.html in Resources */ = {isa = PBXBuildFile; fileRef = C6FB033E27DBBECA0013E2A5 /* policy.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		C6E23D8927C6C456002A49E3 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C6FB033827DB5AEE0013E2A5 /* file1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = file1.txt; sourceTree = "<group>"; };
 		C6FB033A27DB5B260013E2A5 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		C6FB033E27DBBECA0013E2A5 /* policy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = policy.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 			children = (
 				C6FB033827DB5AEE0013E2A5 /* file1.txt */,
 				C6FB033A27DB5B260013E2A5 /* index.html */,
+				C6FB033E27DBBECA0013E2A5 /* policy.html */,
 			);
 			path = docs;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6FB033F27DBBECA0013E2A5 /* policy.html in Resources */,
 				C6FB033927DB5AEE0013E2A5 /* file1.txt in Resources */,
 				C676491E2663919D0033464A /* Preview Assets.xcassets in Resources */,
 				C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */,
