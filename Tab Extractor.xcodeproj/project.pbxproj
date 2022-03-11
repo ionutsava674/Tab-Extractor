@@ -44,6 +44,7 @@
 		C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */; };
 		C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */; };
 		C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6E23D8827C6C456002A49E3 /* InfoPlist.strings */; };
+		C6FB033927DB5AEE0013E2A5 /* file1.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6FB033827DB5AEE0013E2A5 /* file1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		C6C6F9D1267F45A200F4A653 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabFromTextContent.swift; sourceTree = "<group>"; };
 		C6E23D8927C6C456002A49E3 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C6FB033827DB5AEE0013E2A5 /* file1.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = file1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		C676490A2663919C0033464A = {
 			isa = PBXGroup;
 			children = (
+				C6FB033727DB5AC80013E2A5 /* site */,
 				C67649152663919C0033464A /* Tab Extractor */,
 				C67649142663919C0033464A /* Products */,
 			);
@@ -193,6 +196,14 @@
 				C676491D2663919D0033464A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C6FB033727DB5AC80013E2A5 /* site */ = {
+			isa = PBXGroup;
+			children = (
+				C6FB033827DB5AEE0013E2A5 /* file1.txt */,
+			);
+			path = site;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6FB033927DB5AEE0013E2A5 /* file1.txt in Resources */,
 				C676491E2663919D0033464A /* Preview Assets.xcassets in Resources */,
 				C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */,
 				C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */,
