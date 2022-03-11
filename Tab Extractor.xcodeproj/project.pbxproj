@@ -18,6 +18,10 @@
 		C61D34E72778BD9A00EB3013 /* Save1Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E62778BD9A00EB3013 /* Save1Song.swift */; };
 		C61D34E92778BE4D00EB3013 /* TabSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E82778BE4D00EB3013 /* TabSharer.swift */; };
 		C61D34EB2778BF1900EB3013 /* WebViewRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34EA2778BF1900EB3013 /* WebViewRep.swift */; };
+		C639CA3C27DB56A500057A4E /* index2.html in Resources */ = {isa = PBXBuildFile; fileRef = C639CA3827DB56A500057A4E /* index2.html */; };
+		C639CA3D27DB56A500057A4E /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = C639CA3927DB56A500057A4E /* index.html */; };
+		C639CA3E27DB56A500057A4E /* policy2.html in Resources */ = {isa = PBXBuildFile; fileRef = C639CA3A27DB56A500057A4E /* policy2.html */; };
+		C639CA3F27DB56A500057A4E /* policy1.txt in Resources */ = {isa = PBXBuildFile; fileRef = C639CA3B27DB56A500057A4E /* policy1.txt */; };
 		C64F37492783920D0063E990 /* AlignedGeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F37482783920D0063E990 /* AlignedGeometryReader.swift */; };
 		C65C26A9267BC70100DA491D /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C26A8267BC70100DA491D /* SelectableItem.swift */; };
 		C66C424B27C1451A002C587C /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66C424A27C1451A002C587C /* MailComposer.swift */; };
@@ -58,6 +62,10 @@
 		C61D34E62778BD9A00EB3013 /* Save1Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Save1Song.swift; sourceTree = "<group>"; };
 		C61D34E82778BE4D00EB3013 /* TabSharer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabSharer.swift; sourceTree = "<group>"; };
 		C61D34EA2778BF1900EB3013 /* WebViewRep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewRep.swift; sourceTree = "<group>"; };
+		C639CA3827DB56A500057A4E /* index2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index2.html; sourceTree = "<group>"; };
+		C639CA3927DB56A500057A4E /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		C639CA3A27DB56A500057A4E /* policy2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = policy2.html; sourceTree = "<group>"; };
+		C639CA3B27DB56A500057A4E /* policy1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = policy1.txt; sourceTree = "<group>"; };
 		C646D2D7276B600E000C83BB /* Tab Extractor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tab Extractor.entitlements"; sourceTree = "<group>"; };
 		C64F37482783920D0063E990 /* AlignedGeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedGeometryReader.swift; sourceTree = "<group>"; };
 		C65C26A8267BC70100DA491D /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
@@ -152,9 +160,21 @@
 			path = data;
 			sourceTree = "<group>";
 		};
+		C639CA3727DB561700057A4E /* webhost */ = {
+			isa = PBXGroup;
+			children = (
+				C639CA3927DB56A500057A4E /* index.html */,
+				C639CA3827DB56A500057A4E /* index2.html */,
+				C639CA3B27DB56A500057A4E /* policy1.txt */,
+				C639CA3A27DB56A500057A4E /* policy2.html */,
+			);
+			path = webhost;
+			sourceTree = "<group>";
+		};
 		C676490A2663919C0033464A = {
 			isa = PBXGroup;
 			children = (
+				C639CA3727DB561700057A4E /* webhost */,
 				C67649152663919C0033464A /* Tab Extractor */,
 				C67649142663919C0033464A /* Products */,
 			);
@@ -253,10 +273,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C639CA3E27DB56A500057A4E /* policy2.html in Resources */,
 				C676491E2663919D0033464A /* Preview Assets.xcassets in Resources */,
+				C639CA3F27DB56A500057A4E /* policy1.txt in Resources */,
 				C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */,
 				C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */,
+				C639CA3D27DB56A500057A4E /* index.html in Resources */,
 				C676491B2663919D0033464A /* Assets.xcassets in Resources */,
+				C639CA3C27DB56A500057A4E /* index2.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
