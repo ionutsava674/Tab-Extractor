@@ -18,6 +18,7 @@
 		C61D34E72778BD9A00EB3013 /* Save1Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E62778BD9A00EB3013 /* Save1Song.swift */; };
 		C61D34E92778BE4D00EB3013 /* TabSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E82778BE4D00EB3013 /* TabSharer.swift */; };
 		C61D34EB2778BF1900EB3013 /* WebViewRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34EA2778BF1900EB3013 /* WebViewRep.swift */; };
+		C63453E527DC8E9E00B41F0B /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63453E427DC8E9E00B41F0B /* PrivacyView.swift */; };
 		C64F37492783920D0063E990 /* AlignedGeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F37482783920D0063E990 /* AlignedGeometryReader.swift */; };
 		C65C26A9267BC70100DA491D /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C26A8267BC70100DA491D /* SelectableItem.swift */; };
 		C66C424B27C1451A002C587C /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66C424A27C1451A002C587C /* MailComposer.swift */; };
@@ -60,6 +61,8 @@
 		C61D34E62778BD9A00EB3013 /* Save1Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Save1Song.swift; sourceTree = "<group>"; };
 		C61D34E82778BE4D00EB3013 /* TabSharer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabSharer.swift; sourceTree = "<group>"; };
 		C61D34EA2778BF1900EB3013 /* WebViewRep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewRep.swift; sourceTree = "<group>"; };
+		C63453E427DC8E9E00B41F0B /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		C63453E627DCE0B900B41F0B /* index.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = index.md; sourceTree = "<group>"; };
 		C646D2D7276B600E000C83BB /* Tab Extractor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tab Extractor.entitlements"; sourceTree = "<group>"; };
 		C64F37482783920D0063E990 /* AlignedGeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedGeometryReader.swift; sourceTree = "<group>"; };
 		C65C26A8267BC70100DA491D /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 				C66C424A27C1451A002C587C /* MailComposer.swift */,
 				C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */,
 				C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */,
+				C63453E427DC8E9E00B41F0B /* PrivacyView.swift */,
 				C6A1984F2686483C0083D08B /* PreferencesView.swift */,
 				C68246FF26832C460003B79B /* YourSongsView.swift */,
 				C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */,
@@ -159,7 +163,7 @@
 		C676490A2663919C0033464A = {
 			isa = PBXGroup;
 			children = (
-				C6FB033727DB5AC80013E2A5 /* docs */,
+				C6FB033727DB5AC80013E2A5 /* doc */,
 				C67649152663919C0033464A /* Tab Extractor */,
 				C67649142663919C0033464A /* Products */,
 			);
@@ -200,13 +204,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C6FB033727DB5AC80013E2A5 /* docs */ = {
+		C6FB033727DB5AC80013E2A5 /* doc */ = {
 			isa = PBXGroup;
 			children = (
 				C6FB033A27DB5B260013E2A5 /* index.html */,
 				C6D7C52E27DBDD1200B1032D /* privacypolicy.html */,
+				C63453E627DCE0B900B41F0B /* index.md */,
 			);
-			path = docs;
+			path = doc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +295,7 @@
 				C613835D277BB9C7007F2A43 /* TitleString.swift in Sources */,
 				C66EEEE827A1B8A500569F30 /* AboutView.swift in Sources */,
 				C672E7252781EBD400007E30 /* TabDisplayableLine.swift in Sources */,
+				C63453E527DC8E9E00B41F0B /* PrivacyView.swift in Sources */,
 				C6C537DA2783349E005259BB /* VerticalTabLister.swift in Sources */,
 				C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */,
 				C64F37492783920D0063E990 /* AlignedGeometryReader.swift in Sources */,

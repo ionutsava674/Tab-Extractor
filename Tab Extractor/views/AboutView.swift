@@ -46,6 +46,9 @@ struct AboutView: View {
                     NavigationLink(NSLocalizedString("Troubleshoot", comment: "link in about")) {
                         TroubleshootView()
                     }
+                    NavigationLink(NSLocalizedString("Privacy", comment: "pr link in about")) {
+                        PrivacyView()
+                    }
                 } //gr
                 .padding(8)
                 Group {
