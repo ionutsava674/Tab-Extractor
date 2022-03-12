@@ -53,6 +53,6 @@ B; 2. G; 2
 
 ## Privacy
 
-[privacy policy](privacypolicy.md)
+[privacy policy](privacypolicy.html)
 
 - Ionut Sava

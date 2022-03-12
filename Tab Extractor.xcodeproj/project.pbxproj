@@ -64,6 +64,7 @@
 		C63453E427DC8E9E00B41F0B /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		C646D2D7276B600E000C83BB /* Tab Extractor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tab Extractor.entitlements"; sourceTree = "<group>"; };
 		C64F37482783920D0063E990 /* AlignedGeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedGeometryReader.swift; sourceTree = "<group>"; };
+		C65713D027DD3C8B006EDA83 /* privacypolicy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacypolicy.html; sourceTree = "<group>"; };
 		C65C26A8267BC70100DA491D /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
 		C66C424A27C1451A002C587C /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
 		C66EEEE727A1B8A500569F30 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -210,6 +211,7 @@
 				C6A556CD27DD392E001F50C0 /* _config.yml */,
 				C6A556CE27DD392E001F50C0 /* index.md */,
 				C6A556D327DD3A50001F50C0 /* privacypolicy.md */,
+				C65713D027DD3C8B006EDA83 /* privacypolicy.html */,
 			);
 			path = docs;
 			sourceTree = "<group>";
