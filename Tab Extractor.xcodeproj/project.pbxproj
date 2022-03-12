@@ -38,7 +38,9 @@
 		C69AC590266FF26C00D066AB /* TabParseAlg1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */; };
 		C6A198502686483C0083D08B /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1984F2686483C0083D08B /* PreferencesView.swift */; };
 		C6A413C72786289200E1E7CB /* AnyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A413C62786289200E1E7CB /* AnyContainerView.swift */; };
-		C6A556CA27DD356B001F50C0 /* docs in Resources */ = {isa = PBXBuildFile; fileRef = C6A556C927DD356B001F50C0 /* docs */; };
+		C6A556D027DD392E001F50C0 /* _config.yml in Resources */ = {isa = PBXBuildFile; fileRef = C6A556CD27DD392E001F50C0 /* _config.yml */; };
+		C6A556D127DD392E001F50C0 /* index.md in Resources */ = {isa = PBXBuildFile; fileRef = C6A556CE27DD392E001F50C0 /* index.md */; };
+		C6A556D227DD392E001F50C0 /* privacypolicy.md in Resources */ = {isa = PBXBuildFile; fileRef = C6A556CF27DD392E001F50C0 /* privacypolicy.md */; };
 		C6A66A72278F2EC700C61B75 /* TabTextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */; };
 		C6A66A74278F3BB600C61B75 /* TabViewerHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */; };
 		C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */; };
@@ -83,7 +85,9 @@
 		C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg1.swift; sourceTree = "<group>"; };
 		C6A1984F2686483C0083D08B /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		C6A413C62786289200E1E7CB /* AnyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyContainerView.swift; sourceTree = "<group>"; };
-		C6A556C927DD356B001F50C0 /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = "<group>"; };
+		C6A556CD27DD392E001F50C0 /* _config.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = _config.yml; sourceTree = "<group>"; };
+		C6A556CE27DD392E001F50C0 /* index.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = index.md; sourceTree = "<group>"; };
+		C6A556CF27DD392E001F50C0 /* privacypolicy.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = privacypolicy.md; sourceTree = "<group>"; };
 		C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTextDocument.swift; sourceTree = "<group>"; };
 		C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewerHelpView.swift; sourceTree = "<group>"; };
 		C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg2.swift; sourceTree = "<group>"; };
@@ -160,7 +164,7 @@
 		C676490A2663919C0033464A = {
 			isa = PBXGroup;
 			children = (
-				C6A556C927DD356B001F50C0 /* docs */,
+				C6A556CC27DD38E8001F50C0 /* docs */,
 				C67649152663919C0033464A /* Tab Extractor */,
 				C67649142663919C0033464A /* Products */,
 			);
@@ -199,6 +203,16 @@
 				C676491D2663919D0033464A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C6A556CC27DD38E8001F50C0 /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				C6A556CD27DD392E001F50C0 /* _config.yml */,
+				C6A556CE27DD392E001F50C0 /* index.md */,
+				C6A556CF27DD392E001F50C0 /* privacypolicy.md */,
+			);
+			path = docs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +276,10 @@
 				C676491E2663919D0033464A /* Preview Assets.xcassets in Resources */,
 				C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */,
 				C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */,
+				C6A556D227DD392E001F50C0 /* privacypolicy.md in Resources */,
+				C6A556D127DD392E001F50C0 /* index.md in Resources */,
+				C6A556D027DD392E001F50C0 /* _config.yml in Resources */,
 				C676491B2663919D0033464A /* Assets.xcassets in Resources */,
-				C6A556CA27DD356B001F50C0 /* docs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
