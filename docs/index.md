@@ -1,37 +1,54 @@
-## Welcome to GitHub Pages
+# Tab Extractor 1
 
-You can use the [editor on GitHub](https://github.com/ionutsava674/Tab-Extractor/edit/web/docs/index.md) to maintain and preview the content for your website in Markdown files.
+Very accessible guitar tabs
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Overview
 
-### Markdown
+                Tab Extractor is a tool created to help visually impaired people to read guitar tabs more easily.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Usually guitar tabs are very hard to access using screen readers.
 
-```markdown
-Syntax highlighted code block
+Tab extractor makes it easy and fun to read and navigate guitar tabs by laying out the information in a list form, position by position.
 
-# Header 1
-## Header 2
-### Header 3
+For example, instead of having a tab displayed like:
 
-- Bulleted
-- List
+`e|------0---/------------|`
 
-1. Numbered
-2. List
+`B|----3-2---/----3-2-3-2-|`
 
-**Bold** and _Italic_ and `Code` text
+`G|----4-2---/----4-2-4-2-|`
 
-[Link](url) and ![Image](src)
-```
+`D|---------4/------------|`
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+`A|-2--------/-2----------|`
 
-### Jekyll Themes
+`E|----------/------------|`
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ionutsava674/Tab-Extractor/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+the notes will be listed like this:
 
-### Support or Contact
+A; 2
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+B; 3. G; 4
+
+e; 0. B; 2. G; 2
+
+D; 4
+
+A; 2
+
+B; 3. G; 4
+
+B; 2. G; 2
+
+B; 3. G; 4
+
+B; 2. G; 2
+
+## Main features
+
+- automatically detects guitar tabs on a web page
+- lets you save each tab individually or all together
+- lets you customise the way the information is formatted
+- All it requires is that the tabs are correctly formatted and aligned.
+
+- Ionut Sava
