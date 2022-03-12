@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C60FC9B927DD2973008D1FFA /* docs in Resources */ = {isa = PBXBuildFile; fileRef = C60FC9B827DD2973008D1FFA /* docs */; };
 		C613835D277BB9C7007F2A43 /* TitleString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613835C277BB9C7007F2A43 /* TitleString.swift */; };
 		C619586B277F06D600985895 /* HorizontalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C619586A277F06D600985895 /* HorizontalTabView.swift */; };
 		C61D34DB2778BBC600EB3013 /* lclz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34DA2778BBC600EB3013 /* lclz.swift */; };
@@ -39,6 +38,7 @@
 		C69AC590266FF26C00D066AB /* TabParseAlg1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */; };
 		C6A198502686483C0083D08B /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1984F2686483C0083D08B /* PreferencesView.swift */; };
 		C6A413C72786289200E1E7CB /* AnyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A413C62786289200E1E7CB /* AnyContainerView.swift */; };
+		C6A556CA27DD356B001F50C0 /* docs in Resources */ = {isa = PBXBuildFile; fileRef = C6A556C927DD356B001F50C0 /* docs */; };
 		C6A66A72278F2EC700C61B75 /* TabTextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */; };
 		C6A66A74278F3BB600C61B75 /* TabViewerHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */; };
 		C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */; };
@@ -49,7 +49,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C60FC9B827DD2973008D1FFA /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = "<group>"; };
 		C613835C277BB9C7007F2A43 /* TitleString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleString.swift; sourceTree = "<group>"; };
 		C619586A277F06D600985895 /* HorizontalTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalTabView.swift; sourceTree = "<group>"; };
 		C61D34DA2778BBC600EB3013 /* lclz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lclz.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg1.swift; sourceTree = "<group>"; };
 		C6A1984F2686483C0083D08B /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		C6A413C62786289200E1E7CB /* AnyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyContainerView.swift; sourceTree = "<group>"; };
+		C6A556C927DD356B001F50C0 /* docs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = docs; sourceTree = "<group>"; };
 		C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTextDocument.swift; sourceTree = "<group>"; };
 		C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewerHelpView.swift; sourceTree = "<group>"; };
 		C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg2.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 		C676490A2663919C0033464A = {
 			isa = PBXGroup;
 			children = (
-				C60FC9B827DD2973008D1FFA /* docs */,
+				C6A556C927DD356B001F50C0 /* docs */,
 				C67649152663919C0033464A /* Tab Extractor */,
 				C67649142663919C0033464A /* Products */,
 			);
@@ -263,7 +263,7 @@
 				C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */,
 				C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */,
 				C676491B2663919D0033464A /* Assets.xcassets in Resources */,
-				C60FC9B927DD2973008D1FFA /* docs in Resources */,
+				C6A556CA27DD356B001F50C0 /* docs in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
