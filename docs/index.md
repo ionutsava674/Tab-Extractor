@@ -1,10 +1,10 @@
-# Tab Extractor 1
+# Tab Extractor
 
-Very accessible guitar tabs
+## Very accessible guitar tabs
 
 ## Overview
 
-                Tab Extractor is a tool created to help visually impaired people to read guitar tabs more easily.
+Tab Extractor is a tool created to help visually impaired people to read guitar tabs more easily.
 
 Usually guitar tabs are very hard to access using screen readers.
 
