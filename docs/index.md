@@ -1,6 +1,8 @@
+#Tab Extractor
+
 # Very accessible guitar tabs
 
-## Overview
+## **Overview**
 
 Tab Extractor is an IOS mobile app created to help visually impaired people to read guitar tabs more easily.
 
@@ -42,14 +44,19 @@ B; 3. G; 4
 
 B; 2. G; 2
 
-## Main features
+## **Main features**
 
 - automatically detects guitar tabs on a web page
 - lets you save each tab individually or all together
 - lets you customise the way the information is formatted
 - All it requires is that the tabs are correctly formatted and aligned.
 
-## Privacy
+This app was written with the awesome help of Apple's screen-reader voiceover®.
+
+## **Get the app**
+
+_link placeholder_
+## **App Privacy**
 
 [privacy policy](privacypolicy.html)
 
