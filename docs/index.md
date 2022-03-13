@@ -1,6 +1,6 @@
 # Tab Extractor
 
-## **_Very accessible guitar tabs_**
+**_Very accessible guitar tabs_**
 
 ### **Overview**
 
@@ -44,16 +44,19 @@ B; 3. G; 4
 
 B; 2. G; 2
 
+which makes it a lot more easy to read.
+You get the order of the notes, plus, notes that are supposed to be played at the same time, are listed in the same line.
+
+Screen readers are great tools that help us access and also input information.
+
+I have written this entire app with the awesome help of Apple's screen-reader, voiceover®.
+
 ### **Main features**
 
 - automatically detects guitar tabs on a web page
 - lets you save each tab individually or all together
 - lets you customise the way the information is formatted
 - All it requires is that the tabs are correctly formatted and aligned.
-
-Screen readers are great tools that help us access and also input information.
-
-This app was written with the awesome help of Apple's screen-reader voiceover®.
 
 ### **Get the app**
 
