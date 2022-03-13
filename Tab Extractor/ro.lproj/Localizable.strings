@@ -1,7 +1,4 @@
 /* No comment provided by engineer. */
-"%@ (%@ positions)" = "%1$@ (%2$@ poziții)";
-
-/* No comment provided by engineer. */
 "%@%@" = "%1$@%2$@";
 
 /* item title to display after it was detected */
@@ -133,6 +130,9 @@
 /* save 1 song dialog edit box prompt */
 "enter song name" = "Introduceți titlul cântecului";
 
+/* No comment provided by engineer. */
+"Everything you save is stored locally on the device." = "Tot ceea ce salvezi se stochează local pe dispozitiv.";
+
 /* not note sep example */
 "Example: D%1$@7%2$@G%1$@5" = "Exemplu: D%1$@7%2$@G%1$@5";
 
@@ -147,6 +147,9 @@
 
 /* No comment provided by engineer. */
 "For suggestions, bugs, critics etc 😅 feel free to drop me an email:" = "Pentru sugestii, bug-uri, critici etc 😅 îmi puteți lăsa un email:";
+
+/* No comment provided by engineer. */
+"For the complete privacy policy please visit the link below." = "Pentru întreaga politică de confidențialitate, urmați linkul de mai jos.";
 
 /* start browsing */
 "Go" = "Încarcă";
@@ -253,6 +256,9 @@
 /* preferences tab button caption */
 "Preferences" = "Preferințe";
 
+/* pr link in about */
+"Privacy" = "Confidențialitate";
+
 /* status when done loading */
 "processing content" = "se procesează";
 
@@ -283,6 +289,9 @@
 
 /* save 1 song dialog confirmation message */
 "Saved successfully" = "Salvat cu succes";
+
+/* No comment provided by engineer. */
+"Screen readers are great tools that help us access and also input information." = "Cititoarele de ecran sunt niște super instrumente care ne ajută să accesăm și să introducem informații.";
 
 /* main window search filter caption */
 "search" = "caută";
@@ -357,6 +366,9 @@
 "The recommended mode for voiceover users is horizontal list. You can find this option in preferences." = "Modul recomandat pentru utilizatorii de voiceover este lista orizontală. Poți găsi aceasta opțiune jos, în secțiunea preferințe.";
 
 /* No comment provided by engineer. */
+"The Tab-Extractor app does not collect, store, use or share any information, personal or otherwise." = "Aplicația Tab Extractor nu colectează, folosește sau transmite nici o informație, personală sau altfel.";
+
+/* No comment provided by engineer. */
 "then go over the song portion by swiping right." = "Apoi mergi peste porțiunea de cântec, făcând gest de glisare la dreapta.";
 
 /* No comment provided by engineer. */
@@ -373,6 +385,9 @@
 
 /* No comment provided by engineer. */
 "This dialog also contains an integrated web browser." = "Acest dialog conține și un web browser integrat.";
+
+/* No comment provided by engineer. */
+"This entire app was written with the awesome help of Apple's screen-reader, voiceover®." = "Această aplicație a fost scrisă cu ajutorului cititorului de ecran al Apple, voiceover®.";
 
 /* No comment provided by engineer. */
 "This fret value can be a number (like 8 or 10 or 0 for open strings), or something like 8s10 for example for a slide from 8 to 10." = "Această valoare fret poate fi un număr (ca 8 sau 10, sau 0 (corzi libere), sau, ceva de genul, 8s10, pentru exemplu un slide de la 8 la 10.";

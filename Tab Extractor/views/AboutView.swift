@@ -52,6 +52,10 @@ struct AboutView: View {
                 } //gr
                 .padding(8)
                 Group {
+                    Text("Screen readers are great tools that help us access and also input information.")
+                    Text("This entire app was written with the awesome help of Apple's screen-reader, voiceover®.")
+                } //gr
+                Group {
                     Text("Contact")
                         .font(.subheadline.bold())
                     Text("For suggestions, bugs, critics etc 😅 feel free to drop me an email:")
