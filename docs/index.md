@@ -51,13 +51,20 @@ B; 2. G; 2
 - lets you customise the way the information is formatted
 - All it requires is that the tabs are correctly formatted and aligned.
 
+Screen readers are great tools that help us access and also input information.
+
 This app was written with the awesome help of Apple's screen-reader voiceover®.
 
 ### **Get the app**
 
 _link placeholder_
+
 ### **App Privacy**
 
 [privacy policy](privacypolicy.html)
 
-- Ionut Sava
+--
+
+2022
+
+Ionut Sava
