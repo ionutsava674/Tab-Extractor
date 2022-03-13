@@ -1,6 +1,4 @@
-# Tab Extractor
-
-## Very accessible guitar tabs
+# Very accessible guitar tabs
 
 ## Overview
 
