@@ -66,6 +66,7 @@
 		C64F37482783920D0063E990 /* AlignedGeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedGeometryReader.swift; sourceTree = "<group>"; };
 		C65713D027DD3C8B006EDA83 /* privacypolicy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacypolicy.html; sourceTree = "<group>"; };
 		C6576FAE27DFB56200F6840B /* amazinggrace.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = amazinggrace.html; sourceTree = "<group>"; };
+		C6576FAF27DFB80B00F6840B /* als.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = als.html; sourceTree = "<group>"; };
 		C65C26A8267BC70100DA491D /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
 		C66C424A27C1451A002C587C /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
 		C66EEEE727A1B8A500569F30 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -214,6 +215,7 @@
 				C6A556D327DD3A50001F50C0 /* privacypolicy.md */,
 				C65713D027DD3C8B006EDA83 /* privacypolicy.html */,
 				C6576FAE27DFB56200F6840B /* amazinggrace.html */,
+				C6576FAF27DFB80B00F6840B /* als.html */,
 			);
 			path = docs;
 			sourceTree = "<group>";
