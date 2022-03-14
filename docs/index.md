@@ -8,21 +8,17 @@ Tab Extractor is an IOS mobile app created to help visually impaired people to r
 
 Usually guitar tabs are very hard to access using screen readers.
 
-Tab extractor makes it easy and fun to read and navigate guitar tabs by laying out the information in a list form, position by position.
+extractor makes it easy and fun to read and navigate guitar tabs by laying out the information in a list form, position by position.
 
 For example, instead of having a tab displayed like:
 
-`e|------0---/------------|`
-
-`B|----3-2---/----3-2-3-2-|`
-
-`G|----4-2---/----4-2-4-2-|`
-
-`D|---------4/------------|`
-
-`A|-2--------/-2----------|`
-
-`E|----------/------------|`
+```e|------0---/------------|`
+B|----3-2---/----3-2-3-2-|`
+G|----4-2---/----4-2-4-2-|`
+D|---------4/------------|`
+A|-2--------/-2----------|`
+E|----------/------------|`
+```
 
 the notes will be listed like this:
 
