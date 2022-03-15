@@ -30,6 +30,7 @@ struct ContentView: View {
                 .tabItem {
                     //Label("About", systemImage: "info.circle")
                     Label(LCLZ.aboutTab, systemImage: "hand.point.up")
+                        //.accessibilityElement()
                 }
                 .tag(3)
                 }) //tv

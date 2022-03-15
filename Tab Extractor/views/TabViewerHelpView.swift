@@ -9,13 +9,16 @@ import SwiftUI
 
 struct TabViewerHelpView: View {
     @Environment(\.presentationMode) var premo
+    var asSheet: Bool = false
     var body: some View {
-        NavigationView {
+        //NavigationView {
             ScrollView(.vertical, showsIndicators: true) {
                 VStack(alignment: .leading, spacing: 4) {
-                    Button("back") {
-                        premo.wrappedValue.dismiss()
-                    }.padding()
+                    if asSheet {
+                        Button("back") {
+                            premo.wrappedValue.dismiss()
+                        }.padding()
+                    }
                 Group {
                     Text("To make it easier to go over a portion of the song a few times over, you can mark a position by performing a long press over it.")
                     Text("In voiceover this is a triple tap or a double tap and hold.")
@@ -46,7 +49,7 @@ struct TabViewerHelpView: View {
             .navigationBarTitle("Navigation help")
             //.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             //
-        } //nv
+        //} //nv
         .navigationBarTitleDisplayMode(.inline)
     } //body
 } //str

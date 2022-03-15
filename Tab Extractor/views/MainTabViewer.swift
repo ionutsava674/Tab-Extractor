@@ -37,17 +37,18 @@ struct MainTabViewer: View {
         } //ls
     } //originallines
     var body: some View {
-        //NavigationView {
             VStack {
+                /*
                 Text(tab.title)
                     .font(.headline.bold())
                     .padding(.horizontal)
-                    .onLongPressGesture {
-                        glop.showNavHint1 = true
-                    }
+                 */
                 //Text("contains \(tab.pages.count) \(tab.pages.count == 1 ? "tab" : "tabs")")
                 Text(String.localizedStringWithFormat(NSLocalizedString("contains %1$d %2$@", comment: "contains label"), tab.pages.count, LCLZ.singleMany(tab.pages.count, LCLZ.singleTab, LCLZ.manyTabs)))
                     .font(.headline)
+                    .onLongPressGesture {
+                        glop.showNavHint1 = true
+                    }
                     if glop.viewSourceLines {
                     listSourceLines
                     } else {
@@ -58,9 +59,14 @@ struct MainTabViewer: View {
                         } //if vert
                     } //if comp
                 HStack(alignment: .center, spacing: 4, content: {
-                    //Button("help") {
-                        //self.showingHelp = true
-                    //}
+                    NavigationLink {
+                        TabViewerHelpView()
+                    } label: {
+                        Image(systemName: "questionmark.diamond")
+                            .accessibilityLabel("Navigation help")
+                            .padding()
+                    } //nl
+                    /*
                     Button(action: {
                         self.showingHelp = true
                     }, label: {
@@ -68,6 +74,7 @@ struct MainTabViewer: View {
                     })
                         .accessibilityLabel("Navigation help")
                     .padding()
+                     */
                     Spacer()
                     Button("Export") {
                         DispatchQueue.main.async {
@@ -89,7 +96,7 @@ struct MainTabViewer: View {
             .sheet(isPresented: self.$showingHelp, onDismiss: {
                 //
             }, content: {
-                TabViewerHelpView()
+                TabViewerHelpView(asSheet: true)
             })
             .popover(isPresented: $showingShareSheet, attachmentAnchor: .point(UnitPoint.bottom), arrowEdge: .top, content: {
                 ShareSheet( activityItems: self.sic.sharedItems)
@@ -123,9 +130,8 @@ struct MainTabViewer: View {
             }, message: {
                 Text("You can mark a position with a long press (voiceover triple tap), and focus from any position to the marked position with a single activation (voiceover double-tap).")
             }) //alert
-            // .navigationTitle(tab.title)
-        //} //nv
-        //.navigationViewStyle(StackNavigationViewStyle())
+            .navigationTitle(tab.title)
+            // .navigationBarTitleDisplayMode(.inline)
     } //body
     
     func tabToString(_ gt: GuitarTab,originalMode: Bool = false) -> String {
