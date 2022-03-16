@@ -38,7 +38,7 @@ struct NewTabUrlContent: View {
         NavigationView {
         VStack {
             HStack {
-                TextField(NSLocalizedString("web address", comment: "web address placeholder"), text: self.$editAddressStr)
+                TextField(NSLocalizedString("enter a web address that contains guitar tablatures", comment: "web address placeholder 2"), text: self.$editAddressStr)
                 /*
                     .onReceive(NotificationCenter.default.publisher( for: UITextField.textDidBeginEditingNotification, object: nil), perform: { publisherOutput in
                         if let textField = publisherOutput.object as? UITextField {
@@ -231,7 +231,9 @@ struct NewTabUrlContent: View {
     func goButtonClick() -> Void {
         // DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.browserAddressStr = self.editAddressStr
-        self.statusStr = NSLocalizedString("loading", comment: "status when started loading ")
+        if !browserAddrEmpty {
+            self.statusStr = NSLocalizedString("loading", comment: "status when started loading ")
+        }
         //self.startedBrowsing = true
         //} //dq
     }

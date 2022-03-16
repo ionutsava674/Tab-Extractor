@@ -51,7 +51,7 @@ struct YourSongsView: View {
             return GeometryReader { geo in
             NavigationView {
             VStack {
-                TextField(NSLocalizedString("search", comment: "main window search filter caption"), text: filterBind)
+                TextField(NSLocalizedString("filter", comment: "main window search filter caption 2"), text: filterBind)
                 List {
                 ForEach(docFilesFiltered, id: \.fileUrl) {tfa in
                     NavigationLink(tag: tfa.fileUrl,
@@ -87,6 +87,12 @@ struct YourSongsView: View {
                     Text("Delete \(tfatd.tab.title) ?")
                 }) //alert
                 HStack {
+                    NavigationLink {
+                        HowToUseMainView()
+                    } label: {
+                        Label(NSLocalizedString("How to use", comment: "how to use main screen button"), systemImage: "questionmark.diamond")
+                    }
+                    .padding(.horizontal)
                     Spacer()
                     Button(NSLocalizedString("Refresh list", comment: "main window list refresh button")) {
                         listDocFiles()

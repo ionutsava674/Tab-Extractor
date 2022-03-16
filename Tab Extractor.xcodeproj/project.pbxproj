@@ -45,6 +45,7 @@
 		C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */; };
 		C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */; };
 		C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6E23D8827C6C456002A49E3 /* InfoPlist.strings */; };
+		C6FF474627E2546300E50DCC /* HowToUseMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF474527E2546300E50DCC /* HowToUseMainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		C6C6F9D1267F45A200F4A653 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabFromTextContent.swift; sourceTree = "<group>"; };
 		C6E23D8927C6C456002A49E3 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C6FF474527E2546300E50DCC /* HowToUseMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToUseMainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				C66EEEE727A1B8A500569F30 /* AboutView.swift */,
 				C66C424A27C1451A002C587C /* MailComposer.swift */,
 				C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */,
+				C6FF474527E2546300E50DCC /* HowToUseMainView.swift */,
 				C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */,
 				C63453E427DC8E9E00B41F0B /* PrivacyView.swift */,
 				C6A1984F2686483C0083D08B /* PreferencesView.swift */,
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6FF474627E2546300E50DCC /* HowToUseMainView.swift in Sources */,
 				C66F4C632679EE7D00321FAD /* AccessibleCheckBox.swift in Sources */,
 				C66C424B27C1451A002C587C /* MailComposer.swift in Sources */,
 				C676492826639B5F0033464A /* TabObject.swift in Sources */,
