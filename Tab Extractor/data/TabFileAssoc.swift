@@ -18,7 +18,7 @@ struct TabFileAssoc {
         guard !tab.pages.isEmpty else {
             return nil
         }
-        guard let data = try? JSONEncoder().encode(tab) else {
+        guard let data = try? JSONEncoder().encode( tab) else {
             return nil
         }
         let du = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)        [0]

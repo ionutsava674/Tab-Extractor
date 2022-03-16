@@ -10,8 +10,8 @@ import UIKit
 import Combine
 
 struct NewTabUrlContent: View {
-    let initialAddress: String?
-    let autoFetchClipBoard: Bool
+    var initialAddress: String?
+    var autoFetchClipBoard: Bool
     let browseAutomatically: Bool
     
     @ObservedObject private var glop = GlobalPreferences2.global

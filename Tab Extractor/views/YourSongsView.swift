@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct YourSongsView: View {
     @Environment(\.horizontalSizeClass) var hSizeClass
         @State private var showingNewTabUrl = false
+    @State private var showingNewTabUrlPD = false
+    @State private var newTabUrlPD = "https://ionutsava674.github.io/Tab-Extractor/amazinggrace.html"
     @State private var showingNewTabFromText = false
         @State private var ssl = false
         @State private var docFiles = [TabFileAssoc]()
@@ -52,6 +55,7 @@ struct YourSongsView: View {
             NavigationView {
             VStack {
                 TextField(NSLocalizedString("filter", comment: "main window search filter caption 2"), text: filterBind)
+                ZStack {
                 List {
                 ForEach(docFilesFiltered, id: \.fileUrl) {tfa in
                     NavigationLink(tag: tfa.fileUrl,
@@ -77,15 +81,16 @@ struct YourSongsView: View {
                 } //fe
 //                .onDelete(perform: deleteItems)
                 } //ls
-                .alert(NSLocalizedString("Warning. This action is irreversible.", comment: "main screen alert"), isPresented: self.$showDeleteConfirmation, presenting: self.tfaToDelete, actions: { tfatd in
-                    Button(role: ButtonRole.destructive, action: {
-                        _ = self.deleteItem( tfa: tfatd)
-                    }, label: {
-                        Text("Delete")
-                    })
-                }, message: { tfatd in
-                    Text("Delete \(tfatd.tab.title) ?")
-                }) //alert
+                    if docFiles.isEmpty {
+                        VStack {
+                            Text("You have no songs in the list.")
+                            Button("Add a public domain song to get you started") {
+                                //UIPasteboard.general.
+                                    self.showingNewTabUrlPD = true
+                            }
+                        }
+                    }
+                } //zs
                 HStack {
                     NavigationLink {
                         HowToUseMainView()
@@ -100,13 +105,10 @@ struct YourSongsView: View {
                     .padding(.horizontal)
                 } //hs
                 HStack {
-                    //Spacer()
                     Button {
                         showingNewTabUrl = true
                     } label: {
-                        //Text(
                             Image(systemName: "doc.badge.plus").renderingMode(.original)
-                        //)
                             .font(.largeTitle)
                     } //btn
                     //.padding(.horizontal)
@@ -119,9 +121,7 @@ struct YourSongsView: View {
                     Button {
                         showingNewTabFromText = true
                     } label: {
-                        //Text(
                             Image(systemName: "note.text.badge.plus").renderingMode(.original)
-                        //)
                             .font(.largeTitle)
                     } //btn
                     //.padding(.horizontal)
@@ -134,29 +134,37 @@ struct YourSongsView: View {
                 .padding(.bottom)
             } //vs
             .onAppear(perform: {
-                //print("app")
                 DispatchQueue.main.async {
                     listDocFiles()
                 } //as
             }) //onapp
-            //.navigationBarItems(trailing: EditButton() )
             .navigationTitle(LCLZ.yourSavedSongs)
             .navigationBarTitleDisplayMode(.large)
-                //Text("song here")
                 Color(UIColor.systemBackground)
             } //nv
             .chooseStyle(horizontalSizeClass: hSizeClass, geo: geo )
-            //.navigationViewStyle(DoubleColumnNavigationViewStyle())
-            //.padding(-0.5)
+            .alert(NSLocalizedString("Warning. This action is irreversible.", comment: "main screen alert"), isPresented: self.$showDeleteConfirmation, presenting: self.tfaToDelete, actions: { tfatd in
+                Button(role: ButtonRole.destructive, action: {
+                    _ = self.deleteItem( tfa: tfatd)
+                }, label: {
+                    Text("Delete")
+                })
+            }, message: { tfatd in
+                Text("Delete \(tfatd.tab.title) ?")
+            }) //alert
             } //geo
             .sheet(isPresented: $showingNewTabUrl, onDismiss: {
                 listDocFiles()
             }, content: {
-                NewTabUrlContent(initialAddress:
-                                    // "https://tabs.ultimate-guitar.com/tab/misc-television/formula-1-theme-tabs-2640351",
-                                  // "https://tabs.ultimate-guitar.com/tab/the-national/the-rains-of-castamere-tabs-1228763",
-                                 "",
+                NewTabUrlContent(initialAddress: "",
                                  autoFetchClipBoard: true,
+                                    browseAutomatically: true)
+        })
+            .sheet(isPresented: $showingNewTabUrlPD, onDismiss: {
+                listDocFiles()
+            }, content: {
+                NewTabUrlContent(initialAddress: self.newTabUrlPD,
+                                 autoFetchClipBoard: false,
                                     browseAutomatically: true)
         })
             .sheet(isPresented: $showingNewTabFromText, onDismiss: {
@@ -165,6 +173,7 @@ struct YourSongsView: View {
                                     NewTabFromTextContent()
         })
         } //body
+    
     func deleteItem(tfa: TabFileAssoc) -> Bool {
         if let _ = try? FileManager.default.removeItem( at: tfa.fileUrl) {
             listDocFiles()

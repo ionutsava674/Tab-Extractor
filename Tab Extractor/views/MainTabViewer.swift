@@ -76,6 +76,15 @@ struct MainTabViewer: View {
                     .padding()
                      */
                     Spacer()
+                    Button("raw export") {
+                        DispatchQueue.main.async {
+                            if let data = try? JSONEncoder().encode( tab) {
+                                let str = String(decoding: data, as: UTF8.self)
+                                self.exportDoc = TabTextDocument(initialText: str)
+                                self.showingExport = true
+                            }
+                        } //dq
+                    } //btn
                     Button("Export") {
                         DispatchQueue.main.async {
                             //let ts = self.tabToString(tab, originalMode: glop.viewSourceLines)
@@ -83,8 +92,8 @@ struct MainTabViewer: View {
                             self.exportDoc = TabTextDocument(initialText: self.tabToString(tab, originalMode: glop.viewSourceLines))
                             //print("\(tab.title).txt")
                             self.showingExport = true
-                        }
-                    }
+                        } //dq
+                    } //btn
                     .padding()
                     Button("Share") {
                         share2()
