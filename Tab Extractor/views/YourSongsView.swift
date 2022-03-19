@@ -11,15 +11,19 @@ import UIKit
 struct YourSongsView: View {
     @Environment(\.horizontalSizeClass) var hSizeClass
     //@Environment(\.verticalSizeClass) var vSizeClass
+    
         @State private var showingNewTabUrl = false
     @State private var showingNewTabUrlPD = false
     @State private var newTabUrlPD = "https://ionutsava674.github.io/Tab-Extractor/amazinggrace.html"
     @State private var showingNewTabFromText = false
-        //@State private var ssl = false
+
         @State private var docFiles = [TabFileAssoc]()
     @State private var docFilesLoaded = false
-        @State private var docFilesFiltered: [TabFileAssoc] = []
+        //@State private var docFilesFiltered: [TabFileAssoc] = []
     private var docFiles2Filtered: [TabFileAssoc] {
+        guard self.docFilesLoaded else {
+            return []
+        }
         guard !self.searchFilter.isEmpty else {
             return docFiles
             .sorted(by: { tfa1, tfa2 in
@@ -27,19 +31,20 @@ struct YourSongsView: View {
             })
         } //gua
         return docFiles.filter { tfa in
-            tfa.tab.title.lowercased().contains( searchFilter.lowercased())
+            tfa.tab.title.localizedCaseInsensitiveContains( searchFilter)
+            // tfa.tab.title.lowercased().contains( searchFilter.lowercased())
         }
         .sorted(by: { tfa1, tfa2 in
             tfa1.tab.title < tfa2.tab.title
         })
     } //cv
         @State private var searchFilter = ""
-        @State private var filterCount = 0
+        //@State private var filterCount = 0
     
     @State private var listSelection: URL?
     @State private var showDeleteConfirmation = false
     @State private var tfaToDelete: TabFileAssoc?
-        
+        /*
         func filter(_ cfc: Int) -> Void {
             guard cfc == filterCount else {
                 return
@@ -54,12 +59,14 @@ struct YourSongsView: View {
                 return
             }
             docFilesFiltered = docFiles.filter { tfa in
-                tfa.tab.title.lowercased().contains( searchFilter.lowercased())
+         tfa.tab.title.localizedCaseInsensitiveContains( searchFilter)
+                // tfa.tab.title.lowercased().contains( searchFilter.lowercased())
             }
             .sorted(by: { tfa1, tfa2 in
                 tfa1.tab.title < tfa2.tab.title
             })
         } //func
+         */
         var body: some View {
             /*
             let filterBind = Binding<String> {
@@ -79,14 +86,12 @@ struct YourSongsView: View {
             return GeometryReader { geo in
             NavigationView {
             VStack {
-                Rectangle()
-                    .fill(Color.init(UIColor.systemBackground))
-                    .frame(minHeight: 1, idealHeight: 4, maxHeight: 4, alignment: .center)
+                //Rectangle()
+                    //.fill(Color.init(UIColor.systemBackground))
+                    //.frame(minHeight: 1, idealHeight: 4, maxHeight: 4, alignment: .center)
                 //TextField(NSLocalizedString("filter", comment: "main window search filter caption 2"), text: filterBind)
                     //.padding(2)
                     //.keyboardType(.default)
-                    //.searchCompletion(String)
-                //TextField(NSLocalizedString("filter", comment: "main window search filter caption 2"), text: $searchFilter)
                 ZStack {
                 List {
                 ForEach(docFiles2Filtered, id: \.fileUrl) {tfa in
@@ -112,12 +117,7 @@ struct YourSongsView: View {
                     //.font(.headline)
                 } //fe
                 } //ls
-                .searchable( text: $searchFilter, prompt: "filter") {
-                    ForEach(docFiles2Filtered, id: \.fileUrl) {tfa in
-                        Text(String.localizedStringWithFormat(NSLocalizedString("result: %@", comment: "search result suggestion"), tfa.tab.title))
-                            .searchCompletion( tfa.tab.title)
-                    } //fe in src
-                } //flt
+                //.listStyle(ListStyle.)
                     if docFilesLoaded && docFiles.isEmpty {
                         VStack {
                             Text("You have no songs in the list.")
@@ -135,6 +135,8 @@ struct YourSongsView: View {
                         Label(NSLocalizedString("How to use", comment: "how to use main screen button"), systemImage: "questionmark.diamond")
                     }
                     .padding(.horizontal)
+                    Text("\(listSelection?.path.count ?? 0 )")
+                        .hidden()
                     Spacer()
                     Button(NSLocalizedString("Refresh list", comment: "main window list refresh button")) {
                         listDocFiles()
@@ -171,9 +173,16 @@ struct YourSongsView: View {
             } //vs
             .navigationTitle(LCLZ.yourSavedSongs)
             .navigationBarTitleDisplayMode(.large)
+            .searchable( text: $searchFilter, placement: .navigationBarDrawer(displayMode: .always), prompt: "filter", suggestions: {
+            //.searchable( text: $searchFilter, prompt: "filter") {
+                ForEach(Array( docFiles2Filtered.prefix(3)), id: \.fileUrl) {tfa in
+                    Text(String.localizedStringWithFormat(NSLocalizedString("result: %@", comment: "search result suggestion"), tfa.tab.title))
+                        .searchCompletion( tfa.tab.title)
+                } //fe in src
+            }) //flt
                 Color(UIColor.systemBackground)
             } //nv
-            //.chooseStyle(horizontalSizeClass: hSizeClass, geo: geo )
+            .chooseStyle(horizontalSizeClass: hSizeClass, geo: geo )
             .alert(NSLocalizedString("Warning. This action is irreversible.", comment: "main screen alert"), isPresented: self.$showDeleteConfirmation, presenting: self.tfaToDelete, actions: { tfatd in
                 Button(role: ButtonRole.destructive, action: {
                     _ = self.deleteItem( tfa: tfatd)
@@ -217,13 +226,6 @@ struct YourSongsView: View {
         }
         return false
     } //func
-        func deleteItems(indices: IndexSet) -> Void {
-            for index in indices {
-                let tfa = docFilesFiltered[index]
-                try? FileManager.default.removeItem( at: tfa.fileUrl)
-            }
-            listDocFiles()
-        } //func
         func listDocFiles() -> Void {
             self.docFiles = []
             let du = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
@@ -242,7 +244,14 @@ struct YourSongsView: View {
             } catch {
                 //
             }
-            self.filter(self.filterCount)
+            // self.filter(self.filterCount)
+            if let selected = self.listSelection {
+                if !docFiles.contains(where: {
+                    $0.fileUrl == selected
+                }) {
+                    self.listSelection = nil
+                }
+            }
             self.docFilesLoaded = true
         } //func
     } //struct
