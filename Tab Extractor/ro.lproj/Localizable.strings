@@ -17,10 +17,19 @@
 "%1$d tabs saved successfully." = "%1$d taburi salvate cu succes.";
 
 /* No comment provided by engineer. */
+"1. Go to the web page that contains the tablature you want, using any browser." = "1. Mergi către pagina web care conține tablatura pe care o dorești, folosind orice browser.";
+
+/* No comment provided by engineer. */
 "1. To add tabs from a web page:" = "1. Pentru a adăuga tabulaturi de pe web:";
 
 /* No comment provided by engineer. */
+"2. Copy the address." = "2. Copiază adresa.";
+
+/* No comment provided by engineer. */
 "2. To add tabs directly by text:" = "2. Pentru a adăuga tabulaturi direct, prin text:";
+
+/* No comment provided by engineer. */
+"3. Then, come back here in Tab Extractor, and tap “Add from web”, on the bottom left." = "3. Apoi, întoarce-te aici, în Tab Extractor, și apasă “adaugă de pe web”, în stânga, jos.";
 
 /* About tab button caption */
 "About" = "Despre";
@@ -103,6 +112,9 @@
 /* status */
 "detected %1$d tabs" = "detectate %1$d taburi";
 
+/* in alert */
+"dismiss" = "În regulă";
+
 /* tool button */
 "dismiss keyboard" = "ascunde tastatura";
 
@@ -124,6 +136,9 @@
 /* edit title accessibility action */
 "edit title for %1$@" = "editează titlul pentru %1$@";
 
+/* web address placeholder 2 */
+"enter a web address that contains guitar tablatures" = "introduceți adresa paginii care conține tabulaturi de chitară";
+
 /* enter new title prompt for tab item */
 "enter new title" = "introdu noul titlu";
 
@@ -142,6 +157,9 @@
 /* expand item lines caption */
 "expand %1$@" = "expandează %1$@";
 
+/* main window search filter caption 2 */
+"filter" = "filtrează";
+
 /* No comment provided by engineer. */
 "For example, if these are different versions of the same song, you can choose to save each tab as a song." = "De exemplu, dacă acestea sunt versiuni ale aceluiași cântec, le poți salva pe fiecare ca cântec separat.";
 
@@ -150,6 +168,9 @@
 
 /* No comment provided by engineer. */
 "For the complete privacy policy please visit the link below." = "Pentru întreaga politică de confidențialitate, urmați linkul de mai jos.";
+
+/* No comment provided by engineer. */
+"From there, everything should be automatic." = "De acolo, totul ar trebui să fie automatic.";
 
 /* start browsing */
 "Go" = "Încarcă";
@@ -165,6 +186,9 @@
 
 /* No comment provided by engineer. */
 "How to display tabs" = "Cum să fie afișate tabulaturile";
+
+/* how to use main screen button */
+"How to use" = "Cum se folosește";
 
 /* No comment provided by engineer. */
 "If not, you should paste the text here and then click detect." = "Dacă nu, trebuie să inserați textul aici și să apăsați detectează.";
@@ -213,6 +237,15 @@
 
 /* button on web view */
 "more actions" = "Mai multe acțiuni";
+
+/* in alert */
+"more info" = "mai multe detalii";
+
+/* No comment provided by engineer. */
+"Navigation help" = "Ajutor la navigare";
+
+/* alert title */
+"Navigation hint" = "Pont pentru navigare";
 
 /* status on text */
 "no tabs found" = "nu s-au găsit taburi";
@@ -268,6 +301,9 @@
 /* main window list refresh button */
 "Refresh list" = "Împrospătează lista";
 
+/* search result suggestion */
+"result: %@" = "rezultat: %@";
+
 /* string number: s1 s2 etc */
 "s%1$d;" = "C%1$d;";
 
@@ -320,14 +356,12 @@
 /* prefs sep */
 "Separator between string names (E%1$@A%1$@D%1$@G...)" = "Separator între numele corzilor (E%1$@A%1$@D%1$@G...)";
 
-/* show button on load from text */
+/* show button on load from text
+   status */
 "show %1$d detected tabs" = "arată %1$d tabulaturi detectate";
 
 /* No comment provided by engineer. */
 "Sometimes ,tab detection may fail because they are not formatted correctly. If monospaced font isn’t used, the tab lines may appear equal in length, but in fact, they are not." = "Câteodată, detectarea tabulaturilor eșuează pentru că nu sunt formatate corect. Dacă font monospațiat nu e folosit, liniile tabulaturii pot părea de lungime egală, dar de fapt nu sunt.";
-
-/* No comment provided by engineer. */
-"song here" = "cântec aici";
 
 /* browser initial status */
 "status" = "status";
@@ -349,6 +383,9 @@
 
 /* many tabs */
 "tabs" = "taburi";
+
+/* No comment provided by engineer. */
+"Tap here to add a song from the public domain, to get you started" = "Apasă aici pentru a adăuga un cântec din domeniul public, pentru a începe";
 
 /* No comment provided by engineer. */
 "The best thing to do in this case, is to find a better version. Most tabs out there are formatted and aligned correctly." = "Cel mai bun lucru de făcut în acest caz, este să găsești o versiune mai bună a cântecului. Majoritatea tabulaturilor sunt formatate și aliniate corect.";
@@ -387,7 +424,7 @@
 "This dialog also contains an integrated web browser." = "Acest dialog conține și un web browser integrat.";
 
 /* No comment provided by engineer. */
-"This entire app was written with the awesome help of Apple's screen-reader, voiceover®." = "Această aplicație a fost scrisă cu ajutorului cititorului de ecran al Apple, voiceover®.";
+"This entire app was written with the awesome help of Apple's screen-reader, voiceover®." = "Această aplicație a fost scrisă cu ajutorul cititorului de ecran al Apple, voiceover®.";
 
 /* No comment provided by engineer. */
 "This fret value can be a number (like 8 or 10 or 0 for open strings), or something like 8s10 for example for a slide from 8 to 10." = "Această valoare fret poate fi un număr (ca 8 sau 10, sau 0 (corzi libere), sau, ceva de genul, 8s10, pentru exemplu un slide de la 8 la 10.";
@@ -400,6 +437,9 @@
 
 /* No comment provided by engineer. */
 "Title: %@" = "Titlu: %@";
+
+/* No comment provided by engineer. */
+"To add tabs from a web page:" = "Pentru a adăuga tabulaturi de pe pagini web:";
 
 /* No comment provided by engineer. */
 "To make it easier to go over a portion of the song a few times over, you can mark a position by performing a long press over it." = "Pentru a fi mai ușor să treci peste o porțiune de cântec de mai multe ori, poți marca o poziție printr-o apăsare lungă (voisover triplu tap, sau dublu tap fără ridicare).";
@@ -439,6 +479,9 @@
 
 /* main window add text button hint */
 "you can paste text directly" = "Poți insera text direct";
+
+/* No comment provided by engineer. */
+"You have no songs in the list." = "Nu ai nici un cântec în listă.";
 
 /* main window title */
 "Your saved songs" = "Cântecele tale salvate";

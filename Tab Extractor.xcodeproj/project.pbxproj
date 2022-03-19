@@ -459,6 +459,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Tab Extractor/Tab Extractor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Tab Extractor/Preview Content\"";
 				DEVELOPMENT_TEAM = 2222CRHQ48;
 				ENABLE_PREVIEWS = YES;
@@ -483,6 +484,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Tab Extractor/Tab Extractor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Tab Extractor/Preview Content\"";
 				DEVELOPMENT_TEAM = 2222CRHQ48;
 				ENABLE_PREVIEWS = YES;

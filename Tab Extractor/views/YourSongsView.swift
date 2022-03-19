@@ -10,13 +10,29 @@ import UIKit
 
 struct YourSongsView: View {
     @Environment(\.horizontalSizeClass) var hSizeClass
+    //@Environment(\.verticalSizeClass) var vSizeClass
         @State private var showingNewTabUrl = false
     @State private var showingNewTabUrlPD = false
     @State private var newTabUrlPD = "https://ionutsava674.github.io/Tab-Extractor/amazinggrace.html"
     @State private var showingNewTabFromText = false
-        @State private var ssl = false
+        //@State private var ssl = false
         @State private var docFiles = [TabFileAssoc]()
+    @State private var docFilesLoaded = false
         @State private var docFilesFiltered: [TabFileAssoc] = []
+    private var docFiles2Filtered: [TabFileAssoc] {
+        guard !self.searchFilter.isEmpty else {
+            return docFiles
+            .sorted(by: { tfa1, tfa2 in
+                tfa1.tab.title < tfa2.tab.title
+            })
+        } //gua
+        return docFiles.filter { tfa in
+            tfa.tab.title.lowercased().contains( searchFilter.lowercased())
+        }
+        .sorted(by: { tfa1, tfa2 in
+            tfa1.tab.title < tfa2.tab.title
+        })
+    } //cv
         @State private var searchFilter = ""
         @State private var filterCount = 0
     
@@ -32,39 +48,55 @@ struct YourSongsView: View {
                 docFilesFiltered = docFiles.map({ tfa in
                     tfa
                 })
+                .sorted(by: { tfa1, tfa2 in
+                    tfa1.tab.title < tfa2.tab.title
+                })
                 return
             }
             docFilesFiltered = docFiles.filter { tfa in
-                tfa.tab.title.lowercased().contains(searchFilter.lowercased())
+                tfa.tab.title.lowercased().contains( searchFilter.lowercased())
             }
-        }
+            .sorted(by: { tfa1, tfa2 in
+                tfa1.tab.title < tfa2.tab.title
+            })
+        } //func
         var body: some View {
+            /*
             let filterBind = Binding<String> {
-                searchFilter
+                self.searchFilter
             } set: { newVal in
-                searchFilter = newVal
+                self.searchFilter = newVal
+                print(newVal, newVal.count)
                 filterCount += 1
                 filterCount %= 1000
                 let cfc = filterCount
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     filter( cfc)
                 }
-            }
+            } //bind
+             */
 
             return GeometryReader { geo in
             NavigationView {
             VStack {
-                TextField(NSLocalizedString("filter", comment: "main window search filter caption 2"), text: filterBind)
+                Rectangle()
+                    .fill(Color.init(UIColor.systemBackground))
+                    .frame(minHeight: 1, idealHeight: 4, maxHeight: 4, alignment: .center)
+                //TextField(NSLocalizedString("filter", comment: "main window search filter caption 2"), text: filterBind)
+                    //.padding(2)
+                    //.keyboardType(.default)
+                    //.searchCompletion(String)
+                //TextField(NSLocalizedString("filter", comment: "main window search filter caption 2"), text: $searchFilter)
                 ZStack {
                 List {
-                ForEach(docFilesFiltered, id: \.fileUrl) {tfa in
+                ForEach(docFiles2Filtered, id: \.fileUrl) {tfa in
                     NavigationLink(tag: tfa.fileUrl,
                                    selection: self.$listSelection,
                                    destination: {
                         MainTabViewer(tab: tfa.tab)
                     },
                                    label: {
-                        Text(tfa.tab.title)
+                        Text( tfa.tab.title)
                             .lineLimit(2)
                             .font(.headline.bold())
                             .padding(4)
@@ -79,17 +111,22 @@ struct YourSongsView: View {
                         }) //swipe
                     //.font(.headline)
                 } //fe
-//                .onDelete(perform: deleteItems)
                 } //ls
-                    if docFiles.isEmpty {
+                .searchable( text: $searchFilter, prompt: "filter") {
+                    ForEach(docFiles2Filtered, id: \.fileUrl) {tfa in
+                        Text(String.localizedStringWithFormat(NSLocalizedString("result: %@", comment: "search result suggestion"), tfa.tab.title))
+                            .searchCompletion( tfa.tab.title)
+                    } //fe in src
+                } //flt
+                    if docFilesLoaded && docFiles.isEmpty {
                         VStack {
                             Text("You have no songs in the list.")
-                            Button("Add a public domain song to get you started") {
-                                //UIPasteboard.general.
+                            Button(NSLocalizedString("Tap here to add a song from the public domain, to get you started", comment: "")) {
                                     self.showingNewTabUrlPD = true
-                            }
-                        }
-                    }
+                            } //btn
+                        } //vs
+                        .frame(maxWidth: geo.size.width * 0.66, alignment: .center)
+                    } //if
                 } //zs
                 HStack {
                     NavigationLink {
@@ -111,7 +148,7 @@ struct YourSongsView: View {
                             Image(systemName: "doc.badge.plus").renderingMode(.original)
                             .font(.largeTitle)
                     } //btn
-                    //.padding(.horizontal)
+                    // .padding(.horizontal)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .contentShape(Rectangle())
                     .accessibilityLabel(NSLocalizedString("Add from web", comment: "main window web add button"))
@@ -124,25 +161,19 @@ struct YourSongsView: View {
                             Image(systemName: "note.text.badge.plus").renderingMode(.original)
                             .font(.largeTitle)
                     } //btn
-                    //.padding(.horizontal)
+                    // .padding(.horizontal)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .contentShape(Rectangle())
                     .accessibilityLabel(NSLocalizedString("Add text directly", comment: "main window add text button"))
                     .accessibility(hint: Text(NSLocalizedString("you can paste text directly", comment: "main window add text button hint")))
-                    //Spacer()
                 } //hs
                 .padding(.bottom)
             } //vs
-            .onAppear(perform: {
-                DispatchQueue.main.async {
-                    listDocFiles()
-                } //as
-            }) //onapp
             .navigationTitle(LCLZ.yourSavedSongs)
             .navigationBarTitleDisplayMode(.large)
                 Color(UIColor.systemBackground)
             } //nv
-            .chooseStyle(horizontalSizeClass: hSizeClass, geo: geo )
+            //.chooseStyle(horizontalSizeClass: hSizeClass, geo: geo )
             .alert(NSLocalizedString("Warning. This action is irreversible.", comment: "main screen alert"), isPresented: self.$showDeleteConfirmation, presenting: self.tfaToDelete, actions: { tfatd in
                 Button(role: ButtonRole.destructive, action: {
                     _ = self.deleteItem( tfa: tfatd)
@@ -153,6 +184,11 @@ struct YourSongsView: View {
                 Text("Delete \(tfatd.tab.title) ?")
             }) //alert
             } //geo
+            .onAppear(perform: {
+                DispatchQueue.main.async {
+                    listDocFiles()
+                } //as
+            }) //onapp
             .sheet(isPresented: $showingNewTabUrl, onDismiss: {
                 listDocFiles()
             }, content: {
@@ -171,7 +207,7 @@ struct YourSongsView: View {
                 listDocFiles()
             }, content: {
                                     NewTabFromTextContent()
-        })
+        }) //sheet
         } //body
     
     func deleteItem(tfa: TabFileAssoc) -> Bool {
@@ -207,6 +243,7 @@ struct YourSongsView: View {
                 //
             }
             self.filter(self.filterCount)
+            self.docFilesLoaded = true
         } //func
     } //struct
 

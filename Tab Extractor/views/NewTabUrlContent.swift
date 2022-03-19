@@ -159,7 +159,7 @@ struct NewTabUrlContent: View {
                 gt.title = titleStr?.limitToTitle( of: 64) ?? ""
                 DispatchQueue.main.async {
                     self.tabFromWeb = gt
-                    self.statusStr = String.localizedStringWithFormat(NSLocalizedString("detected %1$d tabs", comment: "status"), gt.pages.count)
+                    self.statusStr = String.localizedStringWithFormat(NSLocalizedString("show %1$d detected tabs", comment: "status"), gt.pages.count)
                     if !gt.pages.isEmpty {
                         self.addressFocused = false
                         self.showingPageViewer = true

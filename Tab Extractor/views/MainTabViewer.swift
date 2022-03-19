@@ -63,7 +63,7 @@ struct MainTabViewer: View {
                         TabViewerHelpView()
                     } label: {
                         Image(systemName: "questionmark.diamond")
-                            .accessibilityLabel("Navigation help")
+                            .accessibilityLabel(NSLocalizedString("Navigation help", comment: ""))
                             .padding()
                     } //nl
                     /*
@@ -76,7 +76,8 @@ struct MainTabViewer: View {
                     .padding()
                      */
                     Spacer()
-                    Button("raw export") {
+                    /*
+                    Button("Export") {
                         DispatchQueue.main.async {
                             if let data = try? JSONEncoder().encode( tab) {
                                 let str = String(decoding: data, as: UTF8.self)
@@ -85,6 +86,7 @@ struct MainTabViewer: View {
                             }
                         } //dq
                     } //btn
+                     */
                     Button("Export") {
                         DispatchQueue.main.async {
                             //let ts = self.tabToString(tab, originalMode: glop.viewSourceLines)
@@ -118,17 +120,17 @@ struct MainTabViewer: View {
                     self.showNavHintDialog = true
                 }
             }) //onapp
-            .alert("Navigation hint", isPresented: self.$showNavHintDialog, actions: {
+            .alert(NSLocalizedString("Navigation hint", comment: "alert title"), isPresented: self.$showNavHintDialog, actions: {
                 Button(role: .cancel) {
                     //
                 } label: {
-                    Label("dismiss", systemImage: "xmark.circle")
+                    Label(NSLocalizedString("dismiss", comment: "in alert"), systemImage: "xmark.circle")
                 }
 
                 Button {
                     self.showingHelp = true
                 } label: {
-                    Label("more info", systemImage: "questionmark.circle")
+                    Label(NSLocalizedString("more info", comment: "in alert"), systemImage: "questionmark.circle")
                 }
 
                 Button(role: .destructive) {
