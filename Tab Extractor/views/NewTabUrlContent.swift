@@ -67,8 +67,10 @@ struct NewTabUrlContent: View {
                 }
                 .confirmationDialog("address actions", isPresented: $showingAddressActions) {
                     Button(NSLocalizedString("Paste and load address", comment: "more actions button")) {
-                        _ = self.pasteClipboard(andGo: true)
-                    }
+                        if self.pasteClipboard() {
+                            self.goButtonClick()
+                        }
+                    } //btn
                     .disabled( !self.clipboardHasUrl() )
                     Button(NSLocalizedString("clear address", comment: "more actions button")) {
                         self.editAddressStr = ""
@@ -102,14 +104,11 @@ struct NewTabUrlContent: View {
                     Button {
                         self.premo.wrappedValue.dismiss()
                     } label: {
-                        //Text(
                             Image(systemName: "xmark").renderingMode(.original)
-                        //)
                             //.font(.largeTitle)
                     } //btn
                 }) //t b i
             }) //tb
-            //.font(.title)
             SwiftUIWebView( targetAddr: self.$browserAddressStr) { bodyStr, titleStr in
                 browserDidFinishNavigation(resultStr: bodyStr, titleStr: titleStr)
             } //web
@@ -142,8 +141,12 @@ struct NewTabUrlContent: View {
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: {
             DispatchQueue.main.async {
-                fetchAddress()
-            }
+                if placeAddress() {
+                    if browseAutomatically {
+                        goButtonClick()
+                    }
+                }
+            } //dq
         }) //onapp
     } //body
     
@@ -201,55 +204,47 @@ struct NewTabUrlContent: View {
         }
         return false
     } //func
-    func pasteClipboard( andGo: Bool) -> Bool {
+    func pasteClipboard() -> Bool {
         if UIPasteboard.general.hasURLs {
-            if let furl = UIPasteboard.general.urls?.first {
-                self.editAddressStr = furl.absoluteString
-                if andGo {
-                    goButtonClick()
-                }
+            if let firstUrl = UIPasteboard.general.urls?.first {
+                self.editAddressStr = firstUrl.absoluteString
                 return true
             }
         }
         if UIPasteboard.general.hasStrings {
-            if let fstr = UIPasteboard.general.strings?.first(where: {
+            if let firstStr = UIPasteboard.general.strings?.first(where: {
                 if let _ = URL(string: $0) {
                     return true
                 }
                 return false
             }) {
-                self.editAddressStr = fstr
-                if andGo {
-                    goButtonClick()
-                }
+                self.editAddressStr = firstStr
                 return true
             }
         }
         return false
     } //func
-    func fetchAddress() -> Void {
+    func placeAddress() -> Bool {
         if autoFetchClipBoard {
-            if pasteClipboard( andGo: browseAutomatically) {
-                return
+            if pasteClipboard( ) {
+                return true
             }
         } //if fetch
         if let ia = initialAddress {
             self.editAddressStr = ia
-            if browseAutomatically {
-                goButtonClick()
-            }
+            return true
         } //if got str
-                //self.addressFocused = true
+        return false
     } //func
     func goButtonClick() -> Void {
-        // DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        guard self.browserAddressStr != self.editAddressStr else {
+            return
+        }
             self.browserAddressStr = self.editAddressStr
         if !browserAddrEmpty {
             self.statusStr = NSLocalizedString("loading", comment: "status when started loading ")
         }
-        //self.startedBrowsing = true
-        //} //dq
-    }
+    } //func
 } //struct
 
 enum ShouldAutoCloseBehaviour {
