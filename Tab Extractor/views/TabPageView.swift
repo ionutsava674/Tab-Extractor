@@ -106,6 +106,8 @@ struct MSIView: View {
 struct TabPageView: View {
     //let enableDebug = true
     let sourceTab: GuitarTab
+    
+    @Binding var didSaveTabs: Bool
 
     @Environment(\.presentationMode) var premo
     
@@ -118,14 +120,12 @@ struct TabPageView: View {
     @State private var genAlertMsg = ""
     @State private var genAlertVisible = false
     
-    init(srcTab: GuitarTab) {
-        //self.pages = pages
+    init(srcTab: GuitarTab, didSaveTabs: Binding<Bool>) {
         self.sourceTab = srcTab
-        //var pageCounter = 0
+        self._didSaveTabs = didSaveTabs
+        
         self.selectableItems = SelectableItemContainer(sourceItems: sourceTab.pages, itemConstruction: { page in
-            //pageCounter += 1
             let rv = SelectablePage(mainItem: page)
-            //rv.title =
             return rv
         })
     } //init
@@ -142,7 +142,7 @@ struct TabPageView: View {
                     saveButton
                         .padding(.horizontal)
                         .fullScreenCover(isPresented: $showingSaveAs1, content: {
-                            Save1Song(TabSELContainer: self.selectableItems, fromTab: self.sourceTab)
+                            Save1Song(TabSELContainer: self.selectableItems, fromTab: self.sourceTab, didSaveTab: self._didSaveTabs)
                         }) //pop
                         .actionSheet(isPresented: self.$showingSaveMenu, content: { saveActionSheet }) //asheet
                 } //hs
@@ -280,6 +280,7 @@ struct TabPageView: View {
         } //for
         if unableToSave.isEmpty {
             generalAlert( msg: String.localizedStringWithFormat(NSLocalizedString("%1$d tabs saved successfully.", comment: "general alert notification message"), savedCount))
+            self.didSaveTabs = true
         } else {
             let lst = unableToSave.map({ $0.title }).joined(separator: "\n")
             generalAlert(msg: String.localizedStringWithFormat(NSLocalizedString("Unknown error occurred.\nThe following tabs could not be saved:\n%1$@", comment: "general alert notification"), lst))

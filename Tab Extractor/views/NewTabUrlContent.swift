@@ -13,10 +13,12 @@ struct NewTabUrlContent: View {
     var initialAddress: String?
     var autoFetchClipBoard: Bool
     let browseAutomatically: Bool
-    
+    let shouldCloseAfterSaving: ShouldAutoCloseBehaviour
+
     @ObservedObject private var glop = GlobalPreferences2.global
     @Environment(\.presentationMode) private var premo
     
+    @State private var didSaveAnyTabs = false
     @State private var editAddressStr = ""
     @FocusState private var addressFocused: Bool
     @State private var statusStr = NSLocalizedString("status", comment: "browser initial status")
@@ -120,9 +122,20 @@ struct NewTabUrlContent: View {
         }, message: {
             Text("The page has finished loading. There were no tabs found on the page.")
         }) //alert
-        .fullScreenCover(isPresented: $showingPageViewer, content: {
-            TabPageView( srcTab: tabFromWeb ?? GuitarTab())
+        .fullScreenCover(isPresented: $showingPageViewer, onDismiss: {
+            let shouldClose: Bool = (self.shouldCloseAfterSaving == .always)
+            || (self.shouldCloseAfterSaving == .onlyIfDidSave && self.didSaveAnyTabs)
+            if shouldClose {
+                DispatchQueue.main.async {
+                    premo.wrappedValue.dismiss()
+                } //dq
+            } //if
+        }, content: {
+            TabPageView( srcTab: tabFromWeb ?? GuitarTab(), didSaveTabs: $didSaveAnyTabs)
         })
+        //.fullScreenCover(isPresented: $showingPageViewer, content: {
+            //TabPageView( srcTab: tabFromWeb ?? GuitarTab())
+        //})
         .navigationTitle(NSLocalizedString("Load from website", comment: "load from web window title"))
         .navigationBarTitleDisplayMode(.inline)
         } //nv
@@ -238,3 +251,7 @@ struct NewTabUrlContent: View {
         //} //dq
     }
 } //struct
+
+enum ShouldAutoCloseBehaviour {
+case no, always, onlyIfDidSave
+}

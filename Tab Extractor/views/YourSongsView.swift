@@ -203,14 +203,18 @@ struct YourSongsView: View {
             }, content: {
                 NewTabUrlContent(initialAddress: "",
                                  autoFetchClipBoard: true,
-                                    browseAutomatically: true)
+                                    browseAutomatically: true,
+                                 shouldCloseAfterSaving: .no
+                )
         })
             .sheet(isPresented: $showingNewTabUrlPD, onDismiss: {
                 listDocFiles()
             }, content: {
                 NewTabUrlContent(initialAddress: self.newTabUrlPD,
                                  autoFetchClipBoard: false,
-                                    browseAutomatically: true)
+                                    browseAutomatically: true,
+                                 shouldCloseAfterSaving: .onlyIfDidSave
+                )
         })
             .sheet(isPresented: $showingNewTabFromText, onDismiss: {
                 listDocFiles()

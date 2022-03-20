@@ -11,6 +11,7 @@ struct Save1Song: View {
     //@ObservedObject var TabSELContainer: MSLContainer<GuitarTab.Page>
     @ObservedObject var TabSELContainer: SelectableItemContainer<SelectablePage, GuitarTab.Page>
     @ObservedObject var fromTab: GuitarTab
+    @Binding var didSaveTab: Bool
     @State private var songTitle = ""
     @Environment(\.presentationMode) var premo
     @State private var alertTitle = ""
@@ -49,6 +50,7 @@ struct Save1Song: View {
         tts.sourceUrl = fromTab.sourceUrl
         tts.title = self.songTitle
         if let _ = TabFileAssoc.saveTab(tab: tts) {
+            self.didSaveTab = true
             return true
         }
         return false

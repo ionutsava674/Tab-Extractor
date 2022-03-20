@@ -96,7 +96,7 @@ struct NewTabFromTextContent: View {
             Text("There were no tabs found in the text.")
         }) //alert
         .fullScreenCover(isPresented: $showingPageViewer, content: {
-            TabPageView( srcTab: tabFromText ?? GuitarTab())
+            TabPageView( srcTab: tabFromText ?? GuitarTab(), didSaveTabs: .constant(false))
         }) //sheet
         .navigationTitle(NSLocalizedString("Load from text", comment: "load from text window title"))
         .navigationBarTitleDisplayMode(.inline)
