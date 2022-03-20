@@ -59,9 +59,12 @@ struct Save1Song: View {
     var body: some View {
         //NavigationView {
         VStack(alignment: .trailing, spacing: 35, content: {
-            TextField(NSLocalizedString("enter song name", comment: "save 1 song dialog edit box prompt"), text: $songTitle, onCommit: {
+            TextField(NSLocalizedString("enter song name", comment: "save 1 song dialog edit box prompt"),
+                      text: $songTitle,
+                      onCommit: {
                 btnSave()
             })
+            .submitLabel(.continue)
                 .focused($editFocused)
             HStack {
                 Button(NSLocalizedString("Save", comment: "save 1 song dialog save button")) {
