@@ -60,7 +60,7 @@ I have written this entire app with the awesome help of Apple's screen-reader, v
 
 ### **Get the app**
 
-_https://apps.apple.com/app/tab-extractor/id1614273947_
+[_Get on the app store_](https://apps.apple.com/app/tab-extractor/id1614273947)
 
 ### **App Privacy**
 
