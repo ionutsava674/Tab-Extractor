@@ -34,6 +34,7 @@
 		C676492826639B5F0033464A /* TabObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C676492726639B5F0033464A /* TabObject.swift */; };
 		C682470026832C460003B79B /* YourSongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68246FF26832C460003B79B /* YourSongsView.swift */; };
 		C682470226832DE40003B79B /* TabFileAssoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C682470126832DE40003B79B /* TabFileAssoc.swift */; };
+		C689B18B27E91C8D000456EF /* LandscaperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C689B18A27E91C8D000456EF /* LandscaperView.swift */; };
 		C68C470926668B4E00D3A026 /* TabDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68C470826668B4E00D3A026 /* TabDetector.swift */; };
 		C69AC590266FF26C00D066AB /* TabParseAlg1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */; };
 		C6A198502686483C0083D08B /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1984F2686483C0083D08B /* PreferencesView.swift */; };
@@ -79,6 +80,7 @@
 		C676492726639B5F0033464A /* TabObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabObject.swift; sourceTree = "<group>"; };
 		C68246FF26832C460003B79B /* YourSongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourSongsView.swift; sourceTree = "<group>"; };
 		C682470126832DE40003B79B /* TabFileAssoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFileAssoc.swift; sourceTree = "<group>"; };
+		C689B18A27E91C8D000456EF /* LandscaperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscaperView.swift; sourceTree = "<group>"; };
 		C68C470826668B4E00D3A026 /* TabDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDetector.swift; sourceTree = "<group>"; };
 		C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg1.swift; sourceTree = "<group>"; };
 		C6A1984F2686483C0083D08B /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				C61D34EA2778BF1900EB3013 /* WebViewRep.swift */,
 				C64F37482783920D0063E990 /* AlignedGeometryReader.swift */,
 				C6A413C62786289200E1E7CB /* AnyContainerView.swift */,
+				C689B18A27E91C8D000456EF /* LandscaperView.swift */,
 			);
 			path = generals;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				C61D34DB2778BBC600EB3013 /* lclz.swift in Sources */,
 				C67649172663919C0033464A /* Tab_ExtractorApp.swift in Sources */,
 				C6A66A72278F2EC700C61B75 /* TabTextDocument.swift in Sources */,
+				C689B18B27E91C8D000456EF /* LandscaperView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

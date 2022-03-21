@@ -15,6 +15,7 @@ struct AboutView: View {
     let mailTo = "ionutsava027@gmail.com"
     let mailSubject = "contacting for Tab Extractor"
     var body: some View {
+        LandscaperView {
         NavigationView {
             ScrollView {
             VStack(alignment: .leading, spacing: 8) {
@@ -81,7 +82,9 @@ struct AboutView: View {
         } content: {
             MailComposerView(result: self.$mailResult, toRecipient: self.mailTo, subject: self.mailSubject)
         } //mail
+        } //ls
     } //body
+        
     func openEmail() -> Void {
         if MFMailComposeViewController.canSendMail() {
             //
