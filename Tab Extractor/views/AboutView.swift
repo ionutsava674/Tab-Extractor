@@ -63,6 +63,11 @@ struct AboutView: View {
                         showingMail = true
                     }
                     .disabled(!MFMailComposeViewController.canSendMail())
+                    Link(destination: URL(string: "https://ionutsava674.github.io/Tab-Extractor/")!) {
+                        Text("Visit the project website on github")
+                            .accessibilityLabel(Text("Visit the project website on github."))
+                    }
+                    .padding()
                 } //gr
             } //vs
             .padding()

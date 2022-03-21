@@ -24,8 +24,13 @@ struct HowToUseMainView: View {
                 Text("This dialog also contains an integrated web browser.")
                 Text("If there are guitar tabs detected, another dialog will appear, where you will have the options to rename or save these tabs.")
                 Text("After saving, you can go back to the main screen of the app, where all your saved songs are listed. Select your song from the list for a friendly and accessible navigation of the tab.")
-            }
+            } //gr
             .padding(8)
+                Text("for more details")
+                Link(destination: URL(string: "https://ionutsava674.github.io/Tab-Extractor/")!) {
+                    Text("Visit the project website on github")
+                        .accessibilityLabel(Text("Visit the project website on github."))
+                }
         } //vs
             .font(.body)
             .padding()

@@ -114,7 +114,6 @@ struct YourSongsView: View {
                                 Label(String.localizedStringWithFormat(NSLocalizedString("delete %@", comment: "main screen menu"), tfa.tab.title), systemImage: "trash.fill")
                             } //btn
                         }) //swipe
-                    //.font(.headline)
                 } //fe
                 } //ls
                 //.listStyle(ListStyle.)
@@ -204,7 +203,7 @@ struct YourSongsView: View {
                 NewTabUrlContent(initialAddress: "",
                                  autoFetchClipBoard: true,
                                     browseAutomatically: true,
-                                 shouldCloseAfterSaving: .no
+                                 shouldCloseAfterSaving: .onlyIfDidSave
                 )
         })
             .sheet(isPresented: $showingNewTabUrlPD, onDismiss: {

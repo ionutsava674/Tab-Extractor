@@ -88,6 +88,12 @@ struct InnerPreferencesView: View {
                 } //se
                  */
             } //if processed
+            Button {
+                glop.restoreDefaults()
+            } label: {
+                Text("Restore defaults")
+                    .font(.headline)
+            } //btn
         } //fo
         .padding(.bottom)
         .keyboardType(.numbersAndPunctuation)

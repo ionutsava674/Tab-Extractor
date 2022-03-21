@@ -19,7 +19,7 @@ class GlobalPreferences2: ObservableObject {
 
     @AppStorage("viewHorizontally") var viewHorizontally = true
 
-    @AppStorage("includeHeader") var includeHeader = true
+    @AppStorage("includeHeader") var includeHeader = false
     @AppStorage("stringStringSeparator") var stringStringSeparator = " "
     @AppStorage("includeBars") var includeBars = true
 
@@ -37,4 +37,32 @@ class GlobalPreferences2: ObservableObject {
     static let noStrings7NamesDefault = "e, b, G, D, A, E, B"
     
     static let global = GlobalPreferences2()
-}
+    
+    func restoreDefaults() -> Void {
+        endOfLine = "\n"
+        
+        showZeroResultsFound2 = true
+        showZeroResultsFound = true
+        showNavHint1 = true
+        
+        viewSourceLines = false
+
+        viewHorizontally = true
+
+        includeHeader = false
+        stringStringSeparator = " "
+        includeBars = true
+
+        stringNoteSeparator = ""
+        noteNoteSeparator = ", "
+
+        noStrings6 = true
+        noStrings6Names = Self.noStrings6NamesDefault
+
+        noStrings4 = true
+        noStrings4Names = Self.noStrings4NamesDefault
+
+        noStrings7 = true
+        noStrings7Names = Self.noStrings7NamesDefault
+    } //func
+} //class

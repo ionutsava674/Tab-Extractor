@@ -1,4 +1,7 @@
 /* No comment provided by engineer. */
+"%@" = "%@";
+
+/* No comment provided by engineer. */
 "%@%@" = "%1$@%2$@";
 
 /* item title to display after it was detected */
@@ -164,6 +167,9 @@
 "For example, if these are different versions of the same song, you can choose to save each tab as a song." = "De exemplu, dacă acestea sunt versiuni ale aceluiași cântec, le poți salva pe fiecare ca cântec separat.";
 
 /* No comment provided by engineer. */
+"for more details" = "pentru mai multe detalii";
+
+/* No comment provided by engineer. */
 "For suggestions, bugs, critics etc 😅 feel free to drop me an email:" = "Pentru sugestii, bug-uri, critici etc 😅 îmi puteți lăsa un email:";
 
 /* No comment provided by engineer. */
@@ -300,6 +306,9 @@
 
 /* main window list refresh button */
 "Refresh list" = "Împrospătează lista";
+
+/* No comment provided by engineer. */
+"Restore defaults" = "reinițializare valori";
 
 /* search result suggestion */
 "result: %@" = "rezultat: %@";
@@ -464,6 +473,12 @@
 
 /* view detected tabs */
 "View" = "Vezi";
+
+/* No comment provided by engineer. */
+"Visit the project website on github" = "vizitează situl proiectului pe github";
+
+/* No comment provided by engineer. */
+"Visit the project website on github." = "Vizitează situl proiectului pe ghit hab.";
 
 /* main screen alert */
 "Warning. This action is irreversible." = "Atenție. Această acțiune este ireversibilă.";
