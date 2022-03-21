@@ -32,17 +32,7 @@ B; 3. G; 4
 
 e; 0. B; 2. G; 2
 
-D; 4
-
-A; 2
-
-B; 3. G; 4
-
-B; 2. G; 2
-
-B; 3. G; 4
-
-B; 2. G; 2
+etc
 
 which makes it a lot more easy to read.
 You get the order of the notes, plus, notes that are supposed to be played at the same time, are listed in the same line.
