@@ -27,7 +27,7 @@ struct NewTabUrlContent: View {
     private var browserAddrEmpty: Bool {
         browserAddressStr.isEmpty ||
         browserAddressStr == "about:blank"
-    }
+    } //cv
     
     @State private var tabFromWeb: GuitarTab?
     @State private var pageBodyFromWeb: String?
@@ -99,6 +99,10 @@ struct NewTabUrlContent: View {
                         )
                 })
             } //hs
+            Text("current address: \(self.browserAddressStr)")
+                .lineLimit(1)
+                .font(.footnote)
+                .frame(maxWidth: .infinity, alignment: .leading)
             .toolbar(content: {
                 ToolbarItem(placement: .navigationBarLeading, content: {
                     Button {
@@ -153,7 +157,6 @@ struct NewTabUrlContent: View {
     func browserDidFinishNavigation(resultStr: String, titleStr: String?) -> Void {
         //let utext = resultStr.replacingOccurrences(of: "\r\n", with: "\n")
         //let lns = utext.components(separatedBy: "\n").map { $0.trimmingCharacters(in: .whitespaces) }
-        //print(self.browserAddressStr)
         //print(resultStr)
         let captAddr  = self.browserAddressStr
         //print("gua1 \(resultStr.isEmpty) \(Date.now)")
@@ -237,8 +240,14 @@ struct NewTabUrlContent: View {
         return false
     } //func
     func goButtonClick() -> Void {
+        guard !editAddressStr.isEmpty else {
+            return
+        }
         guard self.browserAddressStr != self.editAddressStr else {
             return
+        }
+        if !editAddressStr.localizedStandardContains("://") {
+            editAddressStr = "https://" + editAddressStr
         }
             self.browserAddressStr = self.editAddressStr
         if !browserAddrEmpty {

@@ -66,7 +66,7 @@ struct HorizontalTabLister: View {
                             .frame(width: geo.size.width * ratio, alignment: .center)
                             .accessibilityElement()
 //                            .accessibilityLabel( formatter.makeDisplayText(from: clust, asHeader: clust === tabPage.headerCluster, withStringNames: stringNames) )
-                            .accessibilityLabel( Text( "\(formatter.makeDisplayText(from: clust, withStringNames: stringNames))\(self.markedCluster == clust.idForUI ? ", marked" : "")" ) )
+                            .accessibilityLabel( Text( "\(formatter.makeDisplayText(from: clust, asHeader: clust === tabPage.headerCluster, withStringNames: stringNames))\(self.markedCluster == clust.idForUI ? ", marked" : "")" ) )
                             //Text( "\(formatter.makeDisplayText(from: clust, withStringNames: stringNames))\(self.markedCluster == clust.idForUI ? ", marked" : "")" )
                                 //.id( clust.idForUI )
                                 .accessibilityFocused($voFocused, equals: clust.idForUI)

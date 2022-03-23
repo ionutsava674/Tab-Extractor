@@ -14,7 +14,10 @@ struct HowItWorksView: View {
                 VStack(alignment: .leading, spacing: 4) {
                 Text("1. To add tabs from a web page:")
                 Group {
-                    Text("In your web browser, when you are on the page with the tab that you wish to read, simply copy the address from the address bar.")
+                    Text("Open your favourite web browser 😉, using your favourite search engine, 😜, search for something like: \"favourite song guitar tab\", or, \"that song solo tab\" .")
+                    
+                         Text("When you are on the page with the tab that you wish to read, simply copy the address from the address bar.")
+                    //Text("In your web browser, when you are on the page with the tab that you wish to read, simply copy the address from the address bar.")
                     Text("Then, come back here in Tab Extractor, and tap “Add from web” on the bottom.")
                     Text("In the next dialog, the address will be automatically pasted and the web page content will start scanning.")
                     Text("This dialog also contains an integrated web browser.")

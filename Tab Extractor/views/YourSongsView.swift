@@ -117,6 +117,13 @@ struct YourSongsView: View {
                 } //fe
                 } //ls
                 //.listStyle(ListStyle.)
+                .searchable( text: $searchFilter, placement: .navigationBarDrawer(displayMode: .always), prompt: "filter", suggestions: {
+                //.searchable( text: $searchFilter, prompt: "filter") {
+                    ForEach(Array( docFiles2Filtered.prefix(3)), id: \.fileUrl) {tfa in
+                        Text(String.localizedStringWithFormat(NSLocalizedString("result: %@", comment: "search result suggestion"), tfa.tab.title))
+                            .searchCompletion( tfa.tab.title)
+                    } //fe in src
+                }) //flt
                     if docFilesLoaded && docFiles.isEmpty {
                         VStack {
                             Text("You have no songs in the list.")
@@ -172,13 +179,6 @@ struct YourSongsView: View {
             } //vs
             .navigationTitle(LCLZ.yourSavedSongs)
             .navigationBarTitleDisplayMode(.large)
-            .searchable( text: $searchFilter, placement: .navigationBarDrawer(displayMode: .always), prompt: "filter", suggestions: {
-            //.searchable( text: $searchFilter, prompt: "filter") {
-                ForEach(Array( docFiles2Filtered.prefix(3)), id: \.fileUrl) {tfa in
-                    Text(String.localizedStringWithFormat(NSLocalizedString("result: %@", comment: "search result suggestion"), tfa.tab.title))
-                        .searchCompletion( tfa.tab.title)
-                } //fe in src
-            }) //flt
                 Color(UIColor.systemBackground)
             } //nv
             .chooseStyle(horizontalSizeClass: hSizeClass, geo: geo )

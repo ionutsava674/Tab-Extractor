@@ -20,7 +20,7 @@ struct VerticalTabLister: View {
         let formatter = DisplayableClusterFormatter(stringToValueSeparator: glop.stringNoteSeparator, noteNoteSeparator: glop.noteNoteSeparator, stringHeaderSeparator: glop.stringStringSeparator)
         
         return ForEach(elementsToDisplay, id: \.element.idForUI) {(clustIndex, clust) in
-            Text( "\(formatter.makeDisplayText(from: clust, withStringNames: stringNames))\(self.markedCluster == clust.idForUI ? ", marked" : "")" )
+            Text( "\(formatter.makeDisplayText(from: clust, asHeader: clust === page.headerCluster, withStringNames: stringNames))\(self.markedCluster == clust.idForUI ? ", marked" : "")" )
                 .id( clust.idForUI )
                 .accessibilityFocused($aiFocused, equals: clust.idForUI)
                 .padding(.leading, 80)
