@@ -95,6 +95,9 @@
 "contains %1$d %2$@" = "conține %1$d %2$@";
 
 /* No comment provided by engineer. */
+"current address: %@" = "adresa curentă: %@";
+
+/* No comment provided by engineer. */
 "Delete" = "Șterge";
 
 /* main screen menu */
@@ -132,6 +135,9 @@
 
 /* No comment provided by engineer. */
 "double tap to toggle" = "Dublu tap pentru schimbare";
+
+/* No comment provided by engineer. */
+"Each line should start with the string name, E, A, G, D, etc . And make sure that all lines have a equal length of characters." = "Fiecare linie ar trebui să înceapă cu numele corzii, E, A, G, D, etc . Și asigură-te că toate liniile au același număr de caractere.";
 
 /* button caption for selectable item edit title */
 "Edit" = "Editează";
@@ -206,6 +212,9 @@
 "If you have your tab in an email or message, or somewhere like that, simply copy that text to the clipboard" = "Dacă ai o tabulatură într-un mesaj sau email sau ceva de genul acesta, pur și simplu copiază acel text pe clipboard";
 
 /* No comment provided by engineer. */
+"In rare cases, some web sites may take a while to load entirely, 10, even 15 seconds or so. The content scanning cannot start until this is done. So, in these rare cases, please be a little patient." = "În cazuri rare, unele situri durează puțin mai mult să se încarce în întregime, cam 10, chiar 15 secunde. Scanarea de conținut nu poate începe până atunci. Și, în aceste cazuri rare, vă rugăm să așteptați încărcarea.";
+
+/* No comment provided by engineer. */
 "In the next dialog, the address will be automatically pasted and the web page content will start scanning." = "În dialogul următor, adresa web va fi automat inserată din clipboard, și conținutul paginii web va începe să fie scanat.";
 
 /* No comment provided by engineer. */
@@ -267,6 +276,9 @@
 
 /* prefs section */
 "on each note" = "La fiecare notă";
+
+/* No comment provided by engineer. */
+"Open your favourite web browser 😉, using your favourite search engine, 😜, search for something like: \"favourite song guitar tab\", or, \"that song solo tab\" ." = "Deschide browserul tău preferat 😉, folosind motorul de căutare preferat, 😜, pornește o căutare de genul: \"favourite song guitar tab\", sau, \"that song solo tab\" .";
 
 /* main window add button hint */
 "opens browser" = "va deschide un browser";
@@ -488,6 +500,15 @@
 
 /* missing section */
 "When string names are missing" = "Când numele corzilor lipsește";
+
+/* No comment provided by engineer. */
+"When you are on the page with the tab that you wish to read, simply copy the address from the address bar." = "Când ești pe pagina cu tabulatura pe care dorești să o citești, pur și simplu copiază adresa web în clipboard.";
+
+/* No comment provided by engineer. */
+"You can do this using the integrated text editor within Tab Extractor, but, while using screen readers, it is way easier to use a full keyboard. You have more navigation control, with arrow keys, home, end, etc." = "Poți face asta folosind editorul integrat în Tab Extractor, dar, folosind cititoare de ecran, este mult mai ușor să folosești o tastatură întreagă. Ai mai mult control la navigare, cu tastele săgeți, home, end, etc.";
+
+/* No comment provided by engineer. */
+"You can edit out anything that is not part of the tab, and leave only the tab lines." = "Poți șterge orice nu face parte din tabulatură, și să păstrezi doar liniile.";
 
 /* No comment provided by engineer. */
 "You can mark a position with a long press (voiceover triple tap), and focus from any position to the marked position with a single activation (voiceover double-tap)." = "Poți marca o poziție cu o apăsare lungă (voisover triplu tap), și apoi, focusa din orice poziție, la cea marcată, cu o simpla activare (voisover dublu-tap).";

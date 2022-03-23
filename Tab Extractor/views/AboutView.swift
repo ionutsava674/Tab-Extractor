@@ -17,7 +17,7 @@ struct AboutView: View {
     var body: some View {
         LandscaperView {
         NavigationView {
-            ScrollView {
+            ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .leading, spacing: 8) {
                 Text("Tab Extractor")
                     .font(.title)

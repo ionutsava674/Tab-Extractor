@@ -53,6 +53,7 @@ struct NewTabUrlContent: View {
                     })
                  */
                     .focused($addressFocused)
+                    .textInputAutocapitalization(.never)
                     .keyboardType(.URL)
                     .submitLabel(.go)
                     .onSubmit {

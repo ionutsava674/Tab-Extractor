@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PrivacyView: View {
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical, showsIndicators: true) {
             VStack(alignment: .leading, spacing: 8) {
                 Text("The Tab-Extractor app does not collect, store, use or share any information, personal or otherwise.")
                 Text("Everything you save is stored locally on the device.")

@@ -23,7 +23,7 @@ class GlobalPreferences2: ObservableObject {
     @AppStorage("stringStringSeparator") var stringStringSeparator = " "
     @AppStorage("includeBars") var includeBars = true
 
-    @AppStorage("stringNoteSeparator") var stringNoteSeparator: String = ""
+    @AppStorage("stringNoteSeparator") var stringNoteSeparator: String = ": "
     @AppStorage("noteNoteSeparator") var noteNoteSeparator = ", "
 
     @AppStorage("noStrings6") var noStrings6 = true
@@ -53,7 +53,7 @@ class GlobalPreferences2: ObservableObject {
         stringStringSeparator = " "
         includeBars = true
 
-        stringNoteSeparator = ""
+        stringNoteSeparator = ": "
         noteNoteSeparator = ", "
 
         noStrings6 = true
