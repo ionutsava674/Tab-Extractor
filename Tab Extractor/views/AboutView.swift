@@ -44,6 +44,9 @@ struct AboutView: View {
                     NavigationLink(NSLocalizedString("How it works", comment: "link in about")) {
                         HowItWorksView()
                     }
+                    NavigationLink(NSLocalizedString("Most common tab notations", comment: "link in about")) {
+                        TabNotations()
+                    }
                     NavigationLink(NSLocalizedString("Troubleshoot", comment: "link in about")) {
                         TroubleshootView()
                     }
@@ -73,6 +76,11 @@ struct AboutView: View {
             } //vs
             .padding()
             } //sv
+            .onAppear(perform: {
+                DispatchQueue.main.async {
+                    RatingRequester.globalInstance.requestRating(afterNumberOfLaunches: 4)
+                }
+            })
             .navigationTitle(LCLZ.aboutTab)
             .navigationBarTitleDisplayMode(.large)
         } //nv

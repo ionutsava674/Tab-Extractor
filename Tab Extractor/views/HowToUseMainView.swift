@@ -34,6 +34,10 @@ struct HowToUseMainView: View {
                         .accessibilityLabel(Text("Visit the project website on github."))
                 }
                 } //gr
+                NavigationLink(NSLocalizedString("Most common tab notations", comment: "link in how to")) {
+                    TabNotations()
+                }
+                //CommonTabNotationsSubView()
         } //vs
             .font(.body)
             .padding()

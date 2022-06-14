@@ -119,6 +119,9 @@ struct MainTabViewer: View {
                 if glop.showNavHint1 {
                     self.showNavHintDialog = true
                 }
+                DispatchQueue.main.async {
+                    RatingRequester.globalInstance.requestRating(afterNumberOfLaunches: 6)
+                }
             }) //onapp
             .alert(NSLocalizedString("Navigation hint", comment: "alert title"), isPresented: self.$showNavHintDialog, actions: {
                 Button(role: .cancel) {

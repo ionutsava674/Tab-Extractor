@@ -34,5 +34,8 @@ struct ContentView: View {
                 }
                 .tag(3)
                 }) //tv
+        .onAppear {
+            RatingRequester.increaseLaunchCount()
+        } //onapp
     } //body
 } //str

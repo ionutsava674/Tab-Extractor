@@ -41,6 +41,9 @@
 		C6A413C72786289200E1E7CB /* AnyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A413C62786289200E1E7CB /* AnyContainerView.swift */; };
 		C6A66A72278F2EC700C61B75 /* TabTextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */; };
 		C6A66A74278F3BB600C61B75 /* TabViewerHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */; };
+		C6B58FA02858667E00285FA1 /* CommonTabNotationsSubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B58F9F2858667E00285FA1 /* CommonTabNotationsSubView.swift */; };
+		C6B58FA228586DD300285FA1 /* TabNotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B58FA128586DD300285FA1 /* TabNotations.swift */; };
+		C6B58FA42858A62200285FA1 /* RatingRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B58FA32858A62200285FA1 /* RatingRequester.swift */; };
 		C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */; };
 		C6C537DA2783349E005259BB /* VerticalTabLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C537D92783349E005259BB /* VerticalTabLister.swift */; };
 		C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */; };
@@ -87,6 +90,9 @@
 		C6A413C62786289200E1E7CB /* AnyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyContainerView.swift; sourceTree = "<group>"; };
 		C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTextDocument.swift; sourceTree = "<group>"; };
 		C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewerHelpView.swift; sourceTree = "<group>"; };
+		C6B58F9F2858667E00285FA1 /* CommonTabNotationsSubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTabNotationsSubView.swift; sourceTree = "<group>"; };
+		C6B58FA128586DD300285FA1 /* TabNotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabNotations.swift; sourceTree = "<group>"; };
+		C6B58FA32858A62200285FA1 /* RatingRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingRequester.swift; sourceTree = "<group>"; };
 		C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg2.swift; sourceTree = "<group>"; };
 		C6C537D92783349E005259BB /* VerticalTabLister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTabLister.swift; sourceTree = "<group>"; };
 		C6C6F9CF267F3F1F00F4A653 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				C65C26A8267BC70100DA491D /* SelectableItem.swift */,
+				C6B58FA32858A62200285FA1 /* RatingRequester.swift */,
 				C613835C277BB9C7007F2A43 /* TitleString.swift */,
 				C66F4C622679EE7D00321FAD /* AccessibleCheckBox.swift */,
 				C61D34EA2778BF1900EB3013 /* WebViewRep.swift */,
@@ -129,6 +136,8 @@
 				C66C424A27C1451A002C587C /* MailComposer.swift */,
 				C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */,
 				C6FF474527E2546300E50DCC /* HowToUseMainView.swift */,
+				C6B58F9F2858667E00285FA1 /* CommonTabNotationsSubView.swift */,
+				C6B58FA128586DD300285FA1 /* TabNotations.swift */,
 				C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */,
 				C63453E427DC8E9E00B41F0B /* PrivacyView.swift */,
 				C6A1984F2686483C0083D08B /* PreferencesView.swift */,
@@ -295,6 +304,7 @@
 				C61D34EB2778BF1900EB3013 /* WebViewRep.swift in Sources */,
 				C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */,
 				C6A66A74278F3BB600C61B75 /* TabViewerHelpView.swift in Sources */,
+				C6B58FA228586DD300285FA1 /* TabNotations.swift in Sources */,
 				C682470226832DE40003B79B /* TabFileAssoc.swift in Sources */,
 				C682470026832C460003B79B /* YourSongsView.swift in Sources */,
 				C619586B277F06D600985895 /* HorizontalTabView.swift in Sources */,
@@ -307,10 +317,12 @@
 				C66EEEEA27A1BC9600569F30 /* HowItWorksView.swift in Sources */,
 				C61D34DF2778BC0E00EB3013 /* MainTabViewer.swift in Sources */,
 				C61D34E52778BD6D00EB3013 /* EditValueView.swift in Sources */,
+				C6B58FA42858A62200285FA1 /* RatingRequester.swift in Sources */,
 				C6A413C72786289200E1E7CB /* AnyContainerView.swift in Sources */,
 				C61D34DB2778BBC600EB3013 /* lclz.swift in Sources */,
 				C67649172663919C0033464A /* Tab_ExtractorApp.swift in Sources */,
 				C6A66A72278F2EC700C61B75 /* TabTextDocument.swift in Sources */,
+				C6B58FA02858667E00285FA1 /* CommonTabNotationsSubView.swift in Sources */,
 				C689B18B27E91C8D000456EF /* LandscaperView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,7 +475,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Tab Extractor/Tab Extractor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Tab Extractor/Preview Content\"";
 				DEVELOPMENT_TEAM = 2222CRHQ48;
 				ENABLE_PREVIEWS = YES;
@@ -473,7 +485,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.saio674.Tab-Extractor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
@@ -489,7 +501,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Tab Extractor/Tab Extractor.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Tab Extractor/Preview Content\"";
 				DEVELOPMENT_TEAM = 2222CRHQ48;
 				ENABLE_PREVIEWS = YES;
@@ -499,7 +511,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.saio674.Tab-Extractor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
