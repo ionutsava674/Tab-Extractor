@@ -66,6 +66,13 @@ struct MainTabViewer: View {
                             .accessibilityLabel(NSLocalizedString("Navigation help", comment: ""))
                             .padding()
                     } //nl
+                    NavigationLink {
+                        TabNotations()
+                    } label: {
+                        Image(systemName: "questionmark.folder")
+                            .accessibilityLabel(NSLocalizedString("Notation hints", comment: ""))
+                            .padding()
+                    } //nl
                     /*
                     Button(action: {
                         self.showingHelp = true
@@ -119,7 +126,7 @@ struct MainTabViewer: View {
                 if glop.showNavHint1 {
                     self.showNavHintDialog = true
                 }
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     RatingRequester.globalInstance.requestRating(afterNumberOfLaunches: 6)
                 }
             }) //onapp

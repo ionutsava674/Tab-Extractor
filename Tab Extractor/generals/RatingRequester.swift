@@ -16,33 +16,38 @@ class RatingRequester {
     var alreadyRequestedThisInstance = false
     
     static func increaseLaunchCount() -> Void {
-        let curVersionKey = kCFBundleVersionKey as String
-        guard let curVersion = Bundle.main.object(forInfoDictionaryKey: curVersionKey) as? String else {
+        //UserDefaults.standard.set(3, forKey: Self.launchCountKey)
+        let BuildNumberKey = kCFBundleVersionKey as String
+        guard let curVersion = Bundle.main.object(forInfoDictionaryKey: BuildNumberKey) as? String else {
             return
         }
         let lastVersion = UserDefaults.standard.string(forKey: Self.launchCountVersionKey)
         var curCount = 1
         if curVersion == lastVersion {
-            curCount = UserDefaults.standard.integer(forKey: Self.launchCountKey) ?? 0
+            curCount = UserDefaults.standard.integer(forKey: Self.launchCountKey)
             curCount += 1
         }
-        defer {
+        //defer {
             UserDefaults.standard.set(curCount, forKey: Self.launchCountKey)
             if curVersion != lastVersion {
                 UserDefaults.standard.set(curVersion, forKey: Self.launchCountVersionKey)
             }
-        } //def
+        //} //def
         //print("curcount \(curCount) ver \(curVersion)")
     } //func
     func requestRating( afterNumberOfLaunches minLaunchCount: Int) -> Void {
         guard !alreadyRequestedThisInstance else {
             return
         }
-        let launchCount = UserDefaults.standard.integer(forKey: Self.launchCountKey) ?? 0
+        let launchCount = UserDefaults.standard.integer(forKey: Self.launchCountKey)
         guard launchCount >= minLaunchCount else {
             return
         } //gua
         alreadyRequestedThisInstance = true
-        SKStoreReviewController.requestReview()
+        UserDefaults.standard.set(-30, forKey: Self.launchCountKey)
+        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
+        }
+        //SKStoreReviewController.requestReview()
     } //func
 } //class

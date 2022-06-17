@@ -72,12 +72,18 @@ struct AboutView: View {
                             .accessibilityLabel(Text("Visit the project website on github."))
                     }
                     .padding()
+                    Text("If you enjoy using Tab-Extractor, and like the fact that it's free, you can really help out by giving a rating and leaving a good review on the app store.")
+                    Link(destination: URL(string: "https://apps.apple.com/app/id1614273947?action=write-review")!) {
+                        Text("rate and review on the app store")
+                            //.accessibilityLabel(Text("Visit the project website on github."))
+                    }
                 } //gr
             } //vs
             .padding()
             } //sv
             .onAppear(perform: {
-                DispatchQueue.main.async {
+                //DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     RatingRequester.globalInstance.requestRating(afterNumberOfLaunches: 4)
                 }
             })
