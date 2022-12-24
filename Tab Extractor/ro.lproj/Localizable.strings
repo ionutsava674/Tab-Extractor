@@ -1,4 +1,31 @@
 /* No comment provided by engineer. */
+"‘<>‘ in Guitar TAB is the symbol for natural harmonics. When you see a note in between the two symbols such as <12> it means to play a natural harmonic on that fret." = "‘<>‘ înseamnă armonica naturală. Când apare o notă între cele două simboluri, ca <12>, înseamnă să cânți o armonică naturală pe acea tastă.";
+
+/* No comment provided by engineer. */
+"‘~‘ in Guitar TAB is the symbol for vibrato. In text-based Guitar TAB, this is usually displayed on the line next to the note." = "‘~‘ în tabulatură este simbolul pentru vibrato. Acesta este de obicei afișat pe linie lîngă notă.";
+
+/* No comment provided by engineer. */
+"‘b‘ in Guitar TAB is the symbol for a bend." = "‘b‘ Înseamnă bend. Când împingi și îndoi coarda.";
+
+/* No comment provided by engineer. */
+"‘h‘ in Guitar TAB is short for ‘hammer-on’. This is when you play a note and hammer-on to a higher note." = "‘h‘ înseamnă ‘hammer-on’. Când lovești o tastă de mai sus fără să mai ciupești.";
+
+/* No comment provided by engineer. */
+"‘p‘ in Guitar TAB is short for ‘pull-off’. This is when you play a note and pull-off to a lower note." = "‘p‘, înseamnă ‘pull-off’. Este atunci când ridici degetul rapid de pe o tastă.";
+
+/* No comment provided by engineer. */
+"‘pb’ in Guitar TAB means to pre-bend a note before you pick it. You push the string up to the correct pitch, then pick the note before releasing it or holding it." = "‘pb’ înseamnă pre-bend. Împingi și îndoi coarda ăn sus până la sunetul corect, apoi ciupești.";
+
+/* No comment provided by engineer. */
+"‘PM‘ in Guitar TAB is the symbol for palm muting. This is usually displayed above or below the staff and is followed by a dashed line if the palm muting is held for a long time." = "‘PM‘ înseamnă palm muting. ";
+
+/* No comment provided by engineer. */
+"‘r‘ in Guitar TAB means to release a bend. Sometimes this is shown if a bend needs to be held for a long time, so you know when to lower it again." = "‘r‘, înseamnă să aduci coarda înapoi, (release), din bend.";
+
+/* No comment provided by engineer. */
+"‘x‘ in Guitar TAB is the symbol for a muted hit or rake. This can be across multiple strings or on a single string." = "‘x‘ În tabulatură este simbolul pentru o lovitură pe corzile estompate. Poate fi pe mai multe corzi sau pe o singură coardă.";
+
+/* No comment provided by engineer. */
 "%@" = "%@";
 
 /* No comment provided by engineer. */
@@ -20,6 +47,27 @@
 "%1$d tabs saved successfully." = "%1$d taburi salvate cu succes.";
 
 /* No comment provided by engineer. */
+"• () = grace note or let the note ring out" = "• () = lasă nota să sune";
+
+/* No comment provided by engineer. */
+"• / = slide up" = "• / = glisare în sus, (slide up)";
+
+/* No comment provided by engineer. */
+"• \\ = slide down" = "• \\ = glisare în jos, (slide down)";
+
+/* No comment provided by engineer. */
+"• <> = natural harmonics" = "• <> = armonica naturală";
+
+/* No comment provided by engineer. */
+"• ~~~ = vibrato" = "• ~~~ = vibrato";
+
+/* No comment provided by engineer. */
+"• PM – – – – = palm muting (above or below TAB)" = "• PM – – – – = palm muting (deasupra sau sub tabulatură)";
+
+/* No comment provided by engineer. */
+"• x = muted hit" = "• x = lovitură estompată";
+
+/* No comment provided by engineer. */
 "1. Go to the web page that contains the tablature you want, using any browser." = "1. Mergi către pagina web care conține tablatura pe care o dorești, folosind orice browser.";
 
 /* No comment provided by engineer. */
@@ -32,7 +80,19 @@
 "2. To add tabs directly by text:" = "2. Pentru a adăuga tabulaturi direct, prin text:";
 
 /* No comment provided by engineer. */
+"2h4 means play the 2nd fret, then hammer-on to the 4th fret. 2h4h5 means to do two hammer-ons in a row (you only pick the first note)." = "2h4 înseamnă ciupește tasta 2, apoi hammer-on pe tasta 4. 2h4h5 înseamnă să faci două hammer-on la rând (ciupești doar prima notă).";
+
+/* No comment provided by engineer. */
 "3. Then, come back here in Tab Extractor, and tap “Add from web”, on the bottom left." = "3. Apoi, întoarce-te aici, în Tab Extractor, și apasă “adaugă de pe web”, în stânga, jos.";
+
+/* No comment provided by engineer. */
+"A muted hit is when you lightly place your fingers over the strings and hit them." = "O lovitură estompată (mute hit) este când așezi ușor degetele pe corzi și le lovești.";
+
+/* No comment provided by engineer. */
+"A quick summary of the most common Guitar TAB notations:" = "Un rezumat rapid al celor mai întâlnite notații de tabulatură:";
+
+/* No comment provided by engineer. */
+"A slash ( / ) or backslash ( \\ ) in Guitar TAB is the symbol for a slide." = "A slash ( / ) or backslash ( \\ ) în tabulatură este simbolul pentru glisare (slide).";
 
 /* About tab button caption */
 "About" = "Despre";
@@ -190,6 +250,9 @@
 /* No comment provided by engineer. */
 "here" = "aici";
 
+/* No comment provided by engineer. */
+"Here is a quick guide to the most common symbols you will see in text-based Guitar TAB:" = "Aici este un ghid rapid a celor mai folosite notații pe care le vei întâlni în tabulaturi:";
+
 /* save action confirmation prompt */
 "How do you wish to save?" = "Cum dorești să salvezi?";
 
@@ -209,10 +272,16 @@
 "If there are guitar tabs detected, another dialog will appear, where you will have the options to rename or save these tabs." = "Dacă sunt tabulaturi detectate, un alt dialog va apărea unde vei avea opțiunile să le denumești și să le salvezi.";
 
 /* No comment provided by engineer. */
+"If you enjoy using Tab-Extractor, and like the fact that it's free, you can really help out by giving a rating and leaving a good review on the app store." = "Dacă îți place să folosești Tab-Extractor, și îți place faptul că e gratuit, ai putea ajuta mult lăsând un rating și un review bun pe app store.";
+
+/* No comment provided by engineer. */
 "If you have your tab in an email or message, or somewhere like that, simply copy that text to the clipboard" = "Dacă ai o tabulatură într-un mesaj sau email sau ceva de genul acesta, pur și simplu copiază acel text pe clipboard";
 
 /* No comment provided by engineer. */
 "In rare cases, some web sites may take a while to load entirely, 10, even 15 seconds or so. The content scanning cannot start until this is done. So, in these rare cases, please be a little patient." = "În cazuri rare, unele situri durează puțin mai mult să se încarce în întregime, cam 10, chiar 15 secunde. Scanarea de conținut nu poate începe până atunci. Și, în aceste cazuri rare, vă rugăm să așteptați încărcarea.";
+
+/* No comment provided by engineer. */
+"In text-based Guitar TAB, sometimes a number is given after the ‘b’ to tell us what pitch to bend up to. So 7b9 means to bend the 7th fret note up until it sounds like the 9th fret pitch." = "În tabulaturi, câteodată apare un număr după ‘b’ să ne spună până la ce notă să facem bend. Așadar 7b9 înseamnă să facem bend la nota de pe tasta 7 până ce sună la fel ca nota de pe tasta 9.";
 
 /* No comment provided by engineer. */
 "In the next dialog, the address will be automatically pasted and the web page content will start scanning." = "În dialogul următor, adresa web va fi automat inserată din clipboard, și conținutul paginii web va începe să fie scanat.";
@@ -231,6 +300,9 @@
 
 /* prefs radio box */
 "Include header line (the string names at the beginning of the tab)" = "Include linia antet (numele corzilor din prima coloană)";
+
+/* No comment provided by engineer. */
+"It’s basically the opposite of a hammer-on." = "Este de fapt opusul unui hammer-on.";
 
 /* No comment provided by engineer. */
 "lets you customise the way the information is formatted" = "poți customiza cum să fie formatată informația";
@@ -256,6 +328,10 @@
 /* in alert */
 "more info" = "mai multe detalii";
 
+/* link in about
+   link in how to */
+"Most common tab notations" = "Cele mai întâlnite notații de tabulatură";
+
 /* No comment provided by engineer. */
 "Navigation help" = "Ajutor la navigare";
 
@@ -269,10 +345,16 @@
 "not selected" = "neselectat";
 
 /* No comment provided by engineer. */
+"Notation hints" = "Ponturi de notație";
+
+/* No comment provided by engineer. */
 "Of course, Tab Extractor can be used by everyone, including sighted persons, by having tabs displayed in original format, so that tabs can be easily shared with friends." = "Bineînțeles, Tab Extractor poate fi folosit de toată lumea, prin posibilitatea de a avea tabulaturile afișate în format original, astfel să fie ușor de schimbat/partajat cu prieteni.";
 
 /* save 1 song dialog ok button for alerts */
 "ok" = "În regulă";
+
+/* No comment provided by engineer. */
+"old text-based Guitar TAB may show s instead of a slash (eg: 7s5)." = "În unele tabulaturi se folosește s în loc de slash (ex: 7 s 5).";
 
 /* prefs section */
 "on each note" = "La fiecare notă";
@@ -312,6 +394,9 @@
 
 /* status when done loading */
 "processing content" = "se procesează";
+
+/* No comment provided by engineer. */
+"rate and review on the app store" = "Lasă un rating pe app store";
 
 /* main window list refresh button */
 "Refresh" = "Împrospătează";
@@ -382,6 +467,12 @@
 "show %1$d detected tabs" = "arată %1$d tabulaturi detectate";
 
 /* No comment provided by engineer. */
+"Some old text-based Guitar TAB uses v next to the note to show vibrato because the ~~~ can be hard to see." = "Unele tabulaturi mai vechi folosesc v lângă notă să arate vibrato, pentru că ~~~ poate fi mai greu de observat.";
+
+/* No comment provided by engineer. */
+"Some older text-based Guitar TAB found online use the symbol ^ to represent a bend." = "Unele tabulaturi mai vechi gasite online folosesc simbolul ^ să reprezinte un bend.";
+
+/* No comment provided by engineer. */
 "Sometimes ,tab detection may fail because they are not formatted correctly. If monospaced font isn’t used, the tab lines may appear equal in length, but in fact, they are not." = "Câteodată, detectarea tabulaturilor eșuează pentru că nu sunt formatate corect. Dacă font monospațiat nu e folosit, liniile tabulaturii pot părea de lungime egală, dar de fapt nu sunt.";
 
 /* browser initial status */
@@ -427,6 +518,9 @@
 "The Tab-Extractor app does not collect, store, use or share any information, personal or otherwise." = "Aplicația Tab Extractor nu colectează, folosește sau transmite nici o informație, personală sau altfel.";
 
 /* No comment provided by engineer. */
+"The type of slash used tells you whether you need to slide up to a note ‘/’ or slide down to a note" = "Tipul de bară oblică (slash) folosită îți spune dacă trebuie să glisezi in sus ‘/’ sau în jos (slide down)";
+
+/* No comment provided by engineer. */
 "then go over the song portion by swiping right." = "Apoi mergi peste porțiunea de cântec, făcând gest de glisare la dreapta.";
 
 /* No comment provided by engineer. */
@@ -437,6 +531,9 @@
 
 /* No comment provided by engineer. */
 "Then, when you want to go back to the marked position, just perform a double tap wherever, and the focus will jump back to the marked position." = "Apoi, când vrei să te întorci la poziția marcată, fă o simplă activare (dublu tap) oriunde, și focusul va sări la poziția marcată anterior.";
+
+/* No comment provided by engineer. */
+"There are many more symbols that can appear in Guitar TAB, but the above covers all of the essentials you are likely to see." = "Mai sunt unele notații care pot să apară în tabulaturi, dar cele de mai sus sunt cele mai întâlnite.";
 
 /* No comment provided by engineer. */
 "There were no tabs found in the text." = "Nu s-au găsit taburi in text";
@@ -497,6 +594,9 @@
 
 /* web address to start browsing */
 "web address" = "adresa web";
+
+/* No comment provided by engineer. */
+"When a note is in parentheses () in Guitar TAB, it either means to play a ghost note or that the note is continuing to ring out." = "Când o notă este în paranteze () înseamnă, ori notă fantomă (ghost note), ori că nota este lăsată să sune.";
 
 /* missing section */
 "When string names are missing" = "Când numele corzilor lipsește";
