@@ -39,8 +39,6 @@ You get the order of the notes, plus, notes that are supposed to be played at th
 
 Screen readers are great tools that help us access and also input information.
 
-I have written this entire app with the awesome help of Apple's screen-reader, voiceover®.
-
 ### **Main features**
 
 - automatically detects guitar tabs on a web page
@@ -55,6 +53,8 @@ I have written this entire app with the awesome help of Apple's screen-reader, v
 ### **App Privacy**
 
 [privacy policy](privacypolicy.html)
+
+[readme](readme.md)
 
 --
 
