@@ -7,99 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C613835D277BB9C7007F2A43 /* TitleString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613835C277BB9C7007F2A43 /* TitleString.swift */; };
-		C619586B277F06D600985895 /* HorizontalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C619586A277F06D600985895 /* HorizontalTabView.swift */; };
-		C61D34DB2778BBC600EB3013 /* lclz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34DA2778BBC600EB3013 /* lclz.swift */; };
-		C61D34DD2778BBDB00EB3013 /* PreferencesClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34DC2778BBDB00EB3013 /* PreferencesClass.swift */; };
-		C61D34DF2778BC0E00EB3013 /* MainTabViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */; };
-		C61D34E12778BD1C00EB3013 /* NewTabUrlContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E02778BD1C00EB3013 /* NewTabUrlContent.swift */; };
-		C61D34E32778BD4200EB3013 /* TabPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E22778BD4200EB3013 /* TabPageView.swift */; };
-		C61D34E52778BD6D00EB3013 /* EditValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E42778BD6D00EB3013 /* EditValueView.swift */; };
-		C61D34E72778BD9A00EB3013 /* Save1Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E62778BD9A00EB3013 /* Save1Song.swift */; };
-		C61D34E92778BE4D00EB3013 /* TabSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34E82778BE4D00EB3013 /* TabSharer.swift */; };
-		C61D34EB2778BF1900EB3013 /* WebViewRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34EA2778BF1900EB3013 /* WebViewRep.swift */; };
-		C63453E527DC8E9E00B41F0B /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63453E427DC8E9E00B41F0B /* PrivacyView.swift */; };
-		C64F37492783920D0063E990 /* AlignedGeometryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64F37482783920D0063E990 /* AlignedGeometryReader.swift */; };
-		C65C26A9267BC70100DA491D /* SelectableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65C26A8267BC70100DA491D /* SelectableItem.swift */; };
-		C66C424B27C1451A002C587C /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66C424A27C1451A002C587C /* MailComposer.swift */; };
-		C66EEEE827A1B8A500569F30 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66EEEE727A1B8A500569F30 /* AboutView.swift */; };
-		C66EEEEA27A1BC9600569F30 /* HowItWorksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */; };
-		C66EEEEC27A1BF8100569F30 /* TroubleshootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */; };
-		C66F4C632679EE7D00321FAD /* AccessibleCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66F4C622679EE7D00321FAD /* AccessibleCheckBox.swift */; };
-		C672E7252781EBD400007E30 /* TabDisplayableLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672E7242781EBD400007E30 /* TabDisplayableLine.swift */; };
-		C67649172663919C0033464A /* Tab_ExtractorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67649162663919C0033464A /* Tab_ExtractorApp.swift */; };
-		C67649192663919C0033464A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67649182663919C0033464A /* ContentView.swift */; };
-		C676491B2663919D0033464A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C676491A2663919D0033464A /* Assets.xcassets */; };
-		C676491E2663919D0033464A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C676491D2663919D0033464A /* Preview Assets.xcassets */; };
-		C676492826639B5F0033464A /* TabObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C676492726639B5F0033464A /* TabObject.swift */; };
-		C682470026832C460003B79B /* YourSongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68246FF26832C460003B79B /* YourSongsView.swift */; };
-		C682470226832DE40003B79B /* TabFileAssoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C682470126832DE40003B79B /* TabFileAssoc.swift */; };
-		C68C470926668B4E00D3A026 /* TabDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68C470826668B4E00D3A026 /* TabDetector.swift */; };
-		C69AC590266FF26C00D066AB /* TabParseAlg1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */; };
-		C6A198502686483C0083D08B /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A1984F2686483C0083D08B /* PreferencesView.swift */; };
-		C6A413C72786289200E1E7CB /* AnyContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A413C62786289200E1E7CB /* AnyContainerView.swift */; };
 		C6A556D027DD392E001F50C0 /* _config.yml in Resources */ = {isa = PBXBuildFile; fileRef = C6A556CD27DD392E001F50C0 /* _config.yml */; };
 		C6A556D127DD392E001F50C0 /* index.md in Resources */ = {isa = PBXBuildFile; fileRef = C6A556CE27DD392E001F50C0 /* index.md */; };
-		C6A66A72278F2EC700C61B75 /* TabTextDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */; };
-		C6A66A74278F3BB600C61B75 /* TabViewerHelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */; };
-		C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */; };
-		C6C537DA2783349E005259BB /* VerticalTabLister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C537D92783349E005259BB /* VerticalTabLister.swift */; };
-		C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */; };
-		C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */; };
-		C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6E23D8827C6C456002A49E3 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C613835C277BB9C7007F2A43 /* TitleString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleString.swift; sourceTree = "<group>"; };
-		C619586A277F06D600985895 /* HorizontalTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalTabView.swift; sourceTree = "<group>"; };
-		C61D34DA2778BBC600EB3013 /* lclz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lclz.swift; sourceTree = "<group>"; };
-		C61D34DC2778BBDB00EB3013 /* PreferencesClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesClass.swift; sourceTree = "<group>"; };
-		C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewer.swift; sourceTree = "<group>"; };
-		C61D34E02778BD1C00EB3013 /* NewTabUrlContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTabUrlContent.swift; sourceTree = "<group>"; };
-		C61D34E22778BD4200EB3013 /* TabPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageView.swift; sourceTree = "<group>"; };
-		C61D34E42778BD6D00EB3013 /* EditValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditValueView.swift; sourceTree = "<group>"; };
-		C61D34E62778BD9A00EB3013 /* Save1Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Save1Song.swift; sourceTree = "<group>"; };
-		C61D34E82778BE4D00EB3013 /* TabSharer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabSharer.swift; sourceTree = "<group>"; };
-		C61D34EA2778BF1900EB3013 /* WebViewRep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewRep.swift; sourceTree = "<group>"; };
-		C63453E427DC8E9E00B41F0B /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
-		C646D2D7276B600E000C83BB /* Tab Extractor.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tab Extractor.entitlements"; sourceTree = "<group>"; };
-		C64F37482783920D0063E990 /* AlignedGeometryReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignedGeometryReader.swift; sourceTree = "<group>"; };
 		C650829B298EE5B800F90658 /* IntervalsZonePrivacyPolicy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IntervalsZonePrivacyPolicy.html; sourceTree = "<group>"; };
 		C65713D027DD3C8B006EDA83 /* privacypolicy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacypolicy.html; sourceTree = "<group>"; };
 		C6576FAE27DFB56200F6840B /* amazinggrace.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = amazinggrace.html; sourceTree = "<group>"; };
 		C6576FAF27DFB80B00F6840B /* als.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = als.html; sourceTree = "<group>"; };
 		C6576FB027DFBAAD00F6840B /* f1theme.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = f1theme.html; sourceTree = "<group>"; };
-		C65C26A8267BC70100DA491D /* SelectableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableItem.swift; sourceTree = "<group>"; };
-		C66C424A27C1451A002C587C /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
-		C66EEEE727A1B8A500569F30 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowItWorksView.swift; sourceTree = "<group>"; };
-		C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TroubleshootView.swift; sourceTree = "<group>"; };
-		C66F4C622679EE7D00321FAD /* AccessibleCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibleCheckBox.swift; sourceTree = "<group>"; };
-		C672E7242781EBD400007E30 /* TabDisplayableLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDisplayableLine.swift; sourceTree = "<group>"; };
 		C67649132663919C0033464A /* Tab Extractor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tab Extractor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C67649162663919C0033464A /* Tab_ExtractorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab_ExtractorApp.swift; sourceTree = "<group>"; };
-		C67649182663919C0033464A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C676491A2663919D0033464A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C676491D2663919D0033464A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C676491F2663919D0033464A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C676492726639B5F0033464A /* TabObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabObject.swift; sourceTree = "<group>"; };
-		C68246FF26832C460003B79B /* YourSongsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourSongsView.swift; sourceTree = "<group>"; };
-		C682470126832DE40003B79B /* TabFileAssoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabFileAssoc.swift; sourceTree = "<group>"; };
-		C68C470826668B4E00D3A026 /* TabDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDetector.swift; sourceTree = "<group>"; };
-		C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg1.swift; sourceTree = "<group>"; };
-		C6A1984F2686483C0083D08B /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
-		C6A413C62786289200E1E7CB /* AnyContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyContainerView.swift; sourceTree = "<group>"; };
 		C6A556CD27DD392E001F50C0 /* _config.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = _config.yml; sourceTree = "<group>"; };
 		C6A556CE27DD392E001F50C0 /* index.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = index.md; sourceTree = "<group>"; };
 		C6A556D327DD3A50001F50C0 /* privacypolicy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacypolicy.md; sourceTree = "<group>"; };
-		C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabTextDocument.swift; sourceTree = "<group>"; };
-		C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewerHelpView.swift; sourceTree = "<group>"; };
-		C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabParseAlg2.swift; sourceTree = "<group>"; };
-		C6C537D92783349E005259BB /* VerticalTabLister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTabLister.swift; sourceTree = "<group>"; };
-		C6C6F9CF267F3F1F00F4A653 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C6C6F9D1267F45A200F4A653 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
-		C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTabFromTextContent.swift; sourceTree = "<group>"; };
-		C6E23D8927C6C456002A49E3 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,63 +34,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C61D34EC2778BF3200EB3013 /* generals */ = {
-			isa = PBXGroup;
-			children = (
-				C65C26A8267BC70100DA491D /* SelectableItem.swift */,
-				C613835C277BB9C7007F2A43 /* TitleString.swift */,
-				C66F4C622679EE7D00321FAD /* AccessibleCheckBox.swift */,
-				C61D34EA2778BF1900EB3013 /* WebViewRep.swift */,
-				C64F37482783920D0063E990 /* AlignedGeometryReader.swift */,
-				C6A413C62786289200E1E7CB /* AnyContainerView.swift */,
-			);
-			path = generals;
-			sourceTree = "<group>";
-		};
-		C61D34ED2778BFA900EB3013 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				C67649182663919C0033464A /* ContentView.swift */,
-				C66EEEE727A1B8A500569F30 /* AboutView.swift */,
-				C66C424A27C1451A002C587C /* MailComposer.swift */,
-				C66EEEE927A1BC9600569F30 /* HowItWorksView.swift */,
-				C66EEEEB27A1BF8100569F30 /* TroubleshootView.swift */,
-				C63453E427DC8E9E00B41F0B /* PrivacyView.swift */,
-				C6A1984F2686483C0083D08B /* PreferencesView.swift */,
-				C68246FF26832C460003B79B /* YourSongsView.swift */,
-				C61D34DE2778BC0E00EB3013 /* MainTabViewer.swift */,
-				C6A66A73278F3BB600C61B75 /* TabViewerHelpView.swift */,
-				C619586A277F06D600985895 /* HorizontalTabView.swift */,
-				C6C537D92783349E005259BB /* VerticalTabLister.swift */,
-				C61D34E82778BE4D00EB3013 /* TabSharer.swift */,
-				C61D34E02778BD1C00EB3013 /* NewTabUrlContent.swift */,
-				C6DBE5AD2778FB8400F36A8B /* NewTabFromTextContent.swift */,
-				C61D34E22778BD4200EB3013 /* TabPageView.swift */,
-				C61D34E42778BD6D00EB3013 /* EditValueView.swift */,
-				C61D34E62778BD9A00EB3013 /* Save1Song.swift */,
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		C61D34EE2778BFE300EB3013 /* data */ = {
-			isa = PBXGroup;
-			children = (
-				C682470126832DE40003B79B /* TabFileAssoc.swift */,
-				C676492726639B5F0033464A /* TabObject.swift */,
-				C672E7242781EBD400007E30 /* TabDisplayableLine.swift */,
-				C68C470826668B4E00D3A026 /* TabDetector.swift */,
-				C69AC58F266FF26C00D066AB /* TabParseAlg1.swift */,
-				C6C51B052671DAB70025EBB7 /* TabParseAlg2.swift */,
-				C6A66A71278F2EC700C61B75 /* TabTextDocument.swift */,
-			);
-			path = data;
-			sourceTree = "<group>";
-		};
 		C676490A2663919C0033464A = {
 			isa = PBXGroup;
 			children = (
 				C6A556CC27DD38E8001F50C0 /* docs */,
-				C67649152663919C0033464A /* Tab Extractor */,
 				C67649142663919C0033464A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -180,33 +48,6 @@
 				C67649132663919C0033464A /* Tab Extractor.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		C67649152663919C0033464A /* Tab Extractor */ = {
-			isa = PBXGroup;
-			children = (
-				C646D2D7276B600E000C83BB /* Tab Extractor.entitlements */,
-				C67649162663919C0033464A /* Tab_ExtractorApp.swift */,
-				C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */,
-				C61D34DA2778BBC600EB3013 /* lclz.swift */,
-				C61D34DC2778BBDB00EB3013 /* PreferencesClass.swift */,
-				C61D34ED2778BFA900EB3013 /* views */,
-				C61D34EE2778BFE300EB3013 /* data */,
-				C61D34EC2778BF3200EB3013 /* generals */,
-				C676491A2663919D0033464A /* Assets.xcassets */,
-				C676491F2663919D0033464A /* Info.plist */,
-				C6E23D8827C6C456002A49E3 /* InfoPlist.strings */,
-				C676491C2663919D0033464A /* Preview Content */,
-			);
-			path = "Tab Extractor";
-			sourceTree = "<group>";
-		};
-		C676491C2663919D0033464A /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				C676491D2663919D0033464A /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		C6A556CC27DD38E8001F50C0 /* docs */ = {
@@ -282,12 +123,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C676491E2663919D0033464A /* Preview Assets.xcassets in Resources */,
-				C6E23D8A27C6C456002A49E3 /* InfoPlist.strings in Resources */,
-				C6C6F9CE267F3F1F00F4A653 /* Localizable.strings in Resources */,
 				C6A556D127DD392E001F50C0 /* index.md in Resources */,
 				C6A556D027DD392E001F50C0 /* _config.yml in Resources */,
-				C676491B2663919D0033464A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,64 +135,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C66F4C632679EE7D00321FAD /* AccessibleCheckBox.swift in Sources */,
-				C66C424B27C1451A002C587C /* MailComposer.swift in Sources */,
-				C676492826639B5F0033464A /* TabObject.swift in Sources */,
-				C6A198502686483C0083D08B /* PreferencesView.swift in Sources */,
-				C613835D277BB9C7007F2A43 /* TitleString.swift in Sources */,
-				C66EEEE827A1B8A500569F30 /* AboutView.swift in Sources */,
-				C672E7252781EBD400007E30 /* TabDisplayableLine.swift in Sources */,
-				C63453E527DC8E9E00B41F0B /* PrivacyView.swift in Sources */,
-				C6C537DA2783349E005259BB /* VerticalTabLister.swift in Sources */,
-				C6DBE5AE2778FB8400F36A8B /* NewTabFromTextContent.swift in Sources */,
-				C64F37492783920D0063E990 /* AlignedGeometryReader.swift in Sources */,
-				C61D34E12778BD1C00EB3013 /* NewTabUrlContent.swift in Sources */,
-				C61D34E92778BE4D00EB3013 /* TabSharer.swift in Sources */,
-				C61D34E32778BD4200EB3013 /* TabPageView.swift in Sources */,
-				C68C470926668B4E00D3A026 /* TabDetector.swift in Sources */,
-				C61D34EB2778BF1900EB3013 /* WebViewRep.swift in Sources */,
-				C6C51B062671DAB70025EBB7 /* TabParseAlg2.swift in Sources */,
-				C6A66A74278F3BB600C61B75 /* TabViewerHelpView.swift in Sources */,
-				C682470226832DE40003B79B /* TabFileAssoc.swift in Sources */,
-				C682470026832C460003B79B /* YourSongsView.swift in Sources */,
-				C619586B277F06D600985895 /* HorizontalTabView.swift in Sources */,
-				C65C26A9267BC70100DA491D /* SelectableItem.swift in Sources */,
-				C61D34E72778BD9A00EB3013 /* Save1Song.swift in Sources */,
-				C69AC590266FF26C00D066AB /* TabParseAlg1.swift in Sources */,
-				C66EEEEC27A1BF8100569F30 /* TroubleshootView.swift in Sources */,
-				C61D34DD2778BBDB00EB3013 /* PreferencesClass.swift in Sources */,
-				C67649192663919C0033464A /* ContentView.swift in Sources */,
-				C66EEEEA27A1BC9600569F30 /* HowItWorksView.swift in Sources */,
-				C61D34DF2778BC0E00EB3013 /* MainTabViewer.swift in Sources */,
-				C61D34E52778BD6D00EB3013 /* EditValueView.swift in Sources */,
-				C6A413C72786289200E1E7CB /* AnyContainerView.swift in Sources */,
-				C61D34DB2778BBC600EB3013 /* lclz.swift in Sources */,
-				C67649172663919C0033464A /* Tab_ExtractorApp.swift in Sources */,
-				C6A66A72278F2EC700C61B75 /* TabTextDocument.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C6C6F9CF267F3F1F00F4A653 /* en */,
-				C6C6F9D1267F45A200F4A653 /* ro */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		C6E23D8827C6C456002A49E3 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C6E23D8927C6C456002A49E3 /* ro */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		C67649202663919D0033464A /* Debug */ = {
