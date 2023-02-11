@@ -42,8 +42,7 @@ The tabs can then be exported and shared by the user in the following formats
 
 ![screenshot 1](img/IMG_4552.PNG){: width="220"} ![screenshot 2](img/IMG_4553.PNG){: width="220"}
 
-![screenshot 3](img/IMG_4554.PNG){: width="220"} ![screenshot 4](img/IMG_4555.PNG){: width="220"}
-![screenshot 5](img/IMG_4556.PNG){: width="220"}
+![screenshot 3](img/IMG_4554.PNG){: height="220"}   ![screenshot 4](img/IMG_4555.PNG){: width="220"}   ![screenshot 5](img/IMG_4556.PNG){: width="220"}
 
 ## **Get the app**
 
