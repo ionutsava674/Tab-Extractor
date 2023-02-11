@@ -1,15 +1,20 @@
-#  Tab Extractor - readme
+#  Tab Extractor - home
 
-    <div>
-        <div>
-            <img src="img/te60x60_2x.png"
-                alt="App icon"
-                style="width: 200px; float: left; margin: 5px;">
-        </div>
-        <p>
-        Guitar tabs found on the internet can be difficult for visually impaired individuals to read using screen readers. I wanted to help address this issue and make it easier for these musicians to access tabs. That's why I created 'Tab Extractor,' an app that scans pages for guitar tabs, extracts the information, and stores it in a structured format for easy reading by screen readers.
-        </p>
-    </div
+<br />
+
+<div style="display: grid; align-items: left; grid-template-columns: 1fr 3fr; column-gap: 5px;">
+<img alt="Tab Extractor icon" src="icons/te60x60_2x.png" style="width: 220px;">
+<h3>Tab Extractor description.</h3>
+</div>
+
+<div>
+<div>
+<img src="img/te60x60_2x.png" alt="App icon" style="width: 200px; float: left; margin: 5px;">
+</div>
+<p>
+Guitar tabs found on the internet can be difficult for visually impaired individuals to read using screen readers. I wanted to help address this issue and make it easier for these musicians to access tabs. That's why I created 'Tab Extractor,' an app that scans pages for guitar tabs, extracts the information, and stores it in a structured format for easy reading by screen readers.
+</p>
+</div
 
 
 
