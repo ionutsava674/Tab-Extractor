@@ -56,6 +56,8 @@ The tabs can then be exported and shared by the user in the following formats
 
 [privacy policy](privacypolicy.html)
 
+[promo page](presentation.md)
+
 --
 
 2022
