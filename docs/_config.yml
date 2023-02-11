@@ -6,4 +6,4 @@ relative-links:
   collections: true
 include:
   - index.md
-  - readme.md
+  - presentation.md

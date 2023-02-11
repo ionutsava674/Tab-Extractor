@@ -8,21 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		C6A556D027DD392E001F50C0 /* _config.yml in Resources */ = {isa = PBXBuildFile; fileRef = C6A556CD27DD392E001F50C0 /* _config.yml */; };
-		C6A556D127DD392E001F50C0 /* index.md in Resources */ = {isa = PBXBuildFile; fileRef = C6A556CE27DD392E001F50C0 /* index.md */; };
+		C6A556D127DD392E001F50C0 /* presentation.md in Resources */ = {isa = PBXBuildFile; fileRef = C6A556CE27DD392E001F50C0 /* presentation.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C650829B298EE5B800F90658 /* IntervalsZonePrivacyPolicy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = IntervalsZonePrivacyPolicy.html; sourceTree = "<group>"; };
 		C65713D027DD3C8B006EDA83 /* privacypolicy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacypolicy.html; sourceTree = "<group>"; };
-		C6573B012995878B0034C748 /* readme.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = readme.html; sourceTree = "<group>"; };
 		C6573B02299589190034C748 /* img */ = {isa = PBXFileReference; lastKnownFileType = folder; path = img; sourceTree = "<group>"; };
-		C6573B0329958E750034C748 /* readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		C6573B0329958E750034C748 /* index.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = index.md; sourceTree = "<group>"; };
 		C6576FAE27DFB56200F6840B /* amazinggrace.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = amazinggrace.html; sourceTree = "<group>"; };
 		C6576FAF27DFB80B00F6840B /* als.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = als.html; sourceTree = "<group>"; };
 		C6576FB027DFBAAD00F6840B /* f1theme.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = f1theme.html; sourceTree = "<group>"; };
 		C67649132663919C0033464A /* Tab Extractor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tab Extractor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A556CD27DD392E001F50C0 /* _config.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = _config.yml; sourceTree = "<group>"; };
-		C6A556CE27DD392E001F50C0 /* index.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = index.md; sourceTree = "<group>"; };
+		C6A556CE27DD392E001F50C0 /* presentation.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = presentation.md; sourceTree = "<group>"; };
 		C6A556D327DD3A50001F50C0 /* privacypolicy.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = privacypolicy.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,11 +56,10 @@
 			isa = PBXGroup;
 			children = (
 				C6573B02299589190034C748 /* img */,
-				C6573B012995878B0034C748 /* readme.html */,
-				C6573B0329958E750034C748 /* readme.md */,
+				C6573B0329958E750034C748 /* index.md */,
 				C650829B298EE5B800F90658 /* IntervalsZonePrivacyPolicy.html */,
 				C6A556CD27DD392E001F50C0 /* _config.yml */,
-				C6A556CE27DD392E001F50C0 /* index.md */,
+				C6A556CE27DD392E001F50C0 /* presentation.md */,
 				C6A556D327DD3A50001F50C0 /* privacypolicy.md */,
 				C65713D027DD3C8B006EDA83 /* privacypolicy.html */,
 				C6576FAE27DFB56200F6840B /* amazinggrace.html */,
@@ -129,7 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6A556D127DD392E001F50C0 /* index.md in Resources */,
+				C6A556D127DD392E001F50C0 /* presentation.md in Resources */,
 				C6A556D027DD392E001F50C0 /* _config.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
