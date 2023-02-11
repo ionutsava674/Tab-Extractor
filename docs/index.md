@@ -1,12 +1,5 @@
 #  Tab Extractor - home
 
-<br />
-
-<div style="display: grid; align-items: left; grid-template-columns: 1fr 3fr; column-gap: 5px;">
-<img alt="Tab Extractor icon" src="icons/te60x60_2x.png" style="width: 220px;">
-<h3>Tab Extractor description.</h3>
-</div>
-
 <div>
 <div>
 <img src="img/te60x60_2x.png" alt="App icon" style="width: 200px; float: left; margin: 5px;">
