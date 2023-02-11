@@ -7,7 +7,7 @@
 <p>
 Guitar tabs found on the internet can be difficult for visually impaired individuals to read using screen readers. I wanted to help address this issue and make it easier for these musicians to access tabs. That's why I created 'Tab Extractor,' an app that scans pages for guitar tabs, extracts the information, and stores it in a structured format for easy reading by screen readers.
 </p>
-</div
+</div>
 
 
 
