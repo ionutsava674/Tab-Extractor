@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C600732529AB5BA300771B61 /* Extract Tabs extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C600731B29AB5BA300771B61 /* Extract Tabs extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C600733129AB641300771B61 /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C600733029AB641300771B61 /* UniformTypeIdentifiers.framework */; };
+		C600733429AB641300771B61 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C600733329AB641300771B61 /* Media.xcassets */; };
+		C600733629AB641300771B61 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C600733529AB641300771B61 /* ActionViewController.swift */; };
+		C600733929AB641300771B61 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C600733729AB641300771B61 /* MainInterface.storyboard */; };
+		C600733D29AB641300771B61 /* Extract Tabs action.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C600732E29AB641300771B61 /* Extract Tabs action.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C613835D277BB9C7007F2A43 /* TitleString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C613835C277BB9C7007F2A43 /* TitleString.swift */; };
 		C619586B277F06D600985895 /* HorizontalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C619586A277F06D600985895 /* HorizontalTabView.swift */; };
 		C61D34DB2778BBC600EB3013 /* lclz.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61D34DA2778BBC600EB3013 /* lclz.swift */; };
@@ -52,7 +58,46 @@
 		C6FF474627E2546300E50DCC /* HowToUseMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6FF474527E2546300E50DCC /* HowToUseMainView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		C600732329AB5BA300771B61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C676490B2663919C0033464A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C600731A29AB5BA300771B61;
+			remoteInfo = "Extract Tabs extension";
+		};
+		C600733B29AB641300771B61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C676490B2663919C0033464A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C600732D29AB641300771B61;
+			remoteInfo = "Extract Tabs action";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C600732629AB5BA300771B61 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C600733D29AB641300771B61 /* Extract Tabs action.appex in Embed Foundation Extensions */,
+				C600732529AB5BA300771B61 /* Extract Tabs extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		C600731B29AB5BA300771B61 /* Extract Tabs extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Extract Tabs extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C600732E29AB641300771B61 /* Extract Tabs action.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Extract Tabs action.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C600733029AB641300771B61 /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
+		C600733329AB641300771B61 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		C600733529AB641300771B61 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
+		C600733829AB641300771B61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		C600733A29AB641300771B61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C613835C277BB9C7007F2A43 /* TitleString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleString.swift; sourceTree = "<group>"; };
 		C619586A277F06D600985895 /* HorizontalTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalTabView.swift; sourceTree = "<group>"; };
 		C61D34DA2778BBC600EB3013 /* lclz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lclz.swift; sourceTree = "<group>"; };
@@ -103,6 +148,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C600731829AB5BA300771B61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C600732B29AB641300771B61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C600733129AB641300771B61 /* UniformTypeIdentifiers.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C67649102663919C0033464A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,6 +173,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C600732F29AB641300771B61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C600733029AB641300771B61 /* UniformTypeIdentifiers.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C600733229AB641300771B61 /* Extract Tabs action */ = {
+			isa = PBXGroup;
+			children = (
+				C600733329AB641300771B61 /* Media.xcassets */,
+				C600733529AB641300771B61 /* ActionViewController.swift */,
+				C600733729AB641300771B61 /* MainInterface.storyboard */,
+				C600733A29AB641300771B61 /* Info.plist */,
+			);
+			path = "Extract Tabs action";
+			sourceTree = "<group>";
+		};
 		C61D34EC2778BF3200EB3013 /* generals */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				C67649152663919C0033464A /* Tab Extractor */,
+				C600733229AB641300771B61 /* Extract Tabs action */,
+				C600732F29AB641300771B61 /* Frameworks */,
 				C67649142663919C0033464A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -182,6 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				C67649132663919C0033464A /* Tab Extractor.app */,
+				C600731B29AB5BA300771B61 /* Extract Tabs extension.appex */,
+				C600732E29AB641300771B61 /* Extract Tabs action.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,6 +299,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C600731A29AB5BA300771B61 /* Extract Tabs extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C600732929AB5BA300771B61 /* Build configuration list for PBXNativeTarget "Extract Tabs extension" */;
+			buildPhases = (
+				C600731729AB5BA300771B61 /* Sources */,
+				C600731829AB5BA300771B61 /* Frameworks */,
+				C600731929AB5BA300771B61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Extract Tabs extension";
+			productName = "Extract Tabs extension";
+			productReference = C600731B29AB5BA300771B61 /* Extract Tabs extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C600732D29AB641300771B61 /* Extract Tabs action */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C600733E29AB641300771B61 /* Build configuration list for PBXNativeTarget "Extract Tabs action" */;
+			buildPhases = (
+				C600732A29AB641300771B61 /* Sources */,
+				C600732B29AB641300771B61 /* Frameworks */,
+				C600732C29AB641300771B61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Extract Tabs action";
+			productName = "Extract Tabs action";
+			productReference = C600732E29AB641300771B61 /* Extract Tabs action.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		C67649122663919C0033464A /* Tab Extractor */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C67649222663919D0033464A /* Build configuration list for PBXNativeTarget "Tab Extractor" */;
@@ -223,10 +340,13 @@
 				C676490F2663919C0033464A /* Sources */,
 				C67649102663919C0033464A /* Frameworks */,
 				C67649112663919C0033464A /* Resources */,
+				C600732629AB5BA300771B61 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C600732429AB5BA300771B61 /* PBXTargetDependency */,
+				C600733C29AB641300771B61 /* PBXTargetDependency */,
 			);
 			name = "Tab Extractor";
 			productName = "Tab Extractor";
@@ -239,9 +359,15 @@
 		C676490B2663919C0033464A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					C600731A29AB5BA300771B61 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					C600732D29AB641300771B61 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					C67649122663919C0033464A = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -262,11 +388,29 @@
 			projectRoot = "";
 			targets = (
 				C67649122663919C0033464A /* Tab Extractor */,
+				C600731A29AB5BA300771B61 /* Extract Tabs extension */,
+				C600732D29AB641300771B61 /* Extract Tabs action */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C600731929AB5BA300771B61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C600732C29AB641300771B61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C600733429AB641300771B61 /* Media.xcassets in Resources */,
+				C600733929AB641300771B61 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C67649112663919C0033464A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -281,6 +425,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C600731729AB5BA300771B61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C600732A29AB641300771B61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C600733629AB641300771B61 /* ActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C676490F2663919C0033464A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -329,7 +488,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C600732429AB5BA300771B61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C600731A29AB5BA300771B61 /* Extract Tabs extension */;
+			targetProxy = C600732329AB5BA300771B61 /* PBXContainerItemProxy */;
+		};
+		C600733C29AB641300771B61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C600732D29AB641300771B61 /* Extract Tabs action */;
+			targetProxy = C600733B29AB641300771B61 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		C600733729AB641300771B61 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C600733829AB641300771B61 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		C6C6F9D0267F3F1F00F4A653 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -350,6 +530,114 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C600732729AB5BA300771B61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2222CRHQ48;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Extract Tabs extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Extract Tabs extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.saio674.Tab-Extractor.Extract-Tabs-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C600732829AB5BA300771B61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2222CRHQ48;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Extract Tabs extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Extract Tabs extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.saio674.Tab-Extractor.Extract-Tabs-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C600733F29AB641300771B61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2222CRHQ48;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Extract Tabs action/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Extract Tabs action";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.saio674.Tab-Extractor.Extract-Tabs-action";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C600734029AB641300771B61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2222CRHQ48;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Extract Tabs action/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Extract Tabs action";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.saio674.Tab-Extractor.Extract-Tabs-action";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		C67649202663919D0033464A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -471,6 +759,7 @@
 		C67649232663919D0033464A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = TE;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Tab Extractor/Tab Extractor.entitlements";
@@ -497,6 +786,7 @@
 		C67649242663919D0033464A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = TE;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Tab Extractor/Tab Extractor.entitlements";
@@ -523,6 +813,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C600732929AB5BA300771B61 /* Build configuration list for PBXNativeTarget "Extract Tabs extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C600732729AB5BA300771B61 /* Debug */,
+				C600732829AB5BA300771B61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C600733E29AB641300771B61 /* Build configuration list for PBXNativeTarget "Extract Tabs action" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C600733F29AB641300771B61 /* Debug */,
+				C600734029AB641300771B61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C676490E2663919C0033464A /* Build configuration list for PBXProject "Tab Extractor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
