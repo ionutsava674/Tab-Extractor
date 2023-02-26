@@ -8,10 +8,10 @@
 import Foundation
 
 extension String {
-    func indexAtDistance( _ dist: String.IndexDistance) -> String.Index {
+    func indexAtDistance( _ dist: Int) -> String.Index {
         index(startIndex, offsetBy: dist)
     }
-    func charAtDistance( _ dist: String.IndexDistance) -> Character {
+    func charAtDistance( _ dist: Int) -> Character {
         self[indexAtDistance( dist)]
     }
 }
@@ -140,7 +140,7 @@ class TabParseAlg2: TabParseAlg {
         return r
         //GuitarTab.Page()
     }
-    func gatherInfo( slice: ArraySlice<String>, checkCount: String.IndexDistance) -> barInfo2 {
+    func gatherInfo( slice: ArraySlice<String>, checkCount: Int) -> barInfo2 {
         var r = barInfo2()
         if slice.count < 2 {
             return r
@@ -197,7 +197,7 @@ class TabParseAlg2: TabParseAlg {
     } //getbars
     struct barInfo2 {
         var checkedUpTo = 0
-        var barPositions = [String.IndexDistance]()
+        var barPositions = [Int]()
         var barChars = Set<Character>()
         var onlyBarChars: Set<Character> = []
         var nobChars: Set<Character> = []

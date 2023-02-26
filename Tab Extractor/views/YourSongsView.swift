@@ -135,32 +135,43 @@ struct YourSongsView: View {
                     } //if
                 } //zs
                 HStack {
+                    //Spacer()
                     NavigationLink {
                         HowToUseMainView()
                     } label: {
                         Label(NSLocalizedString("How to use", comment: "how to use main screen button"), systemImage: "questionmark.diamond")
                     }
+                    .padding(4)
+                    .roundBorder(radius: 6, color: .primary, width: 1)
                     .padding(.horizontal)
+                    Spacer()
                     Text("\(listSelection?.path.count ?? 0 )")
                         .hidden()
-                    Spacer()
                     Button(NSLocalizedString("Refresh list", comment: "main window list refresh button")) {
                         listDocFiles()
                     } //btn
+                    .padding(4)
+                    .roundBorder(radius: 6, color: .primary, width: 1)
                     .padding(.horizontal)
+                    //Spacer()
                 } //hs
+                //Divider()
+                Color.clear
+                    .frame(minWidth: 1, idealWidth: .infinity, maxWidth: .infinity, minHeight: 1, idealHeight: 1, maxHeight: 1, alignment: .center)
                 HStack {
                     Button {
                         showingNewTabUrl = true
                     } label: {
                             Image(systemName: "doc.badge.plus").renderingMode(.original)
                             .font(.largeTitle)
+                            .padding(.vertical, 6)
                     } //btn
-                    // .padding(.horizontal)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .contentShape(Rectangle())
+                    .roundBorder(radius: 6, color: .primary, width: 2)
                     .accessibilityLabel(NSLocalizedString("Add from web", comment: "main window web add button"))
                     .accessibility(hint: Text(NSLocalizedString("opens browser", comment: "main window add button hint")))
+                    .padding([.trailing], 3)
                     //Spacer()
                     //Spacer()
                     Button {
@@ -168,12 +179,14 @@ struct YourSongsView: View {
                     } label: {
                             Image(systemName: "note.text.badge.plus").renderingMode(.original)
                             .font(.largeTitle)
+                            .padding(.vertical, 6)
                     } //btn
-                    // .padding(.horizontal)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .contentShape(Rectangle())
+                    .roundBorder(radius: 6, color: .primary, width: 2)
                     .accessibilityLabel(NSLocalizedString("Add text directly", comment: "main window add text button"))
                     .accessibility(hint: Text(NSLocalizedString("you can paste text directly", comment: "main window add text button hint")))
+                    .padding([.leading], 3)
                 } //hs
                 .padding(.bottom)
             } //vs
@@ -269,5 +282,17 @@ extension NavigationView {
         } else {
             self.navigationViewStyle(StackNavigationViewStyle())
         }
+    } //func
+} //ext
+extension View {
+    func roundBorder( radius: CGFloat, color: Color, width: CGFloat) -> some View {
+        self
+            .clipShape(
+                RoundedRectangle( cornerRadius: radius)
+            )
+            .overlay(
+                RoundedRectangle( cornerRadius: radius)
+                    .stroke( color, lineWidth: width)
+            )
     }
 }
